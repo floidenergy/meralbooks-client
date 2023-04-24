@@ -1,0 +1,122 @@
+main {
+  width: 100%;
+}
+
+header.hero {
+  background-image: linear-gradient(rgba(126, 32, 97, 0.68), rgba(126, 32, 97, 0.68)), url("../../images/banner-100.jpg");
+  height: 90vh;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+header.hero p.heroTitle {
+  font-size: 2.5rem;
+}
+
+section {
+  width: 100vw;
+  padding: 50px 25px;
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+@media (max-width: 700px) {
+  .benefits {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    text-align: center;
+  }
+  .benefits article {
+    width: 80%;
+  }
+  .benefits article img.benefits-img {
+    width: 75%;
+  }
+}
+.benefits article img.benefits-img {
+  height: 65px;
+}
+.benefits article p.benefits-title {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.about {
+  display: flex;
+  width: 100vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.about div.info {
+  width: 40%;
+}
+.about p.description {
+  margin: 20px 0;
+}
+.about img.aboutImage {
+  width: 35%;
+  border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .about {
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: center;
+  }
+  .about div.info {
+    width: 75%;
+  }
+  .about img.aboutImage {
+    width: 75%;
+  }
+}
+
+.Collection {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100vw;
+  gap: 25px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Collection .CollectionImage {
+  width: 35vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+.Collection .CollectionImage :hover {
+  transition: 1s ease-in-out all;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.514);
+  transform: translateY(-10px);
+}
+.Collection .CollectionImage img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.Collection .info .description {
+  margin: 10px 0 25px 0;
+}
+@media (max-width: 700px) {
+  .Collection {
+    flex-direction: column-reverse;
+    gap: 20px;
+    text-align: center;
+  }
+  .Collection .CollectionImage {
+    width: 75vw;
+  }
+}/*# sourceMappingURL=home.css.map */

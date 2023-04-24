@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Nexa";
+    src: url("./font/Nexa\ Bold.otf") format("opentype");
+    font-weight: bolder;
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("./font/Nexa\ Light.otf") format("opentype");
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("./font/Nexa\ Regular.otf") format("opentype");
+}
+
+:root{
+    --purple: #7e2061;
+    --black: #5D595A;
+    --gray: #9E9D9D;
+    --white: #FFFFFF;
+    --dark-white: #ECECEC;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nexa';
+}
+
+body{
+    background-color: var(--dark-white);
+}
+
+ /***********************************************/
+
+.bold{
+    font-weight: bold;
+}
+
+/********************** COLORS *****************/
+
+.purple {
+    color: var(--purple);
+}
+
+.black {
+    color: var(--black);
+}
+
+.gray {
+    color: var(--gray);
+}
+
+.white {
+    color: var(--white);
+}
+
+.dark-white{
+    color: var(--dark-white)
+}
+
+.b-purple{
+    background-color: var(--purple);
+}
+
+.b-black {
+    background-color: var(--black);
+}
+
+.b-gray {
+    background-color: var(--gray);
+}
+
+.b-white {
+    background-color: var(--white);
+}
+
+.b-dark-white{
+    background-color: var(--dark-white)
+}
+
+.button{
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    transition: 1s ease-in-out;
+    text-decoration: none;
+}
+
+.button:hover{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+}
