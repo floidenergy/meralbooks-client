@@ -1,3 +1,6 @@
+@import './utilities/variable';
+
+
 main{
     width: 100%;
 }
@@ -6,10 +9,14 @@ header.hero{
     background-image:
         linear-gradient(rgba(126, 32, 97, 0.68),
                         rgba(126, 32, 97, 0.68)),
-        url("../../images/banner-100.jpg");
+        // url("../../images/banner-100.jpg");
+        url("../images/banner-100.jpg");
 
-    height: 90vh;
+
     background-size: cover;
+    height: 90vh;
+    width: 100vw;
+
 
     text-align: center;
     display: flex;
@@ -119,8 +126,8 @@ section{
         // transition: 1s ease-in-out all;
         
         :hover{
-            transition: 1s ease-in-out all;
-            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.514);
+            transition: 1s ease-out all;
+            box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.514);
             transform: translateY(-10px);
         }
 
@@ -147,5 +154,76 @@ section{
             width: 75vw;
         }
     }
+    
+}
+
+.how-we-work{
+    display: flex;
+    flex-direction: row;
+
+    
+    
+    .icons-cards{
+        display: flex;
+        flex-direction: row;
+        // width: 40vw;
+        gap: 15px;
+
+        .card{
+            padding: 10px;
+            border-radius: 10px;
+            width: 15vw;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            transition: 1s ease-out;
+
+
+            div.imageBackground{
+
+                background-color: $white;
+                border-radius: 100%;
+                aspect-ratio: 1;
+                // padding: auto;
+                display: flex;
+                align-items: center;
+
+                .card-icon{
+                    // min-width: 10vw;
+                    width: 75%;
+                    border: none;
+                    height: 50%;
+                    margin: auto;
+                    display: block;
+
+                    fill: $dark-white;
+                }
+            }
+
+            p.card-title{
+                font-size: 1.5rem;
+            }
+        }
+
+        .card:hover{
+            background-color: $white;
+            transform: translateY(-20px);
+            transition: 1s ease-out all;
+            box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.247);
+
+
+            div.imageBackground{
+                background-color: $dark-white;
+                .card-icon{
+                    fill: $black
+                }
+            }
+        }
+    }
+
+
     
 }

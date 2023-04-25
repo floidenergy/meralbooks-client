@@ -3,9 +3,10 @@ main {
 }
 
 header.hero {
-  background-image: linear-gradient(rgba(126, 32, 97, 0.68), rgba(126, 32, 97, 0.68)), url("../../images/banner-100.jpg");
-  height: 90vh;
+  background-image: linear-gradient(rgba(126, 32, 97, 0.68), rgba(126, 32, 97, 0.68)), url("../images/banner-100.jpg");
   background-size: cover;
+  height: 90vh;
+  width: 100vw;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -96,8 +97,8 @@ section {
   gap: 10px;
 }
 .Collection .CollectionImage :hover {
-  transition: 1s ease-in-out all;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.514);
+  transition: 1s ease-out all;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.514);
   transform: translateY(-10px);
 }
 .Collection .CollectionImage img {
@@ -119,4 +120,56 @@ section {
   .Collection .CollectionImage {
     width: 75vw;
   }
+}
+
+.how-we-work {
+  display: flex;
+  flex-direction: row;
+}
+.how-we-work .icons-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.how-we-work .icons-cards .card {
+  padding: 10px;
+  border-radius: 10px;
+  width: 15vw;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: 1s ease-out;
+}
+.how-we-work .icons-cards .card div.imageBackground {
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+}
+.how-we-work .icons-cards .card div.imageBackground .card-icon {
+  width: 75%;
+  border: none;
+  height: 50%;
+  margin: auto;
+  display: block;
+  fill: #ECECEC;
+}
+.how-we-work .icons-cards .card p.card-title {
+  font-size: 1.5rem;
+}
+.how-we-work .icons-cards .card:hover {
+  background-color: #FFFFFF;
+  transform: translateY(-20px);
+  transition: 1s ease-out all;
+  box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.247);
+}
+.how-we-work .icons-cards .card:hover div.imageBackground {
+  background-color: #ECECEC;
+}
+.how-we-work .icons-cards .card:hover div.imageBackground .card-icon {
+  fill: #5D595A;
 }/*# sourceMappingURL=home.css.map */

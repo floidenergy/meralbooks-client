@@ -13,7 +13,7 @@ import App from "./app";
 import NavBar from "./elements/navBar/navBar";
 import { useGlobalContext } from "./context";
 
-import './globalStyle.css';
+import './css/globalStyle.css';
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
 

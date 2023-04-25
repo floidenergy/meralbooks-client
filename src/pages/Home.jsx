@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import "./sass/home.css"
+import "../css/home.css"
 
 //images.svg
 import fastDelivery from '../images/SVG/fast Delivery.svg';
@@ -17,6 +17,13 @@ import book3 from '../images/booksImageTemp/book3.jpg'
 import book4 from '../images/booksImageTemp/book4.jpg'
 import book5 from '../images/booksImageTemp/book5.jpg'
 
+import {ReactComponent as ChooseYourBook} from '../images/SVG/Choose_Your_Book.svg'
+// import {ReactComponent as ChooseYourBook} from '../images/SVG/shild.svg'
+import {ReactComponent as MakeYourOrder} from '../images/SVG/make_your_order.svg'
+import {ReactComponent as CashAtDelivery} from '../images/SVG/delivery_cash_black.svg'
+
+import benifitsPic from '../images/pexels-vlada-karpovich-4050348.jpg'
+
 const Home = () => {
     return (
         <main className='black'>
@@ -29,7 +36,7 @@ reprehenderit</p>
                 <Link to={'/Store'} className='button b-white purple bold'>Get Me Book</Link>
             </header>
 
-            <section className="benefits">
+            <section className="benefits b-dark-white">
                 <article>
                     <img className='benefits-img' src={fastDelivery} alt="fast delivery" />
                     <p className="benefits-title bold">Quick Delivery</p>
@@ -84,13 +91,34 @@ reprehenderit</p>
                     <p className="detail purple bold">How We Work</p>
                     <h2 className='bold title'>Explore Our<br/>Processes</h2>
                     <div className="icons-cards">
-                        <div className="card">
+                        <div className="card b-dark-white">
+                            <div className="imageBackground">
+                                <ChooseYourBook className="card-icon"/>
+                            </div>
                             
+                            <p className="card-title bold">Choose Your Book</p>
+                        </div>
+                        <div className="card b-dark-white">
+                            <div className="imageBackground">
+                                <MakeYourOrder className="card-icon"/>
+                            </div>
+                            <p className="card-title bold">Make Your Order</p>
+                        </div>
+                        <div className="card b-dark-white">
+                            <div className="imageBackground">
+                                <CashAtDelivery className="card-icon"/>
+                            </div>
+                            <p className="card-title bold">Pay On Delivery</p>
                         </div>
                     </div>
                 </div>
                 <div className="benifits">
-
+                    <p className='number'>.01</p>
+                    <img src={benifitsPic} alt="" />
+                    <div className="info">
+                        <p className="title purple bold">Benifits</p>
+                        <p className="description">Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri, partem libris mea id. Vix no odio quas probo, pri consetetur percipitur id. Semper molestiae consectetuer pri ea, ea est facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis everti erroribus ex. Ad vim minim nobis hendrerit, et ludus feugiat legimus has.</p>
+                    </div>
                 </div>
             </section>
         </main>
