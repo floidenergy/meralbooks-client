@@ -5,6 +5,15 @@ main{
     width: 100%;
 }
 
+.section-detail{
+    font-size: 0.8rem;
+}
+
+.title{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
 header.hero{
     background-image:
         linear-gradient(rgba(126, 32, 97, 0.68),
@@ -27,6 +36,9 @@ header.hero{
     
     p.heroTitle{
         font-size: 2.5rem;
+        span{
+            font-size: 2.5rem;
+        }
     }
 }
 
@@ -160,19 +172,54 @@ section{
 .how-we-work{
     display: flex;
     flex-direction: row;
-
+    justify-content: space-evenly;
     
+    @media (max-width: 700px){
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        // width: 75vw;
+        .info{
+            width: 75vw;
+            .icons-cards{
+                width: 100%;
+                padding-bottom: 40px;
+            }
+        }
+
+        .benifits{
+            width: 75vw !important;
+            // background-color: red !important;
+            .number{
+                font-size: 8rem !important;
+            }
+
+            .info{
+                .title{
+                    font-size: 6rem !important;
+                    text-align: left;
+                }
+                .description{
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
     
     .icons-cards{
+        margin-top: 50px;
+
         display: flex;
         flex-direction: row;
-        // width: 40vw;
-        gap: 15px;
+        width: 35vw;
+        gap: 1.5vw;
+        // background-color: $black;
 
         .card{
             padding: 10px;
             border-radius: 10px;
-            width: 15vw;
+            // width: 20%;
             display: flex;
             gap: 20px;
             flex-direction: column;
@@ -224,6 +271,108 @@ section{
         }
     }
 
+    .benifits{
+        width: 35vw;
+        // min-height: max-content;
+
+        background-color: #f8f8f8;
+        padding: 10px;
+        border-radius: 34px;
+
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 0.5fr 1fr;
+
+        box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.096);
+
+        .number{
+            font-size: 4rem;
+            opacity: 0.2;
+        }
+
+        img{
+            width: 100%;
+            border-radius: 100%;
+        }
+
+        .info{
+            grid-column: 1 / 3;
+            width: 100%;
+            padding: 10px;
+
+            .title{
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+        }
+
+    }
 
     
+}
+
+.testimonials{
+    
+    .info{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    
+    .testimonials-cards{
+        display: flex;
+        justify-content: space-evenly;
+
+        .testimo-card{
+            width: 30vw;
+            height: max-content;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.096);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .user-info{
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin-top: 10px;
+                min-height: 150px;
+                padding: 0;
+
+                img{
+                    width: 50%;
+                    max-height: 100px;
+                    max-width: 100px;
+                    object-fit: cover;
+                    aspect-ratio: 1;
+                    border-radius: 100%;
+                }
+                .name{
+                    font-size: 1.3rem;
+                    text-align: right;
+                    width: 75%;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        @media (max-width: 700px){
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            
+            
+            .testimo-card{
+                width: 50vw;
+                padding: 15px 15px 0 15px;
+
+                .user-info{
+                    min-height: 100px;
+                    justify-content: end !important;
+
+                }
+            }
+
+        }
+    }
 }

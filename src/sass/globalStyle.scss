@@ -1,12 +1,18 @@
 // @import "../css/fonts.scss";
 @import "./utilities/variable";
 
+@font-face {
+    font-family: "Nexa";
+    src: url("../font/Nexa-Heavy.ttf") format("truetype");
+    // src: url("../font/Nexa\ Bold.otf")
+    font-weight:bolder;
+}
 
 @font-face {
     font-family: "Nexa";
     src: url("../font/Nexa\ Bold.otf") format("opentype");
     // src: url("../font/Nexa\ Bold.otf")
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 @font-face {
@@ -25,6 +31,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Nexa';
+    font-size : clamp(1.2vw, 1vw, 8rem);
 }
 
 body{
@@ -32,6 +39,14 @@ body{
 }
 
 /************************ TEXT FORMAT ********************/
+
+.lighter{
+    font-family: lighter;
+}
+
+.bolder{
+    font-weight: bolder;
+}
 
 .bold{
     font-weight: bold;

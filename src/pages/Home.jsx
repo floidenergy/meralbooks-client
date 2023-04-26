@@ -24,6 +24,10 @@ import {ReactComponent as CashAtDelivery} from '../images/SVG/delivery_cash_blac
 
 import benifitsPic from '../images/pexels-vlada-karpovich-4050348.jpg'
 
+import user1 from '../images/user/user1.jpg';
+import user2 from '../images/user/user2.jpg';
+import user3 from '../images/user/user3.jpg';
+
 const Home = () => {
     return (
         <main className='black'>
@@ -61,8 +65,8 @@ reprehenderit</p>
 
             <section className="about b-white">
                 <div className="info">
-                    <p className="detail purple bold">About</p>
-                    <h2 className='bold title'>We Provide<br/>Incredible Experience</h2>
+                    <p className="section-detail purple bold">About</p>
+                    <h2 className='bolder title'>We Provide<br/>Incredible Experience</h2>
                     <p className="description">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed<br/>Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna,<br/>Aliqua. Ut Enim</p>
                     <Link to={"/About"} className="button white b-purple ">Take a look</Link>
                 </div>
@@ -71,7 +75,7 @@ reprehenderit</p>
 
             <section className="Collection b-dark-white">
                 <div className="info">
-                    <p className="detail purple bold">Collection</p>
+                    <p className="section-detail purple bold">Collection</p>
                     <h2 className='bold title'>Our Best<br/>Sellings</h2>
                     <p className="description">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed<br/>Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna,<br/>Aliqua. Ut Enim</p>
                     <Link to={"/Store"} className="button white b-purple ">Get me a book</Link>
@@ -88,7 +92,7 @@ reprehenderit</p>
 
             <section className="how-we-work">
                 <div className="info">
-                    <p className="detail purple bold">How We Work</p>
+                    <p className="section-detail purple bold">How We Work</p>
                     <h2 className='bold title'>Explore Our<br/>Processes</h2>
                     <div className="icons-cards">
                         <div className="card b-dark-white">
@@ -113,11 +117,41 @@ reprehenderit</p>
                     </div>
                 </div>
                 <div className="benifits">
-                    <p className='number'>.01</p>
+                    <p className='number bold'>.01</p>
                     <img src={benifitsPic} alt="" />
                     <div className="info">
                         <p className="title purple bold">Benifits</p>
                         <p className="description">Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri, partem libris mea id. Vix no odio quas probo, pri consetetur percipitur id. Semper molestiae consectetuer pri ea, ea est facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis everti erroribus ex. Ad vim minim nobis hendrerit, et ludus feugiat legimus has.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="testimonials b-dark-white">
+                <div className="info">
+                    <p className="section-detail purple bold">Testimonials</p>
+                    <h2 className="bolder title">What Clients Say</h2>
+                </div>
+                <div className="testimonials-cards">
+                    <div className="testimo-card b-white">
+                        <p className="review">Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri, partem libris mea id. Vix no odio quas probo, pri consetetur percipitur id. Semper molestiae consectetuer pri ea, ea est facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis everti erroribus ex. Ad vim minim nobis hendrerit, et ludus feugiat legimus has.</p>
+                        <div className="user-info">
+                            <img src={user1} alt="" />
+                            <p className="name bold">Mohamed Djemaoui</p>
+                        </div>
+                    </div>
+                    <div className="testimo-card b-purple white">
+                        <p className="review">Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri, partem libris mea id. Vix no odio quas probo, pri consetetur percipitur id. Semper molestiae consectetuer pri ea, ea est facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis everti erroribus ex. Ad vim minim nobis hendrerit, et ludus feugiat legimus has.</p>
+                        <div className="user-info">
+                            <img src={user2} alt="" />
+                            <p className="name bold">Djamila Kias</p>
+                        </div>
+                    </div>
+                    <div className="testimo-card b-white">
+                        <p className="review">Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri, partem libris mea id. Vix no odio quas probo, pri consetetur percipitur id. Semper molestiae consectetuer pri ea, ea est facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis everti erroribus ex. Ad vim minim nobis hendrerit, et ludus feugiat legimus has.</p>
+                        <div className="user-info">
+                            <img src={user3} alt="" />
+                            <p className="name bold">Kader Ben M'hamed</p>
+                        </div>
                     </div>
                 </div>
             </section>
