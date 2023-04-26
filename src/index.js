@@ -11,6 +11,8 @@ import About from './pages/About';
 import App from "./app";
 
 import NavBar from "./elements/navBar/navBar";
+import Footer from "./elements/footer/Footer";
+
 import { useGlobalContext } from "./context";
 
 import './css/globalStyle.css';
@@ -33,6 +35,7 @@ root.render(
                         <Route path='/Cart' element={<Cart />}/>
                         <Route path='/Profile' element={<Profile />}/>
                     </Routes>
+                <Footer />
             </App>
         </BrowserRouter>
 

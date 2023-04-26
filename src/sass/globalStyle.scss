@@ -1,30 +1,6 @@
 // @import "../css/fonts.scss";
 @import "./utilities/variable";
-
-@font-face {
-    font-family: "Nexa";
-    src: url("../font/Nexa-Heavy.ttf") format("truetype");
-    // src: url("../font/Nexa\ Bold.otf")
-    font-weight:bolder;
-}
-
-@font-face {
-    font-family: "Nexa";
-    src: url("../font/Nexa\ Bold.otf") format("opentype");
-    // src: url("../font/Nexa\ Bold.otf")
-    font-weight: bold;
-}
-
-@font-face {
-    font-family: "Nexa";
-    src: url("../font/Nexa\ Light.otf") format("opentype");
-    font-weight: lighter;
-}
-
-@font-face {
-    font-family: "Nexa";
-    src: url("../font/Nexa\ Regular.otf") format("opentype");
-}
+@import "./utilities/fonts.scss"
 
 *{
     padding: 0;

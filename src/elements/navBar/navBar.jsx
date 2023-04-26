@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import './style.css'
-import logo from '../../images/SVG/meral_books.svg'
+import {ReactComponent as Logo} from '../../images/SVG/meral_books.svg'
 import { useGlobalContext } from '../../context'
 
 import { AiOutlineShoppingCart } from 'react-icons/ai'
@@ -42,7 +42,8 @@ const NavBar = () => {
 
   return (
     <nav className='b-white'>
-      <img src={logo} alt='' className='logo' />
+      {/* <img src={logo} alt='' className='logo' /> */}
+      <Logo className='logo' />
 
       <ul className='navList bold black'>
         {Headers.map((header, index) => (

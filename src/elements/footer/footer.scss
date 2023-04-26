@@ -1,0 +1,52 @@
+@import '../../sass/utilities/variable';
+@import "../../sass/utilities/fonts";
+
+footer{
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+
+    img{
+        width: 100%;
+        opacity: 0.5;
+    }
+    
+    .footer-menue{
+        padding: 75px 25px;
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+
+        .footer-logo{
+            fill: $white;
+            width: 15%;
+        }
+
+        .customer-care{
+            .title{
+                text-decoration: underline;
+                // font
+            }
+
+            ul{
+                margin-top: 25px;
+                margin-left: 25px;
+                list-style-type: none;
+                li{
+                    padding: 5px;
+                    a{
+                        color: white;
+                        text-decoration: none;
+                        font-weight: lighter;
+                        font-size: 0.8rem;
+                    }
+
+                    :hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Nexa";
+  src: url("../../font/Nexa-Heavy.ttf") format("truetype");
+  font-weight: bolder;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../font/Nexa Bold.otf") format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../font/Nexa-ExtraLight.ttf") format("opentype");
+  font-weight: lighter;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("../../font/Nexa Regular.otf") format("opentype");
+}
+footer {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+footer img {
+  width: 100%;
+  opacity: 0.5;
+}
+footer .footer-menue {
+  padding: 75px 25px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .footer-menue .footer-logo {
+  fill: #FFFFFF;
+  width: 15%;
+}
+footer .footer-menue .customer-care .title {
+  text-decoration: underline;
+}
+footer .footer-menue .customer-care ul {
+  margin-top: 25px;
+  margin-left: 25px;
+  list-style-type: none;
+}
+footer .footer-menue .customer-care ul li {
+  padding: 5px;
+}
+footer .footer-menue .customer-care ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 0.8rem;
+}
+footer .footer-menue .customer-care ul li :hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=footer.css.map */
