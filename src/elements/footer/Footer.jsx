@@ -11,9 +11,9 @@ import '../../css/footer.css'
 
 function Footer() {
   return (
-    <footer>
+    <footer className='b-purple white'>
         <img src={footerBanner} alt="" />
-        <div className="footer-menue b-purple white">
+        <div className="footer-menue ">
             <Logo className='footer-logo' />
             <div className="customer-care">
                 <p className="title bold">CUSTOMER CARE</p>
@@ -28,12 +28,12 @@ function Footer() {
                 <p className="description">Subscribe To Get Special Offers. Free Giveaways. And Once-In-A Lifetime Deals</p>
                 <div className="sub-input">
                     <input type="email" name="email-subscription" className='email-subscription' placeholder='Enter Your Email'/>
-                    <AiOutlineMail />
+                    <AiOutlineMail className='icon'/>
                 </div>
             </div>
             <div className="socialMedia-contacts">
-                <a href="https://bit.ly/3n3uuWz" target='_blank'><InstagramIcon /></a>
-                <a href="https://bit.ly/43Z5CQp" target='_blank'><FacebookIcon /></a>
+                <a href="https://bit.ly/3n3uuWz" target='_blank'><InstagramIcon className='sm-icon'/></a>
+                <a href="https://bit.ly/43Z5CQp" target='_blank'><FacebookIcon className='sm-icon'/></a>
             </div>
         </div>
         <p className="cpywrite">&copy; 2023 Meral Books All Rights Reserved.</p>
