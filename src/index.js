@@ -1,44 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client"
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+/** @format */
+import React, {useState} from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import axios from "axios"
 
-import Home from './pages/Home';
-import Store from './pages/Store';
-import Forum from './pages/Forum';
-import Contact from './pages/Contact';
-import About from './pages/About';
+import { pickApp } from "./utils/routerPicker";
 
-import App from "./app";
+const CurrentApp = pickApp();
 
-import NavBar from "./elements/navBar/navBar";
-import Footer from "./elements/footer/Footer";
-
-import { useGlobalContext } from "./context";
-
-import './css/globalStyle.css';
-import Cart from "./pages/Cart";
-import Profile from "./pages/Profile";
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <App>
-                <NavBar/>
-                    <Routes>
-                        <Route path='/' element={<Home />}/>
-                        <Route path='/Store' element={<Store />}/>
-                        <Route path='/Forum' element={<Forum />}/>
-                        <Route path='/Contact' element={<Contact />}/>
-                        <Route path='/About' element={<About />}/>
-
-                        <Route path='/Cart' element={<Cart />}/>
-                        <Route path='/Profile' element={<Profile />}/>
-                    </Routes>
-                <Footer />
-            </App>
-        </BrowserRouter>
-
-
-    </React.StrictMode>
-)
+	<React.StrictMode>
+		<BrowserRouter>
+      		<CurrentApp />
+		</BrowserRouter>
+	</React.StrictMode>
+);

@@ -1,0 +1,135 @@
+.main {
+  background-image: linear-gradient(to right, rgb(126, 32, 97) 35%, rgba(126, 32, 97, 0.5)), url("../images/loginbanner.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.navBar {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.logo {
+  height: 100%;
+  padding: 8px;
+  fill: #FFFFFF !important;
+}
+
+.navBar .navList {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+.navBar .navList li a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.navBar .navList li a:hover {
+  color: red !important;
+}
+
+.mainFrame {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 92vh;
+  margin: 0 auto;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  gap: 15px;
+}
+.loginForm .realNameField {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+.loginForm .realNameField input {
+  width: 50%;
+}
+.loginForm input {
+  color: #FFFFFF;
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2.5px solid white;
+}
+.loginForm input:-webkit-autofill:focus,
+.loginForm input:-webkit-autofill,
+.loginForm input:-webkit-autofill:hover {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.loginForm input::-moz-placeholder {
+  background-color: transparent;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+.loginForm input::placeholder {
+  background-color: transparent;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+.loginForm input:focus {
+  outline: none;
+}
+.loginForm .errorBox {
+  min-height: -moz-max-content;
+  min-height: max-content;
+  color: white;
+}
+.loginForm .errorBox .errorMsg {
+  list-style-type: none;
+  padding-left: 25px;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  background-color: orangered;
+}
+.loginForm .errorBox .reqMsg {
+  padding-left: 25px;
+  padding: 10px;
+  background-color: black;
+  width: 100%;
+}
+.loginForm .keepConnection {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+}
+.loginForm .subBtn {
+  padding: 10px;
+  color: #7e2061;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.loginBanner .bannerTitle {
+  font-size: 6rem;
+  font-weight: 600;
+  color: white;
+}
+.loginBanner .rInvitation {
+  color: #FFFFFF;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-weight: lighter;
+}
+.loginBanner .rInvitation a {
+  font-size: 1.8rem;
+  color: cyan;
+}/*# sourceMappingURL=auth.module.css.map */

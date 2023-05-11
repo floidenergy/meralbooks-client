@@ -43,11 +43,12 @@ header.hero{
 }
 
 section{
-    width: 100vw;
-    padding: 50px 25px;
+    
 }
 
 .benefits{
+    width: 100vw;
+    padding: 50px 25px;
     display: flex;
     justify-content:space-evenly;
     gap: 15px;
@@ -81,6 +82,8 @@ section{
 }
 
 .about {
+    width: 100vw;
+    padding: 50px 25px;
     display: flex;
     width: 100vw;
     // gap: 25px;
@@ -120,6 +123,8 @@ section{
 }
 
 .Collection{
+    width: 100vw;
+    padding: 50px 25px;
     display: flex;
     flex-direction: row-reverse;
     width: 100vw;
@@ -170,6 +175,8 @@ section{
 }
 
 .how-we-work{
+    width: 100vw;
+    padding: 50px 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -312,6 +319,8 @@ section{
 }
 
 .testimonials{
+    width: 100vw;
+    padding: 50px 25px;
     
     .info{
         text-align: center;

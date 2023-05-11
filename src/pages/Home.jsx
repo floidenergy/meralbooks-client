@@ -27,9 +27,13 @@ import benifitsPic from '../images/pexels-vlada-karpovich-4050348.jpg'
 import user1 from '../images/user/user1.jpg';
 import user2 from '../images/user/user2.jpg';
 import user3 from '../images/user/user3.jpg';
+import NavBar from '../elements/navBar/navBar';
+import Footer from '../elements/footer/Footer';
 
 const Home = () => {
     return (
+        <>
+        <NavBar />
         <main className='black'>
             <header className='hero white'>
                 <p className='heroTitle'>Welcome To <span className='bold'>MERAL BOOKS.</span></p>
@@ -156,6 +160,8 @@ reprehenderit</p>
                 </div>
             </section>
         </main>
+        <Footer />
+        </>
     );
 }
 
