@@ -58,17 +58,6 @@ const NavBar = () => {
       </>
     )
   }
-
-  console.log(nStyle)
-
-const obj = {
-  Profile_Icons: "navbar_Profile-Icons__ZibSK",
-  active: "navbar_active__11dk5",
-  authButton: "navbar_authButton__xE82c",
-  icons: "navbar_icons__el6Td",
-  logo: "navbar_logo__pDmad",
-  navList: "navbar_navList__qWZGx"
-}
    
   return (
     <nav className={nStyle.navBar} >

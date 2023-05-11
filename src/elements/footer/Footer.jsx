@@ -32,8 +32,8 @@ function Footer() {
                 </div>
             </div>
             <div className="socialMedia-contacts">
-                <a href="https://bit.ly/3n3uuWz" target='_blank'><InstagramIcon className='sm-icon'/></a>
-                <a href="https://bit.ly/43Z5CQp" target='_blank'><FacebookIcon className='sm-icon'/></a>
+                <a href="https://bit.ly/3n3uuWz" target='_blank' rel='noopener noreferrer' ><InstagramIcon className='sm-icon'/></a>
+                <a href="https://bit.ly/43Z5CQp" target='_blank' rel='noopener noreferrer' ><FacebookIcon className='sm-icon'/></a>
             </div>
         </div>
         <p className="cpywrite">&copy; 2023 Meral Books All Rights Reserved.</p>

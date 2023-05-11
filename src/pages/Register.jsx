@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios"
 
 import lStyle from "../css/auth.module.css";
 
 import { ReactComponent as Logo } from "../images/SVG/meral_books.svg";
-import LoginBanner from "../images/loginbanner.jpg";
 
 const Register = () => {
     const [Headers, setHeaders] = useState([
@@ -74,7 +73,7 @@ const Register = () => {
         const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
 
-        const {data, status} = await axios.post("http://localhost:3001/register", formData)
+        const {data} = await axios.post("http://localhost:3001/register", formData)
         console.log(data);
         if(data.redirection)
             return window.location.pathname = data.redirection;

@@ -7,7 +7,6 @@ import axios from "axios"
 import lStyle from "../css/auth.module.css";
 
 import { ReactComponent as Logo } from "../images/SVG/meral_books.svg";
-import LoginBanner from "../images/loginbanner.jpg";
 
 
 const Login = () => {
@@ -21,19 +20,6 @@ const Login = () => {
 
 	const [RequestError, setRequestError] = useState("")
 
-	// const HandleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
-
-	// 	const {data, status} =
-    //     console.log(data);
-    //     if(data.redirection)
-    //         return window.location.pathname = data.redirection;
-        
-    //     return setRequestError(data.message);
-	// }
-
 	const HandleSubmit = async (e) => {
 		e.preventDefault();
 
@@ -41,7 +27,12 @@ const Login = () => {
 
 		try{
 			const {data} = await axios.post('http://localhost:3001/login', formData);
-			return window.location.pathname = data.redirection;
+
+			console.log(data);
+
+			if(data.redirection);
+				return window.location.pathname = data.redirection;
+			
 		}catch(err){
 			return setRequestError(err.response.data.message)
 		}

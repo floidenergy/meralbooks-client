@@ -1,6 +1,6 @@
 import React from 'react';
 import { GlobalContext } from './context';
-import { BrowserRouterm, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 
 import Home from "./pages/Home";
@@ -8,10 +8,6 @@ import Store from "./pages/Store";
 import Forum from "./pages/Forum";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-
-import Footer from "./elements/footer/Footer";
-
-import { useGlobalContext } from "./context";
 
 import "./css/globalStyle.css";
 import Cart from "./pages/Cart";

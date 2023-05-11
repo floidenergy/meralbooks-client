@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Forum from '../pages/Forum';
 
 
 import "./upload.css"
@@ -11,13 +10,8 @@ import bookSkilteon from './book.jpg'
 const Upload = () => {
     const [bookPicture, setBookPicture] = useState(bookSkilteon)
 
-    // const pic = new File([""], "book.jpg", {type: "image/jpg"});
-;
-    // const blob = new Blob([], {type: "image/jpg"});
-
     const fr = new FileReader();
 
-    // fr.readAsDataURL(blob);
     fr.onload = () =>{
         setBookPicture(fr.result);
         console.log(fr.result);
