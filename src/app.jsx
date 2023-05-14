@@ -12,8 +12,10 @@ import About from "./pages/About";
 import "./css/globalStyle.css";
 import Cart from "./pages/Cart";
 import Profile from "./pages/Profile";
+
 import Login from './pages/Login';
 import Register from './pages/Register';
+import EmailConf from './pages/EmailConf';
 
 
 const MainApp = () => {
@@ -28,6 +30,8 @@ const MainApp = () => {
 
                 <Route path='/Cart' element={<Cart />}/>
                 <Route path='/Profile' element={<Profile />}/>
+                <Route path='/Email' element={<EmailConf />}/>
+
                 <Route path='/Login' element={<Login />} />
                 <Route path='/Register' element={<Register/>} />
             </Routes>

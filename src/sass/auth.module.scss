@@ -95,6 +95,19 @@
         outline: none;
     }
 
+    .PassSec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        input{
+            width: 90%;
+        }
+        .PassIcon{
+            font-size: 2rem;
+        }
+    }
+
     .errorBox{
         // height: 7vh;
         min-height: max-content;

@@ -88,6 +88,18 @@
 .loginForm input:focus {
   outline: none;
 }
+.loginForm .PassSec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.loginForm .PassSec input {
+  width: 90%;
+}
+.loginForm .PassSec .PassIcon {
+  font-size: 2rem;
+}
 .loginForm .errorBox {
   min-height: -moz-max-content;
   min-height: max-content;
