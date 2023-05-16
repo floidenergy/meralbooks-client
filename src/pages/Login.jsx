@@ -51,7 +51,9 @@ const Login = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
     try {
-      const { data } = await axios.post('http://localhost:3001/login', formData)
+      const data = await axios.post('http://localhost:3001/login', formData, {
+        withCredentials: true
+      })
 
       console.log(data)
 
