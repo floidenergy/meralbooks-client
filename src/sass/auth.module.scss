@@ -1,5 +1,4 @@
 @import "./utilities/variable.scss";
-// @import 
 
 .main{
     background-image: linear-gradient(
@@ -8,8 +7,10 @@
         rgba(126, 32, 97, 0.5)),
         url('../images/loginbanner.jpg');
     background-size: cover;
+    background-position: center;
     height: 100vh;
     position: relative;
+    
 }
 
 .navBar {
@@ -19,26 +20,25 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
-}
-
-.logo{
-    height: 100%;
-    padding: 8px;
-    fill: $white !important;
-}
-
-.navBar .navList{
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-    li{
-        a{
-            color: inherit;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        a:hover{
-            color: red !important;
+    
+    .logo{
+        height: 100%;
+        padding: 8px;
+        fill: $white !important;
+    }
+    .navList{
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        li{
+            a{
+                color: inherit;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+            a:hover{
+                color: red !important;
+            }
         }
     }
 }
@@ -47,117 +47,249 @@
     display: flex;
     flex-direction: row;
     gap: 35px;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     height: 92vh;
     margin: 0 auto;
-    // background-color: red;
+    .loginForm{
+        display: flex;
+        flex-direction: column;
+        width: 28%;
+        max-width: 300px;
+        gap: 15px;
+        
     
-}
-
-.loginForm{
-    display: flex;
-    flex-direction: column;
-    width: 28%;
-    gap: 15px;
-
-
-    .realNameField{
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        width: 100%;
-        input{
-            width: 50%;
-        }
-    }
-    input{
-        color: $white;
-        margin-top: 10px;
-        padding: 8px;
-        font-size: 1.2rem;
-        background-color: transparent;
-        border: none;
-        border-bottom: 2.5px solid white;
-    }
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover{
-        -webkit-text-fill-color: white;
-        transition: background-color 5000s ease-in-out 0s;
-    }
-    input::placeholder{
-        background-color: transparent;
-        color: $white;
-        opacity: 0.7;
-    }
-    input:focus{
-        outline: none;
-    }
-
-    .PassSec{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        input{
-            width: 90%;
-        }
-        .PassIcon{
-            font-size: 2rem;
-        }
-    }
-
-    .errorBox{
-        // height: 7vh;
-        min-height: max-content;
-        // background-color: red;
-        color: white;
-        .errorMsg{
-            list-style-type: none;
-            padding-left: 25px;
-            font-weight: bolder;
-            font-size: 1.2rem;
-            background-color: orangered;
-        }
-        .reqMsg{
-            padding-left: 25px;
-            padding: 10px;
-            background-color: black;
+        .realNameField{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
             width: 100%;
+            input{
+                width: 50%;
+            }
+        }
+        input{
+            color: $white;
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 1.2rem;
+            background-color: transparent;
+            border: none;
+            border-bottom: 2.5px solid white;
+        }
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover{
+            -webkit-text-fill-color: white;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        input::placeholder{
+            background-color: transparent;
+            color: $white;
+            opacity: 0.7;
+        }
+        input:focus{
+            outline: none;
+        }
+    
+        .gender{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: white;
+            border-bottom: 2.5px solid white;
+            padding: 8px;
+            margin-top: 10px;
+            option{
+                color: black;
+            }
+        }
+
+        .PassSec{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            input{
+                width: 90%;
+            }
+            .PassIcon{
+                font-size: 2rem;
+            }
+        }
+    
+        .errorBox{
+            min-height: max-content;
+            color: white;
+            background-color: red;
+            border-radius: 10px;
+            .errorMsg{
+                list-style-type: none;
+                font-weight: bolder;
+                font-size: 1rem;
+                margin: 10px;
+                border-bottom: 2px solid white;
+            }
+            .reqMsg{
+                padding-left: 25px;
+                padding: 10px;
+                background-color: black;
+                width: 100%;
+            }
+        }
+        
+        .keepConnection{
+            margin-right: 10px;
+            height: 15px;
+            width: 15px;
+        }
+    
+        .subBtn{
+            padding: 10px;
+            color: $purple;
+            font-size: 1.5rem;
+            font-weight: bolder;
         }
     }
+
+    .loginBanner{
     
-    .keepConnection{
-        margin-right: 10px;
-        height: 15px;
-        width: 15px;
+        .bannerTitle{
+            font-size: 4rem;
+            font-weight: 600;
+            color: white;
+        }
+    
+        .rInvitation{
+            color: $white;
+            margin-top: 10px;
+            font-size: 1.8rem;
+            font-weight: lighter;
+            a{
+                font-size: 1.8rem;
+                color: cyan;
+            }
+        }
     }
 
-    .subBtn{
-        padding: 10px;
-        color: $purple;
-        font-size: 1.5rem;
-        font-weight: bolder;
+    
+}
+
+.navButton{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    
+
+    .navButton{
+        z-index: 3;
+        display: block;
+        width: 15vw;
+        height: 15vw;
+        max-width: 50px;
+        max-height: 50px;
+        background-color: white;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        border-radius: 10px;
+        color: black;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .navBar {
+        z-index: 2;
+        background-color: $white;
+        position: fixed;
+        right: -100vw;
+        height: 100vh;
+        width: 50vw;
+        padding-bottom: 50px;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: none;
+        transition: 1s ease-in all;
+        .logo{
+            display: none;
+        }
+
+        ul.navList{
+            margin-top: 75px;
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+            li{
+                color: $black !important;
+                padding: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        div.icons{
+            width: 100%;
+            div.authDiv{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                a.authButton{
+                    background-color: $purple;
+                    color: $white;
+                    padding: 10px;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .ActiveMenu{
+        right: 0 !important;
+        transition: 1s ease-out all;
+
     }
 }
 
-.loginBanner{
-    
-    .bannerTitle{
-        font-size: 6rem;
-        font-weight: 600;
-        color: white;
-    }
 
-    .rInvitation{
-        color: $white;
-        margin-top: 10px;
-        font-size: 1.8rem;
-        font-weight: lighter;
-        a{
-            font-size: 1.8rem;
-            color: cyan;
+@media screen and (max-width: 850px) {
+    .main{
+        background-image: linear-gradient(
+                            rgba(126, 32, 97, 0.8) 35%,
+                            rgba(126, 32, 97, 0.8)),
+                        url('../images/loginbanner.jpg');
+                   
+        .mainFrame{
+            flex-direction: column;
+            justify-content: center;
+
+            .loginForm{
+                min-width: 300px;
+                input{
+                    border-radius: unset;
+                }
+                button{
+                    border-radius: 0;
+                    background-color: white;
+                    border: none;
+                }
+            }
+
+            .loginBanner{
+                .bannerTitle{
+                    display: none;
+                }
+                .rInvitation{
+                    font-size: 1rem;
+                    a{
+                        font-size: 1rem;
+                    }
+                }
+            }
         }
     }
 }

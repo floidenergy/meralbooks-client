@@ -1,8 +1,11 @@
+.navButton {
+  display: none;
+}
+
 .navBar {
   /* background-color: var(--white); */
   width: 100%;
   height: 60px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,31 +16,29 @@
   padding: 8px;
   fill: #7e2061 !important;
 }
-
-ul.navList {
+.navBar ul.navList {
   display: flex;
   gap: 20px;
   list-style-type: none;
 }
-ul.navList li a {
+.navBar ul.navList li a {
   text-decoration: none;
   font-size: 1rem;
   transition: 1ms ease-in-out;
   color: inherit;
 }
-ul.navList li a :hover {
+.navBar ul.navList li a :hover {
   color: #7e2061;
 }
-ul.navList li.active {
+.navBar ul.navList li.active {
   text-decoration: underline;
   color: #7e2061 !important;
 }
-
-div.icons {
+.navBar div.icons {
   display: flex;
   gap: 10px;
 }
-div.icons a.authButton {
+.navBar div.icons a.authButton {
   padding: 5px 15px;
   background-color: var(--dark-white);
   color: var(--purple);
@@ -47,8 +48,84 @@ div.icons a.authButton {
   border-radius: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
-div.icons a.Profile_Icons {
-  font-size: 1.5rem;
+.navBar div.icons a.Profile_Icons {
+  height: 100%;
+  width: 100%;
   padding-right: 15px;
   color: #5D595A;
+}
+.navBar div.icons a.Profile_Icons svg {
+  width: 100%;
+  height: 100%;
+  min-width: 25px;
+  max-width: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .navButton {
+    z-index: 3;
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    max-width: 50px;
+    max-height: 50px;
+    background-color: white;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+    color: black;
+  }
+  .navButton svg {
+    width: 100%;
+    height: 100%;
+  }
+  .navBar {
+    z-index: 2;
+    background-color: #FFFFFF;
+    position: fixed;
+    right: -100vw;
+    height: 100vh;
+    width: 50vw;
+    padding-bottom: 50px;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: 1s ease-in all;
+  }
+  .navBar .logo {
+    display: none;
+  }
+  .navBar ul.navList {
+    color: #5D595A;
+    margin-top: 75px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .navBar ul.navList li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .navBar div.icons {
+    width: 100%;
+  }
+  .navBar div.icons div.authDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  .navBar div.icons div.authDiv a.authButton {
+    background-color: #7e2061;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .Active {
+    right: 0 !important;
+    transition: 1s ease-out all;
+  }
 }/*# sourceMappingURL=navbar.module.css.map */

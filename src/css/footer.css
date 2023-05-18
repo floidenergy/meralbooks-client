@@ -1,3 +1,4 @@
+/** @format */
 footer {
   width: 100vw;
   padding: 0;
@@ -17,63 +18,68 @@ footer .footer-menue .footer-logo {
   fill: #FFFFFF;
   width: 15%;
 }
-footer .footer-menue .customer-care .title {
+footer .footer-menue div.mainMenu {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 75px;
+}
+footer .footer-menue div.mainMenu .customer-care .title {
   text-decoration: underline;
   margin-bottom: 25px;
 }
-footer .footer-menue .customer-care ul {
+footer .footer-menue div.mainMenu .customer-care ul {
   margin-left: 25px;
   list-style-type: none;
 }
-footer .footer-menue .customer-care ul li {
+footer .footer-menue div.mainMenu .customer-care ul li {
   padding-bottom: 5px;
 }
-footer .footer-menue .customer-care ul li a {
+footer .footer-menue div.mainMenu .customer-care ul li a {
   color: white;
   text-decoration: none;
   font-weight: lighter;
   font-size: 0.9rem;
 }
-footer .footer-menue .customer-care ul li :hover {
+footer .footer-menue div.mainMenu .customer-care ul li :hover {
   text-decoration: underline;
 }
-footer .footer-menue .mail-subscribtion {
-  width: 20vw;
+footer .footer-menue div.mainMenu .mail-subscription {
+  width: 100%;
 }
-footer .footer-menue .mail-subscribtion .title {
+footer .footer-menue div.mainMenu .mail-subscription .title {
   text-decoration: underline;
   margin-bottom: 25px;
 }
-footer .footer-menue .mail-subscribtion .description {
+footer .footer-menue div.mainMenu .mail-subscription .description {
   font-weight: lighter;
   font-size: 0.8rem;
 }
-footer .footer-menue .mail-subscribtion .sub-input {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input {
   border-bottom: 2px solid #FFFFFF;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-footer .footer-menue .mail-subscribtion .sub-input input {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input {
   color: #FFFFFF;
   margin-top: 15px;
   background-color: transparent;
   border: none;
   width: 90%;
 }
-footer .footer-menue .mail-subscribtion .sub-input input:focus {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input:focus {
   outline: none;
 }
-footer .footer-menue .mail-subscribtion .sub-input input::-moz-placeholder {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input::-moz-placeholder {
   color: #FFFFFF;
   opacity: 0.7;
 }
-footer .footer-menue .mail-subscribtion .sub-input input::placeholder {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input::placeholder {
   color: #FFFFFF;
   opacity: 0.7;
 }
-footer .footer-menue .mail-subscribtion .sub-input .icon {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input .icon {
   font-size: 1.2rem;
   width: 10%;
   text-align: right;
@@ -90,6 +96,27 @@ footer .footer-menue .socialMedia-contacts a .sm-icon {
   background-color: #FFFFFF;
   border-radius: 10px;
   color: #7e2061;
+}
+@media screen and (max-width: 720px) {
+  footer .footer-menue {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 10px;
+  }
+  footer .footer-menue .mainMenu {
+    padding: 10px !important;
+    gap: 10px;
+  }
+  footer .footer-menue .mainMenu .customer-care {
+    width: 70% !important;
+  }
+  footer .footer-menue .mainMenu .mail-subscription {
+    width: 30%;
+  }
+}
+footer .footer-menue .socialMedia-contacts {
+  flex-direction: row;
 }
 footer .cpywrite {
   text-align: center;

@@ -1,4 +1,8 @@
-.section-detail {
+main {
+  width: 100%;
+}
+
+.section_detail {
   font-size: 0.8rem;
 }
 
@@ -45,14 +49,14 @@ header.hero p.heroTitle span {
   .benefits article {
     width: 80%;
   }
-  .benefits article img.benefits-img {
+  .benefits article img.benefits_img {
     width: 75%;
   }
 }
-.benefits article img.benefits-img {
+.benefits article img.benefits_img {
   height: 65px;
 }
-.benefits article p.benefits-title {
+.benefits article p.benefits_title {
   font-size: 1.5rem;
   margin: 10px 0;
 }
@@ -132,7 +136,7 @@ header.hero p.heroTitle span {
   }
 }
 
-.how-we-work {
+.how_we_work {
   width: 100vw;
   padding: 50px 25px;
   display: flex;
@@ -140,89 +144,110 @@ header.hero p.heroTitle span {
   justify-content: space-evenly;
 }
 @media screen and (max-width: 700px) {
-  .how-we-work {
+  .how_we_work {
     flex-direction: column;
     align-items: center;
     font-size: 3rem;
     text-align: center;
   }
-  .how-we-work .info {
+  .how_we_work .info {
     width: 75vw;
   }
-  .how-we-work .info .icons-cards {
+  .how_we_work .info .icons_cards {
+    flex-direction: column;
     width: 100%;
     padding-bottom: 40px;
   }
-  .how-we-work .benifits {
+  .how_we_work .benifits {
     width: 75vw !important;
     display: flex !important;
     flex-direction: column;
   }
-  .how-we-work .benifits .number {
+  .how_we_work .benifits .number {
     font-size: 2rem !important;
     display: none;
   }
-  .how-we-work .benifits img {
+  .how_we_work .benifits img {
     width: 100%;
     border-radius: 10px !important;
   }
-  .how-we-work .benifits .info .title {
+  .how_we_work .benifits .info .title {
     font-size: 2rem !important;
     text-align: left;
   }
-  .how-we-work .benifits .info .description {
+  .how_we_work .benifits .info .description {
     font-size: 1rem;
   }
 }
-.how-we-work .icons-cards {
+.how_we_work .icons_cards {
   margin-top: 50px;
   display: flex;
-  flex-direction: row;
-  width: 35vw;
-  gap: 1.5vw;
+  flex-direction: row !important;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 45vw;
+  gap: 5px;
+  position: relative;
 }
-.how-we-work .icons-cards .card {
+.how_we_work .icons_cards .card {
   padding: 10px;
   border-radius: 10px;
   display: flex;
-  gap: 20px;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   transition: 1s ease-out;
+  width: 22vw;
+  min-width: 40px;
+  max-width: 200px;
 }
-.how-we-work .icons-cards .card div.imageBackground {
+.how_we_work .icons_cards .card div.imageBackground {
   background-color: #FFFFFF;
   border-radius: 100%;
   aspect-ratio: 1;
   display: flex;
-  align-items: center;
+  width: 80%;
 }
-.how-we-work .icons-cards .card div.imageBackground .card-icon {
-  width: 75%;
+.how_we_work .icons_cards .card div.imageBackground .card_icon {
+  width: 50%;
   border: none;
   height: 50%;
   margin: auto;
   display: block;
   fill: #ECECEC;
 }
-.how-we-work .icons-cards .card p.card-title {
-  font-size: 1.5rem;
+.how_we_work .icons_cards .card p.card_title {
+  font-size: 1rem;
+  word-wrap: normal;
 }
-.how-we-work .icons-cards .card:hover {
+.how_we_work .icons_cards .card p.card_description {
+  font-size: 0.8rem;
+  display: none;
+  box-shadow: inherit;
+  position: absolute;
+  top: 100%;
+  background-color: inherit;
+  padding: 10px;
+  border-radius: 10px;
+}
+.how_we_work .icons_cards .card:hover {
   background-color: #FFFFFF;
   transform: translateY(-20px);
   transition: 1s ease-out all;
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.247);
 }
-.how-we-work .icons-cards .card:hover div.imageBackground {
+.how_we_work .icons_cards .card:hover div.imageBackground {
   background-color: #ECECEC;
 }
-.how-we-work .icons-cards .card:hover div.imageBackground .card-icon {
+.how_we_work .icons_cards .card:hover div.imageBackground .card_icon {
   fill: #5D595A;
 }
-.how-we-work .benifits {
+.how_we_work .icons_cards .card:hover p.card_description {
+  display: block;
+}
+.how_we_work .benifits {
   width: 35vw;
   background-color: #f8f8f8;
   padding: 10px;
@@ -232,20 +257,20 @@ header.hero p.heroTitle span {
   grid-template-rows: 0.5fr 1fr;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.096);
 }
-.how-we-work .benifits .number {
+.how_we_work .benifits .number {
   font-size: 4rem;
   opacity: 0.2;
 }
-.how-we-work .benifits img {
+.how_we_work .benifits img {
   width: 100%;
   border-radius: 100%;
 }
-.how-we-work .benifits .info {
+.how_we_work .benifits .info {
   grid-column: 1/3;
   width: 100%;
   padding: 10px;
 }
-.how-we-work .benifits .info .title {
+.how_we_work .benifits .info .title {
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -258,11 +283,11 @@ header.hero p.heroTitle span {
   text-align: center;
   margin-bottom: 25px;
 }
-.testimonials .testimonials-cards {
+.testimonials .testimonials_cards {
   display: flex;
   justify-content: space-evenly;
 }
-.testimonials .testimonials-cards .testimo-card {
+.testimonials .testimonials_cards .testimo_card {
   width: 30vw;
   height: -moz-max-content;
   height: max-content;
@@ -273,7 +298,7 @@ header.hero p.heroTitle span {
   flex-direction: column;
   justify-content: space-between;
 }
-.testimonials .testimonials-cards .testimo-card .user-info {
+.testimonials .testimonials_cards .testimo_card .user_info {
   display: flex;
   align-items: center;
   position: relative;
@@ -281,7 +306,7 @@ header.hero p.heroTitle span {
   min-height: 150px;
   padding: 0;
 }
-.testimonials .testimonials-cards .testimo-card .user-info img {
+.testimonials .testimonials_cards .testimo_card .user_info img {
   width: 50%;
   max-height: 100px;
   max-width: 100px;
@@ -290,24 +315,24 @@ header.hero p.heroTitle span {
   aspect-ratio: 1;
   border-radius: 100%;
 }
-.testimonials .testimonials-cards .testimo-card .user-info .name {
+.testimonials .testimonials_cards .testimo_card .user_info .name {
   font-size: 1.3rem;
   text-align: right;
   width: 75%;
   text-decoration: underline;
 }
 @media (max-width: 700px) {
-  .testimonials .testimonials-cards {
+  .testimonials .testimonials_cards {
     flex-direction: column;
     align-items: center;
     gap: 15px;
   }
-  .testimonials .testimonials-cards .testimo-card {
+  .testimonials .testimonials_cards .testimo_card {
     width: 95vw;
     padding: 15px;
   }
-  .testimonials .testimonials-cards .testimo-card .user-info {
+  .testimonials .testimonials_cards .testimo_card .user_info {
     min-height: 100px;
     justify-content: end !important;
   }
-}/*# sourceMappingURL=home.css.map */
+}/*# sourceMappingURL=home.module.css.map */

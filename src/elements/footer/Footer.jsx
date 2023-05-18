@@ -15,20 +15,22 @@ function Footer() {
         <img src={footerBanner} alt="" />
         <div className="footer-menue ">
             <Logo className='footer-logo' />
-            <div className="customer-care">
-                <p className="title bold">CUSTOMER CARE</p>
-                <ul>
-                    <li><Link to="/FAQ">FAQ</Link></li>
-                    <li><Link to="/FAQ">Shipping & Returns</Link></li>
-                    <li><Link to="/FAQ">Contact Us</Link></li>
-                </ul>
-            </div>
-            <div className="mail-subscribtion">
-                <p className="title bold">SIGN UP AND SAVE</p>
-                <p className="description">Subscribe To Get Special Offers. Free Giveaways. And Once-In-A Lifetime Deals</p>
-                <div className="sub-input">
-                    <input type="email" name="email-subscription" className='email-subscription' placeholder='Enter Your Email'/>
-                    <AiOutlineMail className='icon'/>
+            <div className="mainMenu">
+                <div className="customer-care">
+                    <p className="title bold">CUSTOMER CARE</p>
+                    <ul>
+                        <li><Link to="/FAQ">FAQ</Link></li>
+                        <li><Link to="/FAQ">Shipping & Returns</Link></li>
+                        <li><Link to="/FAQ">Contact Us</Link></li>
+                    </ul>
+                </div>
+                <div className="mail-subscription">
+                    <p className="title bold">SIGN UP AND SAVE</p>
+                    <p className="description">Subscribe To Get Special Offers. Free Giveaways. And Once-In-A Lifetime Deals</p>
+                    <div className="sub-input">
+                        <input type="email" name="email-subscription" className='email-subscription' placeholder='Enter Your Email'/>
+                        <AiOutlineMail className='icon'/>
+                    </div>
                 </div>
             </div>
             <div className="socialMedia-contacts">

@@ -5,7 +5,7 @@ main{
     width: 100%;
 }
 
-.section-detail{
+.section_detail{
     font-size: 0.8rem;
 }
 
@@ -18,7 +18,6 @@ header.hero{
     background-image:
         linear-gradient(rgba(126, 32, 97, 0.68),
                         rgba(126, 32, 97, 0.68)),
-        // url("../../images/banner-100.jpg");
         url("../images/banner-100.jpg");
 
 
@@ -36,6 +35,7 @@ header.hero{
     
     p.heroTitle{
         font-size: 2.5rem;
+        width: 90%;
         span{
             font-size: 2.5rem;
         }
@@ -62,18 +62,18 @@ section{
         
         article{
             width: 80%;
-            img.benefits-img{
+            img.benefits_img{
                 width: 75%;
             }
         }
     }
 
     article{
-        img.benefits-img{
+        img.benefits_img{
             height: 65px;
         }
 
-        p.benefits-title{
+        p.benefits_title{
             font-size: 1.5rem;
             margin: 10px 0;
         }
@@ -174,22 +174,24 @@ section{
     
 }
 
-.how-we-work{
+.how_we_work{
     width: 100vw;
     padding: 50px 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     
-    @media (max-width: 700px){
+    @media screen and (max-width: 700px){
         flex-direction: column;
         align-items: center;
 
+        font-size: 3rem;
         text-align: center;
         // width: 75vw;
         .info{
             width: 75vw;
-            .icons-cards{
+            .icons_cards{
+                flex-direction: column;
                 width: 100%;
                 padding-bottom: 40px;
             }
@@ -197,57 +199,67 @@ section{
 
         .benifits{
             width: 75vw !important;
-            // background-color: red !important;
+            display: flex !important;
+            flex-direction: column;
             .number{
-                font-size: 8rem !important;
+                font-size: 2rem !important;
+                display: none;
+            }
+            img{
+                width: 100%;
+                border-radius: 10px !important;
             }
 
             .info{
                 .title{
-                    font-size: 6rem !important;
+                    font-size: 2rem !important;
                     text-align: left;
                 }
                 .description{
-                    font-size: 1.8rem;
+                    font-size: 1rem;
                 }
             }
         }
     }
     
-    .icons-cards{
+    .icons_cards{
         margin-top: 50px;
 
         display: flex;
-        flex-direction: row;
-        width: 35vw;
-        gap: 1.5vw;
+        flex-direction: row !important;
+        justify-content: space-evenly;
+        // align-items: center;
+        flex-wrap: wrap;
+        width: 45vw;
+        gap: 5px;
+        position: relative;
         // background-color: $black;
 
         .card{
             padding: 10px;
             border-radius: 10px;
-            // width: 20%;
             display: flex;
-            gap: 20px;
             flex-direction: column;
+            gap: 10px;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             text-align: center;
             transition: 1s ease-out;
-
+            width: 22vw;
+            min-width: 40px;
+            max-width: 200px;
 
             div.imageBackground{
-
                 background-color: $white;
                 border-radius: 100%;
                 aspect-ratio: 1;
-                // padding: auto;
                 display: flex;
-                align-items: center;
+                width: 80%;
 
-                .card-icon{
+                .card_icon{
                     // min-width: 10vw;
-                    width: 75%;
+
+                    width: 50%;
                     border: none;
                     height: 50%;
                     margin: auto;
@@ -257,8 +269,20 @@ section{
                 }
             }
 
-            p.card-title{
-                font-size: 1.5rem;
+            p.card_title{
+                font-size: 1rem;
+                word-wrap: normal;
+            }
+
+            p.card_description{
+                font-size: 0.8rem;
+                display: none;
+                box-shadow: inherit;
+                position: absolute;
+                top: 100%;
+                background-color: inherit;
+                padding: 10px;
+                border-radius: 10px;
             }
         }
 
@@ -268,12 +292,15 @@ section{
             transition: 1s ease-out all;
             box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.247);
 
-
             div.imageBackground{
                 background-color: $dark-white;
-                .card-icon{
+                .card_icon{
                     fill: $black
                 }
+            }
+
+            p.card_description{
+                display: block;
             }
         }
     }
@@ -327,11 +354,11 @@ section{
         margin-bottom: 25px;
     }
     
-    .testimonials-cards{
+    .testimonials_cards{
         display: flex;
         justify-content: space-evenly;
 
-        .testimo-card{
+        .testimo_card{
             width: 30vw;
             height: max-content;
             padding: 35px;
@@ -340,7 +367,7 @@ section{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            .user-info{
+            .user_info{
                 display: flex;
                 align-items: center;
                 position: relative;
@@ -371,11 +398,11 @@ section{
             gap: 15px;
             
             
-            .testimo-card{
-                width: 50vw;
-                padding: 15px 15px 0 15px;
+            .testimo_card{
+                width: 95vw;
+                padding: 15px;
 
-                .user-info{
+                .user_info{
                     min-height: 100px;
                     justify-content: end !important;
 

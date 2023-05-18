@@ -1,16 +1,31 @@
 /** @format */
 
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-import { BiShow, BiHide } from 'react-icons/bi'
+import user from '../store/features/user'
+
+import { login } from '../store/features/user'
 
 import lStyle from '../css/auth.module.css'
 
+import { BiShow, BiHide } from 'react-icons/bi'
+import {TiThMenu} from 'react-icons/ti'
 import { ReactComponent as Logo } from '../images/SVG/meral_books.svg'
 
 const Login = () => {
+  const dispatcher = useDispatch()
+  const navigator = useNavigate()
+
+  const user = useSelector(state => state.user);
+
+  if(user.isConnected){
+    
+  }
+
   const [Headers, setHeaders] = useState([
     {
       name: 'Home',
@@ -39,6 +54,7 @@ const Login = () => {
     }
   ])
 
+  const [navbarClasses, setNavbarClasses] = useState({isActive: false, classes: lStyle.navBar})
   const [RequestError, setRequestError] = useState('')
   const [PasswordType, SetPasswordType] = useState({
     type: 'password',
@@ -51,23 +67,41 @@ const Login = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
     try {
-      const data = await axios.post('http://localhost:3001/login', formData, {
-        withCredentials: true
-      })
+      const { data } = await axios.post(
+        'http://localhost:3001/login',
+        formData,
+        {
+          withCredentials: true
+        }
+      )
 
-      console.log(data)
+      localStorage.setItem('user', data)
+      dispatcher(login(data))
 
-      if (data.redirection) return (window.location.pathname = data.redirection)
+      navigator('/')
+      
     } catch (err) {
-      return setRequestError(err.response.data.message)
+      return setRequestError(err)
     }
   }
 
   return (
     <main className={lStyle.main}>
-      <nav className={lStyle.navBar}>
+      <div className={lStyle.navButton}
+        onClick={(e) => {
+          if(navbarClasses.isActive){
+            setNavbarClasses({isActive: false, classes: lStyle.navBar})
+          }
+          else{
+            setNavbarClasses({isActive: true, classes: lStyle.navBar + " " + lStyle.ActiveMenu})
+          }
+        }}
+      >
+        <TiThMenu />
+      </div>
+      <nav className={navbarClasses.classes}>
         <Logo className={lStyle.logo} />
-        <ul className={lStyle.navList + ' bold white'}>
+        <ul className={lStyle.navList + ' bold'}>
           {Headers.map((header, index) => (
             <li
               key={index}
@@ -100,8 +134,8 @@ const Login = () => {
             id='usernam'
             placeholder='Username/E-mail'
             required
+            autoFocus
           />{' '}
-          {/* TODO: MAKE A SYSTEM WHERE YOU CAN REVEAL USER PASSWORD */}
           <div className={lStyle.PassSec}>
             <input
               type={PasswordType.type}
@@ -109,7 +143,6 @@ const Login = () => {
               id='password'
               placeholder='Password'
               pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-              // pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
               autoComplete='current-password'
               required
@@ -117,12 +150,12 @@ const Login = () => {
             <PasswordType.Icon
               className={lStyle.PassIcon}
               onClick={() => {
-                if(PasswordType.type === "password"){
-                  SetPasswordType({type: "text", Icon: BiHide});
-                }else{
-                  SetPasswordType({type: "password", Icon: BiShow});
+                if (PasswordType.type === 'password') {
+                  SetPasswordType({ type: 'text', Icon: BiHide })
+                } else {
+                  SetPasswordType({ type: 'password', Icon: BiShow })
                 }
-              }}  
+              }}
             />
           </div>
           <label htmlFor='keepConnection'>
@@ -149,7 +182,7 @@ const Login = () => {
             YOU AGAIN
           </p>
           <p className={lStyle.rInvitation}>
-            Ain't A Member Yet?
+            Ain't A Member Yet?{" "}
             <a href='/Register'>Register Now.</a>
           </p>
         </section>

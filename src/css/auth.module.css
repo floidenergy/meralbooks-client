@@ -1,6 +1,7 @@
 .main {
   background-image: linear-gradient(to right, rgb(126, 32, 97) 35%, rgba(126, 32, 97, 0.5)), url("../images/loginbanner.jpg");
   background-size: cover;
+  background-position: center;
   height: 100vh;
   position: relative;
 }
@@ -13,13 +14,11 @@
   align-items: center;
   padding: 0 40px;
 }
-
-.logo {
+.navBar .logo {
   height: 100%;
   padding: 8px;
   fill: #FFFFFF !important;
 }
-
 .navBar .navList {
   display: flex;
   gap: 20px;
@@ -38,28 +37,28 @@
   display: flex;
   flex-direction: row;
   gap: 35px;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   height: 92vh;
   margin: 0 auto;
 }
-
-.loginForm {
+.mainFrame .loginForm {
   display: flex;
   flex-direction: column;
   width: 28%;
+  max-width: 300px;
   gap: 15px;
 }
-.loginForm .realNameField {
+.mainFrame .loginForm .realNameField {
   display: flex;
   flex-direction: row;
   gap: 10px;
   width: 100%;
 }
-.loginForm .realNameField input {
+.mainFrame .loginForm .realNameField input {
   width: 50%;
 }
-.loginForm input {
+.mainFrame .loginForm input {
   color: #FFFFFF;
   margin-top: 10px;
   padding: 8px;
@@ -68,80 +67,195 @@
   border: none;
   border-bottom: 2.5px solid white;
 }
-.loginForm input:-webkit-autofill:focus,
-.loginForm input:-webkit-autofill,
-.loginForm input:-webkit-autofill:hover {
+.mainFrame .loginForm input:-webkit-autofill:focus,
+.mainFrame .loginForm input:-webkit-autofill,
+.mainFrame .loginForm input:-webkit-autofill:hover {
   -webkit-text-fill-color: white;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
-.loginForm input::-moz-placeholder {
+.mainFrame .loginForm input::-moz-placeholder {
   background-color: transparent;
   color: #FFFFFF;
   opacity: 0.7;
 }
-.loginForm input::placeholder {
+.mainFrame .loginForm input::placeholder {
   background-color: transparent;
   color: #FFFFFF;
   opacity: 0.7;
 }
-.loginForm input:focus {
+.mainFrame .loginForm input:focus {
   outline: none;
 }
-.loginForm .PassSec {
+.mainFrame .loginForm .gender {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+  border-bottom: 2.5px solid white;
+  padding: 8px;
+  margin-top: 10px;
+}
+.mainFrame .loginForm .gender option {
+  color: black;
+}
+.mainFrame .loginForm .PassSec {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
-.loginForm .PassSec input {
+.mainFrame .loginForm .PassSec input {
   width: 90%;
 }
-.loginForm .PassSec .PassIcon {
+.mainFrame .loginForm .PassSec .PassIcon {
   font-size: 2rem;
 }
-.loginForm .errorBox {
+.mainFrame .loginForm .errorBox {
   min-height: -moz-max-content;
   min-height: max-content;
   color: white;
+  background-color: red;
+  border-radius: 10px;
 }
-.loginForm .errorBox .errorMsg {
+.mainFrame .loginForm .errorBox .errorMsg {
   list-style-type: none;
-  padding-left: 25px;
   font-weight: bolder;
-  font-size: 1.2rem;
-  background-color: orangered;
+  font-size: 1rem;
+  margin: 10px;
+  border-bottom: 2px solid white;
 }
-.loginForm .errorBox .reqMsg {
+.mainFrame .loginForm .errorBox .reqMsg {
   padding-left: 25px;
   padding: 10px;
   background-color: black;
   width: 100%;
 }
-.loginForm .keepConnection {
+.mainFrame .loginForm .keepConnection {
   margin-right: 10px;
   height: 15px;
   width: 15px;
 }
-.loginForm .subBtn {
+.mainFrame .loginForm .subBtn {
   padding: 10px;
   color: #7e2061;
   font-size: 1.5rem;
   font-weight: bolder;
 }
-
-.loginBanner .bannerTitle {
-  font-size: 6rem;
+.mainFrame .loginBanner .bannerTitle {
+  font-size: 4rem;
   font-weight: 600;
   color: white;
 }
-.loginBanner .rInvitation {
+.mainFrame .loginBanner .rInvitation {
   color: #FFFFFF;
   margin-top: 10px;
   font-size: 1.8rem;
   font-weight: lighter;
 }
-.loginBanner .rInvitation a {
+.mainFrame .loginBanner .rInvitation a {
   font-size: 1.8rem;
   color: cyan;
+}
+
+.navButton {
+  display: none;
+}
+
+@media screen and (max-width: 700px) {
+  .navButton {
+    z-index: 3;
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    max-width: 50px;
+    max-height: 50px;
+    background-color: white;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+    color: black;
+  }
+  .navButton svg {
+    width: 100%;
+    height: 100%;
+  }
+  .navBar {
+    z-index: 2;
+    background-color: #FFFFFF;
+    position: fixed;
+    right: -100vw;
+    height: 100vh;
+    width: 50vw;
+    padding-bottom: 50px;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: 1s ease-in all;
+  }
+  .navBar .logo {
+    display: none;
+  }
+  .navBar ul.navList {
+    margin-top: 75px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+  .navBar ul.navList li {
+    color: #5D595A !important;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  .navBar div.icons {
+    width: 100%;
+  }
+  .navBar div.icons div.authDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  .navBar div.icons div.authDiv a.authButton {
+    background-color: #7e2061;
+    color: #FFFFFF;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .ActiveMenu {
+    right: 0 !important;
+    transition: 1s ease-out all;
+  }
+}
+@media screen and (max-width: 850px) {
+  .main {
+    background-image: linear-gradient(rgba(126, 32, 97, 0.8) 35%, rgba(126, 32, 97, 0.8)), url("../images/loginbanner.jpg");
+  }
+  .main .mainFrame {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .main .mainFrame .loginForm {
+    min-width: 300px;
+  }
+  .main .mainFrame .loginForm input {
+    border-radius: unset;
+  }
+  .main .mainFrame .loginForm button {
+    border-radius: 0;
+    background-color: white;
+    border: none;
+  }
+  .main .mainFrame .loginBanner .bannerTitle {
+    display: none;
+  }
+  .main .mainFrame .loginBanner .rInvitation {
+    font-size: 1rem;
+  }
+  .main .mainFrame .loginBanner .rInvitation a {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=auth.module.css.map */

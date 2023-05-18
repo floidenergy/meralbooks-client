@@ -1,10 +1,14 @@
 @import '../../sass/utilities/variable.scss';
 
+.navButton{
+    display: none;
+}
+
 .navBar{
     /* background-color: var(--white); */
     width: 100%;
     height: 60px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    // box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,47 +18,128 @@
     padding: 8px;
     fill: $purple !important;
     }
-}
-
-ul.navList{
-    display: flex;
-    gap: 20px;
-    list-style-type: none;
-    li{
-        a{
+    ul.navList{
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        li{
+            a{
+                text-decoration: none;
+                font-size: 1rem;
+                transition: 1ms ease-in-out;
+                color: inherit;
+                :hover{
+                    color: $purple
+                }
+            }
+        }
+        li.active{
+            text-decoration: underline;
+            color: $purple !important;
+        }
+    }
+    div.icons{
+        display: flex;
+        gap: 10px;
+    
+        a.authButton{
+            padding: 5px 15px;
+            background-color: var(--dark-white);
+            color: var(--purple);
             text-decoration: none;
-            font-size: 1rem;
-            transition: 1ms ease-in-out;
-            color: inherit;
-            :hover{
-                color: $purple
+            font-weight: bold;
+            border: 1px solid var(--purple);
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+        }
+        a.Profile_Icons{
+            height: 100%;
+            width: 100%;
+            padding-right: 15px;
+            color: $black;
+            svg{
+                width: 100%;
+                height: 100%;
+                min-width: 25px;
+                max-width: 30px;
             }
         }
     }
-    li.active{
-        text-decoration: underline;
-        color: $purple !important;
-    }
 }
 
-div.icons{
-    display: flex;
-    gap: 10px;
 
-    a.authButton{
-        padding: 5px 15px;
-        background-color: var(--dark-white);
-        color: var(--purple);
-        text-decoration: none;
-        font-weight: bold;
-        border: 1px solid var(--purple);
+
+@media screen and (max-width: 700px) {
+    
+    .navButton{
+        z-index: 3;
+        display: block;
+        width: 15vw;
+        height: 15vw;
+        max-width: 50px;
+        max-height: 50px;
+        background-color: white;
+        position: fixed;
+        right: 10px;
+        top: 10px;
         border-radius: 10px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); 
+        color: black;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
     }
 
-    a.Profile_Icons{
-        font-size: 1.5rem;
-        padding-right: 15px;
-        color: $black;
+    .navBar {
+        z-index: 2;
+        background-color: $white;
+        position: fixed;
+        right: -100vw;
+        height: 100vh;
+        width: 50vw;
+        padding-bottom: 50px;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: none;
+        transition: 1s ease-in all;
+        .logo{
+            display: none;
+        }
+
+        ul.navList{
+            color: $black;
+            margin-top: 75px;
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+            li{
+                padding: 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        div.icons{
+            width: 100%;
+            div.authDiv{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+                a.authButton{
+                    background-color: $purple;
+                    color: $white;
+                    padding: 10px;
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .Active{
+        right: 0 !important;
+        transition: 1s ease-out all;
+
     }
 }
