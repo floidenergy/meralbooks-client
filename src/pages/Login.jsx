@@ -1,30 +1,30 @@
 /** @format */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
-
-import user from '../store/features/user'
 
 import { login } from '../store/features/user'
 
 import lStyle from '../css/auth.module.css'
 
 import { BiShow, BiHide } from 'react-icons/bi'
-import {TiThMenu} from 'react-icons/ti'
+import { TiThMenu } from 'react-icons/ti'
 import { ReactComponent as Logo } from '../images/SVG/meral_books.svg'
 
 const Login = () => {
   const dispatcher = useDispatch()
-  const navigator = useNavigate()
-
+  const navigate = useNavigate()
+  
   const user = useSelector(state => state.user);
 
-  if(user.isConnected){
-    
-  }
+  useEffect(() => {
+    if(user.isConnected){
+      navigate('/Profile')
+    }
+  }, [navigate])
 
   const [Headers, setHeaders] = useState([
     {
@@ -54,7 +54,10 @@ const Login = () => {
     }
   ])
 
-  const [navbarClasses, setNavbarClasses] = useState({isActive: false, classes: lStyle.navBar})
+  const [navbarClasses, setNavbarClasses] = useState({
+    isActive: false,
+    classes: lStyle.navBar
+  })
   const [RequestError, setRequestError] = useState('')
   const [PasswordType, SetPasswordType] = useState({
     type: 'password',
@@ -75,11 +78,8 @@ const Login = () => {
         }
       )
 
-      localStorage.setItem('user', data)
       dispatcher(login(data))
-
-      navigator('/')
-      
+      navigate('/')
     } catch (err) {
       return setRequestError(err)
     }
@@ -87,13 +87,16 @@ const Login = () => {
 
   return (
     <main className={lStyle.main}>
-      <div className={lStyle.navButton}
-        onClick={(e) => {
-          if(navbarClasses.isActive){
-            setNavbarClasses({isActive: false, classes: lStyle.navBar})
-          }
-          else{
-            setNavbarClasses({isActive: true, classes: lStyle.navBar + " " + lStyle.ActiveMenu})
+      <div
+        className={lStyle.navButton}
+        onClick={e => {
+          if (navbarClasses.isActive) {
+            setNavbarClasses({ isActive: false, classes: lStyle.navBar })
+          } else {
+            setNavbarClasses({
+              isActive: true,
+              classes: lStyle.navBar + ' ' + lStyle.ActiveMenu
+            })
           }
         }}
       >
@@ -169,7 +172,9 @@ const Login = () => {
             Stay Connected
           </label>
           <div className={lStyle.errorBox}>
-            <p className={RequestError ? lStyle.reqMsg : ''}>{RequestError}</p>
+            <p className={RequestError ? lStyle.reqMsg : ''}>
+              {RequestError.toString('hex')}
+            </p>
           </div>
           <button type='submit' className={lStyle.subBtn}>
             LOGIN
@@ -182,8 +187,7 @@ const Login = () => {
             YOU AGAIN
           </p>
           <p className={lStyle.rInvitation}>
-            Ain't A Member Yet?{" "}
-            <a href='/Register'>Register Now.</a>
+            Ain't A Member Yet? <a href='/Register'>Register Now.</a>
           </p>
         </section>
       </div>

@@ -21,6 +21,7 @@ footer .footer-menue .footer-logo {
 footer .footer-menue div.mainMenu {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
   padding: 0 75px;
 }
 footer .footer-menue div.mainMenu .customer-care .title {

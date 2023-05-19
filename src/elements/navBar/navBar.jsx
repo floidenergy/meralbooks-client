@@ -7,7 +7,7 @@ import {useSelector} from "react-redux"
 import nStyle from '../../css/navbar.module.css'
 import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
 
-import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineShoppingCart, AiOutlineLogout } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 
 const NavBar = () => {
@@ -37,6 +37,7 @@ const NavBar = () => {
       return h
     })
     setHeaders(headers)
+    setNavbarClasses({isActive: false, classes: nStyle.navBar})
   }, [location])
 
   const AuthButtons = () => {
@@ -54,13 +55,14 @@ const NavBar = () => {
 
   const Profile = () => {
     return (
-      <div>
+      <div className={nStyle.profileDiv}>
         <Link to={'/Cart'} className={nStyle.Profile_Icons}>
           <AiOutlineShoppingCart />
         </Link>
         <Link to={'/Profile'} className={nStyle.Profile_Icons}>
           <CgProfile />
         </Link>
+        <Link to={'/Logout'} className={nStyle.Profile_Icons}><AiOutlineLogout /></Link>
       </div>
     )
   }

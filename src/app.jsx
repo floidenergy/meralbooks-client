@@ -18,6 +18,7 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import EmailConf from './pages/EmailConf'
+import Logout from './pages/Logout'
 
 const MainApp = () => {
   return (
@@ -34,6 +35,7 @@ const MainApp = () => {
         <Route path='/Email' element={<EmailConf />} />
 
         <Route path='/Login' element={<Login />} />
+        <Route path='/Logout' element={<Logout />} />
         <Route path='/Register' element={<Register />} />
       </Routes>
     </Provider>
