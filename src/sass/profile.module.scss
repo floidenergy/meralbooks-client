@@ -26,16 +26,15 @@
 				.profilePic {
           display: block;
           width: 100%;
+          cursor: pointer;
           /////////
 					.pic {
             width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
             border-radius: 90%;
 						border: 6px solid $purple;
 					}
-				}
-
-				input {
-					display: none;
 				}
 			}
 			.fullName {
@@ -45,6 +44,9 @@
       .username{
         font-size: 1rem;
         color: rgb(147, 147, 147);
+      }
+      input[type=file] {
+        display: none;
       }
 		}
     form{
@@ -65,12 +67,18 @@
         outline: none;
         border: none;
       }
+      
       .divisioner{
         display: flex;
         justify-content: space-between;
         a{
           color: $purple;
         }
+      }
+      .errorMessage{
+        color: $white;
+        background-color: black;
+        text-align: center;
       }
     }
     

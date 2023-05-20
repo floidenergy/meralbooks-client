@@ -17,6 +17,7 @@ const Logout = () => {
       withCredentials: true
     })
     .then(result => {
+      // console.log(result);
       if (result.status === 200) {
         dispatcher(logout())
         navigate('/')

@@ -24,14 +24,15 @@
 .main section div.profile div.picDiv .profilePic {
   display: block;
   width: 100%;
+  cursor: pointer;
 }
 .main section div.profile div.picDiv .profilePic .pic {
   width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 90%;
   border: 6px solid #7e2061;
-}
-.main section div.profile div.picDiv input {
-  display: none;
 }
 .main section div.profile .fullName {
   font-size: 1.5rem;
@@ -40,6 +41,9 @@
 .main section div.profile .username {
   font-size: 1rem;
   color: rgb(147, 147, 147);
+}
+.main section div.profile input[type=file] {
+  display: none;
 }
 .main section form {
   width: 75%;
@@ -66,6 +70,11 @@
 }
 .main section form .divisioner a {
   color: #7e2061;
+}
+.main section form .errorMessage {
+  color: #FFFFFF;
+  background-color: black;
+  text-align: center;
 }
 .main label {
   display: flex;

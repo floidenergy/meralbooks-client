@@ -54,11 +54,11 @@ const Login = () => {
     }
   ])
 
+  const [RequestError, setRequestError] = useState('')
   const [navbarClasses, setNavbarClasses] = useState({
     isActive: false,
     classes: lStyle.navBar
   })
-  const [RequestError, setRequestError] = useState('')
   const [PasswordType, SetPasswordType] = useState({
     type: 'password',
     Icon: BiShow
@@ -68,6 +68,8 @@ const Login = () => {
     e.preventDefault()
 
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
+
+    // if(!formData.username || formData.password)
 
     try {
       const { data } = await axios.post(
@@ -81,7 +83,18 @@ const Login = () => {
       dispatcher(login(data))
       navigate('/')
     } catch (err) {
-      return setRequestError(err)
+      console.log(err );
+
+      let errorMessage = ""
+
+      if(err.response)
+        errorMessage = err.response.data.message
+      else
+        errorMessage = err.message
+      
+      console.log(errorMessage);
+      return setRequestError(errorMessage);
+      // return setRequestError(err)
     }
   }
 
@@ -129,7 +142,6 @@ const Login = () => {
         <form
           className={lStyle.loginForm + ' white'}
           onSubmit={HandleSubmit}
-          noValidate
         >
           <input
             type='text'
@@ -173,7 +185,7 @@ const Login = () => {
           </label>
           <div className={lStyle.errorBox}>
             <p className={RequestError ? lStyle.reqMsg : ''}>
-              {RequestError.toString('hex')}
+              {RequestError}
             </p>
           </div>
           <button type='submit' className={lStyle.subBtn}>

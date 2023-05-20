@@ -91,6 +91,7 @@ body {
   padding: 5px;
   transition: 1s ease-in-out;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button:hover {

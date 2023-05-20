@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate} from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 import lStyle from '../css/auth.module.css'
@@ -10,6 +11,14 @@ import { BiShow, BiHide } from 'react-icons/bi'
 import { ReactComponent as Logo } from '../images/SVG/meral_books.svg'
 
 const Register = () => {
+  const navigate = useNavigate()
+  const user = useSelector(state => state.user)
+
+  useEffect(() => {
+    if (user.user) {
+      navigate('/Profile')
+    }
+  })
   const [Headers, setHeaders] = useState([
     { name: 'Home', path: '/' || 'Home', isActive: true },
     { name: 'Forum', path: '/Forum', isActive: false },
@@ -177,6 +186,7 @@ const Register = () => {
             title='Please Provide A valid E-mail'
             required
           />
+          {/* TODO: ADD BIRTH DATE INPUT FILE */}
           <select
             name="gender"
             className={lStyle.gender}

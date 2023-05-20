@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { edit } from '../store/features/user'
 
 import NavBar from '../elements/navBar/navBar'
 import Footer from '../elements/footer/Footer'
@@ -9,148 +11,182 @@ import Style from '../css/profile.module.css'
 
 import sPP from '../images/tempProfilePic.jpg'
 
-const Page = () =>{
+const Page = () => {
+  const user = useSelector(state => state.user);
+  const dispacher = useDispatch();
 
-    const user = useSelector(state => state.user)
-    const [tempProfilePic, setTempProfilePic] = useState(sPP)
-
+  const [tempProfilePic, setTempProfilePic] = useState({image: sPP, changed: false});
+  const [ErrorMessage, setErrorMessage] = useState('');
+  
+  useEffect(() => {
     if (user.user.profilePic === null) {
-        setTempProfilePic(user.user.profilePic);
+      setTempProfilePic({image: user.user.profilePic, changed: false})
     }
+  }, [])
 
-    const base64String = "";
+  const imageUploaded = e => {
+    const reader = new FileReader()
 
-    const imageUploaded = (e) => {
-      var file = e.target.value;
-      var reader = new FileReader();
-      console.log("next");
-       
-      reader.onload = function () {
-          base64String = reader.result.replace("data:", "")
-              .replace(/^.+,/, "");
-   
-          imageBase64Stringsep = base64String;
-   
-          // alert(imageBase64Stringsep);
-          console.log(base64String);
-      }
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(e.target.files[0])
+    reader.onload = () => {
+      console.log(reader.result)
+      setTempProfilePic({image: reader.result, changed: true})
+    }
+    reader.onerror = err => {
+      console.log('error: ', err)
+    }
   }
 
-    return (
-        <>
-          <NavBar />
-          <main className={Style.main}>
-            <section>
-              <div className={Style.profile}>
-                <div className={Style.picDiv}>
-                  <label htmlFor='ProfilePic' className={Style.profilePic}>
-                    <img src={tempProfilePic} className={Style.pic} />
-                  </label>
-                  <input type='file' name='profilePic' id='ProfilePic' onChange={(e) => {
-                    
-                  }}/>
-                </div>
-                <p className={Style.fullName}>
-                  {user.user.name.fName} {user.user.name.lName}
-                </p>
-                <p className={Style.username}>@{user.user.username}</p>
-              </div>
-              <form className='info'>
-                <div className={Style.fullName}>
-                  <label htmlFor='fName'>
-                    First name
-                    <input
-                      type='text'
-                      name='fName'
-                      value={user.user.name.fName}
-                      placeholder='First name'
-                      required
-                      id='fName'
-                    />
-                  </label>
-                  <label htmlFor='lName'>
-                    Last name
-                    <input
-                      type='text'
-                      name='lName'
-                      value={user.user.name.lName}
-                      placeholder='Last name'
-                      id='lName'
-                      required
-                    />
-                  </label>
-                </div>
-                <hr />
-                <label htmlFor='username'>
-                  username
-                  <input
-                    type='text'
-                    name='username'
-                    value={user.user.username}
-                    placeholder='username'
-                    id='username'
-                    required
-                  />
-                </label>
-                <label htmlFor='email'>
-                  E-mail
-                  <input
-                    type='email'
-                    name='email'
-                    value={user.user.email}
-                    id='E-mail'
-                    required
-                  />
-                </label>
-                <label htmlFor='dob'>
-                  birth Date
-                  <input type='date' name='dob' value={user.user.dob} id='dob' />
-                </label>
-                <hr />
-                <div className={Style.divisioner}>
-                  <p>Password</p>
-                  <Link to='/changePassword'>Edit</Link>
-                </div>
-                <div className={Style.divisioner}>
-                  <p>Shipping address</p>
-                  <Link draggable='true' to='/ShippingAddress'>
-                    Edit
-                  </Link>
-                </div>
-                <button type='submit' className='button b-purple white'>
-                  save
-                </button>
-              </form>
-            </section>
-          </main>
-          <Footer />
-        </>
+  const handelChangeSubmit = async e => {
+    e.preventDefault()
+    setErrorMessage('')
+
+    const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
+
+    if(tempProfilePic.changed)
+      formData.profilePic = tempProfilePic.image;
+
+    try {
+      const { data, status } = await axios.post(
+        'http://localhost:3001/profile-edit',
+        formData,
+        {
+          withCredentials: true
+        }
       )
+  
+      if(status === 202)
+        dispacher(edit(data.user))
+      
+      if(data.message)
+        setErrorMessage(data.message);
+  
+    } catch (err) {
+      let errorMessage = ""
+
+      if(err.response)
+        errorMessage = err.response.data.message
+      else
+        errorMessage = err.message
+      
+      return setErrorMessage(errorMessage);
+      
+    }
+  }
+
+  return (
+    <>
+      <NavBar />
+      <main className={Style.main}>
+        <section>
+          <div className={Style.profile}>
+            <div className={Style.picDiv}>
+              <label htmlFor='ProfilePic' className={Style.profilePic}>
+                <img src={tempProfilePic.image} className={Style.pic} />
+                <input type='file' id='ProfilePic' onChange={imageUploaded} />
+              </label>
+            </div>
+            <p className={Style.fullName}>
+              {user.user.name.fName} {user.user.name.lName}
+            </p>
+            <p className={Style.username}>@{user.user.username}</p>
+          </div>
+          <form className='info' onSubmit={handelChangeSubmit}>
+            <div className={Style.fullName}>
+              <label htmlFor='fName'>
+                First name
+                <input
+                  type='text'
+                  name='fName'
+                  defaultValue={user.user.name.fName}
+                  placeholder='First name'
+                  id='fName'
+                />
+              </label>
+              <label htmlFor='lName'>
+                Last name
+                <input
+                  type='text'
+                  name='lName'
+                  defaultValue={user.user.name.lName}
+                  placeholder='Last name'
+                  id='lName'
+                />
+              </label>
+            </div>
+            <hr />
+            <label htmlFor='username'>
+              username
+              <input
+                type='text'
+                name='username'
+                defaultValue={user.user.username}
+                placeholder='username'
+                id='username'
+              />
+            </label>
+            <label htmlFor='email'>
+              E-mail
+              <input
+                type='email'
+                name='email'
+                defaultValue={user.user.email}
+                id='E-mail'
+              />
+            </label>
+            <label htmlFor='dob'>
+              birth Date
+              <input
+                type='date'
+                name='dob'
+                defaultValue={user.user.dob}
+                id='dob'
+              />
+            </label>
+            <label htmlFor='password'>
+              password
+              <input
+                type='password'
+                name='vrfPassword'
+                id='password'
+                placeholder='Enter your password before saving your info'
+                required
+              />
+            </label>
+            <hr />
+            <div className={Style.divisioner}>
+              <p>Password</p>
+              <Link to='/changePassword'>Edit</Link>
+            </div>
+            <div className={Style.divisioner}>
+              <p>Shipping address</p>
+              <Link draggable='true' to='/ShippingAddress'>
+                Edit
+              </Link>
+            </div>
+            <div className={Style.errorMessage}>{ErrorMessage}</div>
+            <button type='submit' className='button b-purple white'>
+              save
+            </button>
+          </form>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 const Profile = () => {
   const navigate = useNavigate()
   const user = useSelector(state => state.user)
 
-  
-
-
   useEffect(() => {
     if (!user.user) {
-        console.log('biiim')
-        navigate('/Login')
+      navigate('/Login')
     }
-    console.log('aaa')
   })
 
-  return(
-    <>
-    {user.isConnected ? <Page /> : <></>}
-    </>
-  )
-
-  
+  return <>{user.isConnected ? <Page /> : <></>}</>
 }
 
 export default Profile
