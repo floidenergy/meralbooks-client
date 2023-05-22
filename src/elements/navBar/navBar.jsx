@@ -59,9 +59,9 @@ const NavBar = () => {
         <Link to={'/Cart'} className={nStyle.Profile_Icons}>
           <AiOutlineShoppingCart />
         </Link>
-        <Link to={'/Profile'} className={nStyle.Profile_Icons}>
+        {/* <Link to={'/Profile'} className={nStyle.Profile_Icons}>
           <CgProfile />
-        </Link>
+        </Link> */}
         <Link to={'/Logout'} className={nStyle.Profile_Icons}><AiOutlineLogout /></Link>
       </div>
     )

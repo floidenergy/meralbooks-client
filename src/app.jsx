@@ -1,9 +1,5 @@
 import React from 'react'
-// import { GlobalContext } from './context';
 import { Routes, Route } from 'react-router-dom'
-
-import { Provider } from 'react-redux'
-import store from './store/store'
 
 import Home from './pages/Home'
 import Store from './pages/Store'
@@ -22,7 +18,6 @@ import Logout from './pages/Logout'
 
 const MainApp = () => {
   return (
-    <Provider store={store}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/Store' element={<Store />} />
@@ -31,14 +26,12 @@ const MainApp = () => {
         <Route path='/About' element={<About />} />
 
         <Route path='/Cart' element={<Cart />} />
-        <Route path='/Profile' element={<Profile />} />
         <Route path='/Email' element={<EmailConf />} />
-
+        <Route path='/Profile' element={<Profile />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Logout' element={<Logout />} />
         <Route path='/Register' element={<Register />} />
       </Routes>
-    </Provider>
   )
 }
 

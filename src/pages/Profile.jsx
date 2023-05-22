@@ -1,3 +1,5 @@
+// lets implement this later with forum
+
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
@@ -115,16 +117,6 @@ const Page = () => {
               </label>
             </div>
             <hr />
-            <label htmlFor='username'>
-              username
-              <input
-                type='text'
-                name='username'
-                defaultValue={user.user.username}
-                placeholder='username'
-                id='username'
-              />
-            </label>
             <label htmlFor='email'>
               E-mail
               <input

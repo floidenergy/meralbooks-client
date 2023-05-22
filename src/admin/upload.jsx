@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import "./upload.css"
 
-import bookSkilteon from './book.jpg'
+import bookSkilteon from './img/book.jpg'
 
 
 const Upload = () => {

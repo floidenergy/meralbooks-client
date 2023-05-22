@@ -1,6 +1,6 @@
 /** @format */
 footer {
-  width: 100vw;
+  width: 100%;
   padding: 0;
   margin: 0;
 }
@@ -45,7 +45,7 @@ footer .footer-menue div.mainMenu .customer-care ul li :hover {
   text-decoration: underline;
 }
 footer .footer-menue div.mainMenu .mail-subscription {
-  width: 100%;
+  width: 50%;
 }
 footer .footer-menue div.mainMenu .mail-subscription .title {
   text-decoration: underline;
@@ -62,15 +62,19 @@ footer .footer-menue div.mainMenu .mail-subscription .sub-input {
   align-items: center;
   justify-content: space-between;
 }
-footer .footer-menue div.mainMenu .mail-subscription .sub-input input {
+footer .footer-menue div.mainMenu .mail-subscription .sub-input form {
+  width: 100%;
+}
+footer .footer-menue div.mainMenu .mail-subscription .sub-input form input {
   color: #FFFFFF;
   margin-top: 15px;
   background-color: transparent;
   border: none;
-  width: 90%;
+  width: 100%;
 }
 footer .footer-menue div.mainMenu .mail-subscription .sub-input input:focus {
   outline: none;
+  background-color: transparent;
 }
 footer .footer-menue div.mainMenu .mail-subscription .sub-input input::-moz-placeholder {
   color: #FFFFFF;
@@ -79,6 +83,13 @@ footer .footer-menue div.mainMenu .mail-subscription .sub-input input::-moz-plac
 footer .footer-menue div.mainMenu .mail-subscription .sub-input input::placeholder {
   color: #FFFFFF;
   opacity: 0.7;
+}
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input:-webkit-autofill:focus,
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input:-webkit-autofill,
+footer .footer-menue div.mainMenu .mail-subscription .sub-input input:-webkit-autofill:hover {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
 }
 footer .footer-menue div.mainMenu .mail-subscription .sub-input .icon {
   font-size: 1.2rem;

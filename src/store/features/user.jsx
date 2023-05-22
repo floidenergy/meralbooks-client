@@ -24,7 +24,7 @@ const userReducer = createSlice({
         localStorage.setItem("user", JSON.stringify(action.payload.user));
         return state = action.payload;
       },
-      prepare: ({id, name, username, email, info, profilPic, order_history}) => {
+      prepare: ({id, name, username, email, info, isAdmin, profilPic, order_history}) => {
         return{
           payload:{
             isConnected: true,
@@ -34,6 +34,7 @@ const userReducer = createSlice({
               username: username,
               email: email,
               info: info,
+              isAdmin: isAdmin,
               profilPic: profilPic,
               order_history: order_history
             }

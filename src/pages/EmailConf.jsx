@@ -1,10 +1,35 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 import NavBar from '../elements/navBar/navBar'
 import emailBanner from '../images/emailConfbanner.jpg'
+import { useSelector } from 'react-redux'
+
 export default function EmailConf() {
-    const isConfirmed = new URLSearchParams(window.location.search).get('c')
+    const user = useSelector(state => state.user);
+    const navigate = useNavigate()
+    
+    const token = new URLSearchParams(window.location.search).get('token')
+
+    const [emailState, setEmailState] = useState('');
+    
+    useEffect(() => {
+        if(user.isConnected)
+            navigate('/profile')
+
+            axios.post('http://localhost:3001/eConfirmation', {
+                token: token
+            }).then(result => {
+                setEmailState(result.data.message);
+            }).catch(err => {
+                if(err.response.data.message)
+                    return setEmailState(err.response.data.message);
+
+                return setEmailState(err.response.data);
+            });
+    
+    }, [])
 
     const Style = {
         main: {
@@ -45,9 +70,10 @@ export default function EmailConf() {
             }>
                 <div style={Style.bg}>
                     <h1 style={Style.header}>
-                    {
+                    {/* {
                         isConfirmed ? "You Successfuly Confirmed Your Email." : "Your Link has Expired Please Login To Request A New Link."
-                    }
+                    } */}
+                    {emailState}
                     </h1>
                     <Link className='button b-purple white' to={"/Login"}>Login</Link>
 

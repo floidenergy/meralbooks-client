@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from "axios"
 import {
   AiOutlineMail,
   AiOutlineInstagram as InstagramIcon
@@ -13,6 +14,21 @@ import { ReactComponent as Logo } from '../../images/SVG/full_logo.svg'
 import '../../css/footer.css'
 
 function Footer () {
+  const [reqStatu, setReqState] = useState('');
+
+  const handleMailSub = (e) => {
+    e.preventDefault();
+    console.log();
+    axios.post('http://localhost:3001/subMail', {
+      email: e.target[0].value
+    }).then(result => {
+      setReqState('Mail Added Successfuly')
+    }).catch(err => {
+      setReqState("Something went wrong")
+    })
+  }
+
+
   return (
     <footer className='b-purple white'>
       <img src={footerBanner} alt='' />
@@ -34,21 +50,23 @@ function Footer () {
             </ul>
           </div>
           <div className='mail-subscription'>
-            {/* TODO: DO THE MAIL SUBSCRIPTION FEATURES */}
             <p className='title bold'>SIGN UP AND SAVE</p>
             <p className='description'>
               Subscribe To Get Special Offers. Free Giveaways. And Once-In-A
               Lifetime Deals
             </p>
             <div className='sub-input'>
-              <input
-                type='email'
-                name='email-subscription'
-                className='email-subscription'
-                placeholder='Enter Your Email'
-              />
+              <form onSubmit={handleMailSub}>
+                <input
+                  type='email'
+                  name='email-subscription'
+                  className='email-subscription'
+                  placeholder='Enter Your Email'
+                />
+              </form>
               <AiOutlineMail className='icon' />
             </div>
+            <p>{reqStatu}</p>
           </div>
         </div>
         <div className='socialMedia-contacts'>

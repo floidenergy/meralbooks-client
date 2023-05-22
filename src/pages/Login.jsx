@@ -22,6 +22,10 @@ const Login = () => {
 
   useEffect(() => {
     if(user.isConnected){
+      if(user.isAdmin){
+        return window.location.href = "http://admin.localhost:3000"
+      }
+
       navigate('/Profile')
     }
   }, [navigate])
@@ -65,7 +69,8 @@ const Login = () => {
   })
 
   const HandleSubmit = async e => {
-    e.preventDefault()
+    e.preventDefault();
+    setRequestError("");
 
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
@@ -80,7 +85,11 @@ const Login = () => {
         }
       )
 
+      console.log(data);
       dispatcher(login(data))
+      if(data.isAdmin){
+        return window.location.href = "http://admin.localhost:3000"
+      }
       navigate('/')
     } catch (err) {
       console.log(err );
@@ -157,8 +166,8 @@ const Login = () => {
               name='password'
               id='password'
               placeholder='Password'
-              pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
-              title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
+              // pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'
+              // title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters'
               autoComplete='current-password'
               required
             />

@@ -236,7 +236,7 @@ const Register = () => {
             <p className={RequestError ? lStyle.reqMsg : ''}>{RequestError}</p>
           </div>
           <button type='submit' className={lStyle.subBtn}>
-            LOGIN
+            REGISTER
           </button>
         </form>
         <section className={lStyle.loginBanner}>
