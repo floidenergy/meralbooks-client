@@ -1,29 +1,39 @@
-import React from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
+import '../css/globalStyle.css'
 
 
-import Upload from "./upload"
-import NavBar from '../elements/navBar/navBar';
+import NavBar from '../elements/navBar/navBar'
+import Login from './Login'
+import Dashboard from './Dashboard'
+import Upload from './upload'
+
 
 const AdminApp = () => {
-    // localStorage.clear();
-    const navigate = useNavigate();
-    const user = useSelector(state => state);
-    console.log(user);
+  const location = useLocation();
+  // localStorage.clear();
+  const navigate = useNavigate();
+  const user = useSelector(state => state)
 
-    if(!user.isConnected)
-        navigate('/login');
 
-    return (
-        <>
-            {/* <NavBar /> */}
-                admin
-            <Routes>
-                <Route path='/Upload' element={<Upload />} />
-            </Routes>
-        </>
-    );
+  useEffect(() => {
+    if (!user.isConnected) 
+      navigate('/login')
+    
+  }, [location.pathname])
+
+  return (
+    <>
+      {/* <NavBar /> */}
+      <Routes>
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Dashboard' element={<Dashboard />} />
+        <Route path='/Upload' element={<Upload />} />
+      </Routes>
+    </>
+  )
 }
 
-export default AdminApp;
+export default AdminApp

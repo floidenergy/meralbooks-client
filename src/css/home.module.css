@@ -216,7 +216,7 @@ header.hero p.heroTitle span {
   height: 50%;
   margin: auto;
   display: block;
-  fill: #ECECEC;
+  fill: #f7f7f7;
 }
 .how_we_work .icons_cards .card p.card_title {
   font-size: 1rem;
@@ -239,7 +239,7 @@ header.hero p.heroTitle span {
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.247);
 }
 .how_we_work .icons_cards .card:hover div.imageBackground {
-  background-color: #ECECEC;
+  background-color: #f7f7f7;
 }
 .how_we_work .icons_cards .card:hover div.imageBackground .card_icon {
   fill: #5D595A;

@@ -62,11 +62,12 @@ const Login = () => {
   const [navbarClasses, setNavbarClasses] = useState({
     isActive: false,
     classes: lStyle.navBar
-  })
+  });
+
   const [PasswordType, SetPasswordType] = useState({
     type: 'password',
     Icon: BiShow
-  })
+  });
 
   const HandleSubmit = async e => {
     e.preventDefault();
@@ -86,10 +87,8 @@ const Login = () => {
       )
 
       console.log(data);
-      dispatcher(login(data))
-      if(data.isAdmin){
-        return window.location.href = "http://admin.localhost:3000"
-      }
+      dispatcher(login(data));
+      
       navigate('/')
     } catch (err) {
       console.log(err );
