@@ -1,17 +1,15 @@
-// lets implement this later with forum
-
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { edit } from '../store/features/user'
+import { edit } from '../../store/features/user'
 
-import NavBar from '../elements/navBar/navBar'
-import Footer from '../elements/footer/Footer'
+import NavBar from '../../elements/navBar/navBar'
+import Footer from '../../elements/footer/Footer'
 
-import Style from '../css/profile.module.css'
+import Style from '../../css/profile.module.css'
 
-import sPP from '../images/tempProfilePic.jpg'
+import sPP from '../../images/tempProfilePic.jpg'
 
 const Page = () => {
   const user = useSelector(state => state.user);

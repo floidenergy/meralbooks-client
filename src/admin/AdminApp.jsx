@@ -12,15 +12,12 @@ const AdminApp = () => {
     const user = useSelector(state => state);
     console.log(user);
 
-    // if(!user)
-    //     navigate('/login');
-
-    // if(!user.user.isAdmin)
-    //     return window.location.href = "http://localhost:3000/profile"
+    if(!user.isConnected)
+        navigate('/login');
 
     return (
         <>
-            <NavBar />
+            {/* <NavBar /> */}
                 admin
             <Routes>
                 <Route path='/Upload' element={<Upload />} />

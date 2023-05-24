@@ -6,13 +6,13 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-import { login } from '../store/features/user'
+import { login } from '../../store/features/user'
 
-import lStyle from '../css/auth.module.css'
+import lStyle from '../../css/auth.module.css'
 
 import { BiShow, BiHide } from 'react-icons/bi'
 import { TiThMenu } from 'react-icons/ti'
-import { ReactComponent as Logo } from '../images/SVG/meral_books.svg'
+import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
 
 const Login = () => {
   const dispatcher = useDispatch()

@@ -2,34 +2,34 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // import "../css/home.css"
-import Style from '../css/home.module.css'
+import Style from '../../css/home.module.css'
 
 // images.svg
-import fastDelivery from '../images/SVG/fast Delivery.svg'
-import payAtDelivery from '../images/SVG/pay at delivery.svg'
-import shild from '../images/SVG/shild.svg'
-import validation from '../images/SVG/validation.svg'
+import fastDelivery from '../../images/SVG/fast Delivery.svg'
+import payAtDelivery from '../../images/SVG/pay at delivery.svg'
+import shild from '../../images/SVG/shild.svg'
+import validation from '../../images/SVG/validation.svg'
 
-import aboutImage from '../images/AboutImage.jpg'
+import aboutImage from '../../images/AboutImage.jpg'
 
-import book1 from '../images/booksImageTemp/book1.jpg'
-import book2 from '../images/booksImageTemp/book2.jpg'
-import book3 from '../images/booksImageTemp/book3.jpg'
-import book4 from '../images/booksImageTemp/book4.jpg'
-import book5 from '../images/booksImageTemp/book5.jpg'
+import book1 from '../../images/booksImageTemp/book1.jpg'
+import book2 from '../../images/booksImageTemp/book2.jpg'
+import book3 from '../../images/booksImageTemp/book3.jpg'
+import book4 from '../../images/booksImageTemp/book4.jpg'
+import book5 from '../../images/booksImageTemp/book5.jpg'
 
-import { ReactComponent as ChooseYourBook } from '../images/SVG/Choose_Your_Book.svg'
+import { ReactComponent as ChooseYourBook } from '../../images/SVG/Choose_Your_Book.svg'
 // import {ReactComponent as ChooseYourBook} from '../images/SVG/shild.svg'
-import { ReactComponent as MakeYourOrder } from '../images/SVG/make_your_order.svg'
-import { ReactComponent as CashAtDelivery } from '../images/SVG/delivery_cash_black.svg'
+import { ReactComponent as MakeYourOrder } from '../../images/SVG/make_your_order.svg'
+import { ReactComponent as CashAtDelivery } from '../../images/SVG/delivery_cash_black.svg'
 
-import benifitsPic from '../images/pexels-vlada-karpovich-4050348.jpg'
+import benifitsPic from '../../images/pexels-vlada-karpovich-4050348.jpg'
 
-import user1 from '../images/user/user1.jpg'
-import user2 from '../images/user/user2.jpg'
-import user3 from '../images/user/user3.jpg'
-import NavBar from '../elements/navBar/navBar'
-import Footer from '../elements/footer/Footer'
+import user1 from '../../images/user/user1.jpg'
+import user2 from '../../images/user/user2.jpg'
+import user3 from '../../images/user/user3.jpg'
+import NavBar from '../../elements/navBar/navBar'
+import Footer from '../../elements/footer/Footer'
 
 const Home = () => {
   return (
