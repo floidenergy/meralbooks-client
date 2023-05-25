@@ -11,42 +11,11 @@ import { TiThMenu } from 'react-icons/ti'
 
 
 function Login () {
+
 	const dispatcher = useDispatch();
 	const navigate  = useNavigate();
 
   const [requestError, setRequestError] = useState('')
-	const [navbarClasses, setNavbarClasses] = useState({
-    isActive: false,
-    classes: lStyle.navBar
-  })
-
-	const [Headers, setHeaders] = useState([
-    {
-      name: 'Home',
-      path: '/' || 'Home',
-      isActive: true
-    },
-    {
-      name: 'Forum',
-      path: '/Forum',
-      isActive: false
-    },
-    {
-      name: 'Store',
-      path: '/Store',
-      isActive: false
-    },
-    {
-      name: 'Contact',
-      path: '/Contact',
-      isActive: false
-    },
-    {
-      name: 'About Us',
-      path: '/About',
-      isActive: false
-    }
-  ])
 
 	const handelInputValue = (e) => {
 		if(e.target.value){
@@ -75,8 +44,8 @@ function Login () {
 			
 			navigate('/Dashboard');
 		} catch (err) {
+      
 			console.log(err );
-
 			let errorMessage = ""
 
 			if(err.response)
@@ -92,43 +61,7 @@ function Login () {
 
   return (
     <div>
-			<div
-        className={lStyle.navButton}
-        onClick={e => {
-          if (navbarClasses.isActive) {
-            setNavbarClasses({ isActive: false, classes: lStyle.navBar })
-          } else {
-            setNavbarClasses({
-              isActive: true,
-              classes: lStyle.navBar + ' ' + lStyle.ActiveMenu
-            })
-          }
-        }}
-      >
-        <TiThMenu />
-      </div>
-      <nav className={navbarClasses.classes + " b-dark-white"} style={{boxShadow: "3px 3px 3px rgba(0, 0, 0, 0.2)"}}>
-        {/* <Logo className={lStyle.logo} /> */}
-        <ul className={lStyle.navList + ' bold'}>
-          {Headers.map((header, index) => (
-            <li
-              key={index}
-              className='black'
-              onClick={e => {
-                const headers = Headers.map(h => {
-                  if (h.isActive) h.isActive = false
-
-                  return h
-                })
-                headers.at(index).isActive = true
-                setHeaders(headers)
-              }}
-            >
-							<Link to={header.path}>{header.name}</Link>
-            </li>
-          ))}{' '}
-        </ul>
-      </nav>
+			
       <div className={style.limiter}>
         <div className={style['container-login100']}>
           <div className={style['wrap-login100']}>

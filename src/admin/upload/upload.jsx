@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-
 import "./upload.css"
 
-import bookSkilteon from './img/book.jpg'
-
+import bookSkilteon from '../img/book.jpg'
 
 const Upload = () => {
     const [bookPicture, setBookPicture] = useState(bookSkilteon)
