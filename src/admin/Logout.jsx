@@ -22,6 +22,9 @@ const Logout = () => {
         dispatcher(logout())
         navigate('/')
       }
+    }).catch(err => {
+      dispatcher(logout())
+      navigate('/')
     })
   });
 

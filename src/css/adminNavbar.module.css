@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #7e2061;
+  color: #FFFFFF;
+  height: 100vh;
+  padding: 10px;
+}
+.navbar .category {
+  margin: 25px 0;
+}
+.navbar .category .title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.navbar .category ul {
+  padding-left: 15px;
+  list-style-type: none;
+}
+.navbar .category ul li {
+  padding: 10px 0px;
+}
+.navbar .category ul li a {
+  color: white;
+  text-decoration: none;
+}/*# sourceMappingURL=adminNavbar.module.css.map */

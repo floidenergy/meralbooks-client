@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import {login} from '../store/features/user'
 
 import style from '../css/adminAuth.module.css'
-import lStyle from '../css/auth.module.css'
-
-import { TiThMenu } from 'react-icons/ti'
-
 
 function Login () {
 
@@ -39,10 +35,10 @@ function Login () {
 			)
       
 
-			console.log(data);
+			// console.log(data);
 			dispatcher(login(data));
 			
-			navigate('/Dashboard');
+			navigate('/');
 		} catch (err) {
       
 			console.log(err );

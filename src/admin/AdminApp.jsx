@@ -1,13 +1,12 @@
-// #get inspired from this page https://demo.evershop.io/admin/products/new
+// #get inspired from this page https://demo.evershop.io/admin/products/new ** email: demo@gmail.com pass: 123456
 // #and this one too: https://demo.evershop.io/
 
 import React, { useEffect } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import NavBar from '../elements/navBar/navBar'
 import Login from './Login'
-import Dashboard from './Dashboard'
+import Dashboard from './dashboard/Dashboard'
 import Upload from './upload/upload'
 import Logout from './Logout'
 
@@ -16,25 +15,23 @@ const AdminApp = () => {
   const navigate = useNavigate();
   const {user} = useSelector(state => state)
 
-
   useEffect(() => {
-    console.log(user.isConnected);
-              
-    if (!user.isConnected) {
+    
+    if(!user.isConnected && location.pathname !== '/login') {
       console.log("is not connected");
       navigate('/login')
-    }
+    } 
     
   }, [location.pathname])
 
   return (
     <>
-      aaaaa:  {user.user.username}
       <Routes>
         <Route path='/Login' element={<Login />} />
-        <Route path='/Dashboard' element={<Dashboard />} />
-        <Route path='/Upload' element={<Upload />} />
-        <Route path='/Logout' element={ <Logout />} />
+        <Route path='/' element={<Dashboard />} >
+
+        </Route>
+        <Route path='/Logout' element={<Logout />} />
       </Routes>
     </>
   )

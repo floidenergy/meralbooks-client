@@ -11,9 +11,11 @@ const CurrentApp = pickApp();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<BrowserRouter>
-		<Provider store={store} >
-			<CurrentApp />
-		</Provider>
-	</BrowserRouter>
+	<React.StrictMode>
+		<BrowserRouter>
+			<Provider store={store} >
+				<CurrentApp />
+			</Provider>
+		</BrowserRouter>
+	</React.StrictMode>
 );
