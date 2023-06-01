@@ -86,7 +86,7 @@ const Login = () => {
         }
       )
 
-      console.log(data);
+      // console.log(data);
       dispatcher(login(data));
       
       navigate('/')
