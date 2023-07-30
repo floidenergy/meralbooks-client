@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
@@ -94,8 +94,9 @@ const Register = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
     const { data } = await axios.post(
-      'http://localhost:3001/register',
-      formData
+      `${process.env.REACT_APP_SERVER_LINK}/account/register`,
+      formData,
+      { withCredentials: true }
     )
     console.log(data)
     if (data.redirection) return (window.location.pathname = data.redirection)
@@ -186,16 +187,21 @@ const Register = () => {
             title='Please Provide A valid E-mail'
             required
           />
-          {/* TODO: ADD BIRTH DATE INPUT FILE */}
           <select
-            name="gender"
+            name='gender'
             className={lStyle.gender}
             title='Please Provide A valid gender'
-            required>
-            <option value="" disabled selected hidden>I'am a</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+            required
+          >
+            <option value='' disabled selected hidden>
+              I'am a
+            </option>
+            <option value='male'>Male</option>
+            <option value='female'>Female</option>
           </select>
+          <div className={lStyle.dob}>
+            <input type='date' name='dob' id='dob' />
+          </div>
           <div className={lStyle.PassSec}>
             <input
               type={PasswordType.type}

@@ -13,6 +13,10 @@
 .exe
 
 # .env
+.env
+
+# SSL certificat
+cert/
 
 # misc
 .DS_Store

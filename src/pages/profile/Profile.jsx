@@ -48,7 +48,7 @@ const Page = () => {
 
     try {
       const { data, status } = await axios.post(
-        'http://localhost:3001/profile-edit',
+        `${process.env.REACT_APP_SERVER_LINK}/profile-edit`,
         formData,
         {
           withCredentials: true

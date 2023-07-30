@@ -19,7 +19,7 @@ function Footer () {
   const handleMailSub = (e) => {
     e.preventDefault();
     console.log();
-    axios.post('http://localhost:3001/subMail', {
+    axios.post(`${process.env.REACT_APP_SERVER_LINK}/subMail`, {
       email: e.target[0].value
     }).then(result => {
       setReqState('Mail Added Successfuly')

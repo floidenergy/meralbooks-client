@@ -13,7 +13,7 @@ const Logout = () => {
     
 
     axios
-    .get('http://localhost:3001/Logout', {
+    .get(`${process.env.REACT_APP_SERVER_LINK}/Logout`, {
       withCredentials: true
     })
     .then(result => {

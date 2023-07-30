@@ -79,7 +79,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        'http://localhost:3001/login',
+        `${process.env.REACT_APP_SERVER_LINK}/account/login`,
         formData,
         {
           withCredentials: true
