@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 // import "../css/home.css"
-import Style from '../../css/home.module.css'
+import Style from './home.module.css'
 
 // images.svg
 import fastDelivery from '../../images/SVG/fast Delivery.svg'
@@ -33,7 +33,7 @@ import Footer from '../../elements/footer/Footer'
 
 const Home = () => {
   return (
-    <>
+    <div>
       <NavBar />
       <main className='black'>
         <header className={Style.hero + ' white'}>
@@ -58,7 +58,7 @@ const Home = () => {
           </Link>
         </header>
 
-        <section className={Style.benefits + ' b-dark-white'}>
+        <div className={Style.benefits + ' b-dark-white'}>
           <article>
             <img
               className={Style.benefits_img}
@@ -109,7 +109,7 @@ const Home = () => {
               Eiusmod TemporIncididunt Ut Labore Et DoloreMagna Aliqua. Ut Enim
             </p>
           </article>
-        </section>
+        </div>
 
         <section className={Style.about + '  b-white'}>
           <div className='info'>
@@ -166,11 +166,13 @@ const Home = () => {
           <div className={Style.info}>
             <p className={Style.section_detail + ' purple bold'}>How We Work</p>
             <h2 className='bold title'>
-              Explore Our
-              <br />
-              Processes
+              Explore Our Processes
             </h2>
-            <div className={Style.icons_cards}>
+           
+          </div>
+
+          <div className={Style.hwwContainer}>
+             <div className={Style.icons_cards}>
               <div className={Style.card + ' b-dark-white'}>
                 <div className={Style.imageBackground}>
                   <ChooseYourBook className={Style.card_icon} />
@@ -204,21 +206,20 @@ const Home = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className={Style.benifits}>
-            <p className={Style.number + ' bold'}>.01</p>
-            <img src={benifitsPic} alt='' />
-            <div className={Style.info}>
-              <p className='title purple bold'>Benifits</p>
-              <p className={Style.description}>
-                Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri,
-                partem libris mea id. Vix no odio quas probo, pri consetetur
-                percipitur id. Semper molestiae consectetuer pri ea, ea est
-                facer nostrud vivendo. Usu cu dicam euripidis complectitur, vis
-                everti erroribus ex. Ad vim minim nobis hendrerit, et ludus
-                feugiat legimus has.
-              </p>
+            <div className={Style.benifits}>
+              <p className={Style.number + ' bold'}>.01</p>
+              <img src={benifitsPic} alt='' />
+              <div className={Style.info}>
+                <p className='title purple bold'>Benifits</p>
+                <p className={Style.description}>
+                  Lorem ipsum dolor sit amet, laudem tamquam ullamcorper at pri,
+                  partem libris mea id. Vix no odio quas probo, pri consetetur
+                  percipitur id. Semper molestiae consectetuer pri ea, ea est
+                  facer nostrud vivendo. Usu cu dicam euripidis complectitur,
+                  vis everti erroribus ex. Ad vim minim nobis hendrerit, et
+                  ludus feugiat legimus has.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -277,7 +278,7 @@ const Home = () => {
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-import lStyle from '../../css/auth.module.css'
+import lStyle from './auth.module.css'
 
 import { TiThMenu } from 'react-icons/ti'
 import { BiShow, BiHide } from 'react-icons/bi'

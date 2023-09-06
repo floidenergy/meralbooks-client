@@ -1,0 +1,106 @@
+/** @format */
+
+// @import "./utilities/variable.scss";
+@import "../../sass/utilities/variable.scss";
+
+.main {
+	width: 100vw;
+	padding: 50px 0;
+	section {
+		/////////
+		display: flex;
+		justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 10px;
+		div.profile {
+			/////////
+			text-align: center;
+			background-color: $dark-white;
+      padding: 25px;
+			width: 18%;
+      min-width: 190px;
+      border-radius: 10px;
+			div.picDiv {
+				/////////
+				width: 100%;
+				.profilePic {
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          /////////
+					.pic {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 90%;
+						border: 6px solid $purple;
+					}
+				}
+			}
+			.fullName {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+      .username{
+        font-size: 1rem;
+        color: rgb(147, 147, 147);
+      }
+      input[type=file] {
+        display: none;
+      }
+		}
+    form{
+      width: 75%;
+      background-color: $dark-white;
+      border-radius: 10px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      div.fullName{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input{
+        padding: 5px;
+        outline: none;
+        border: none;
+      }
+      
+      .divisioner{
+        display: flex;
+        justify-content: space-between;
+        a{
+          color: $purple;
+        }
+      }
+      .errorMessage{
+        color: $white;
+        background-color: black;
+        text-align: center;
+      }
+    }
+    
+	}
+  label{
+    display: flex;
+    justify-content: space-between;
+    input{
+      width: 70%;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    background-image: linear-gradient(
+                          rgba(126, 32, 97, 0.8) 35%,
+                          rgba(126, 32, 97, 0.8)),
+                      url('../../images/loginbanner.jpg');
+                      
+    margin-bottom: 25px;
+    section{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

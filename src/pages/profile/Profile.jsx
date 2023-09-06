@@ -7,7 +7,7 @@ import { edit } from '../../store/features/user'
 import NavBar from '../../elements/navBar/navBar'
 import Footer from '../../elements/footer/Footer'
 
-import Style from '../../css/profile.module.css'
+import Style from './profile.module.css'
 
 import sPP from '../../images/tempProfilePic.jpg'
 

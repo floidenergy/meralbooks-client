@@ -8,7 +8,7 @@ import axios from 'axios'
 
 import { login } from '../../store/features/user'
 
-import lStyle from '../../css/auth.module.css'
+import lStyle from './auth.module.css'
 
 import { BiShow, BiHide } from 'react-icons/bi'
 import { TiThMenu } from 'react-icons/ti'

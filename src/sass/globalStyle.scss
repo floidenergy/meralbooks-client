@@ -5,16 +5,22 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     font-family: 'Nexa';
     font-size : clamp(1rem, 1rem, 8rem);
 
 }
 
 body{
+    width: 100vw;
     background-color: var(--dark-white);
 }
 
+#root{
+    // background-color: red !important;
+    // width: 800px !important;
+    // overflow-x: hidden !important;
+}
 /************************ TEXT FORMAT ********************/
 
 .lighter{

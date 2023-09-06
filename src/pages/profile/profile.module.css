@@ -1,0 +1,95 @@
+/** @format */
+.main {
+  width: 100vw;
+  padding: 50px 0;
+}
+.main section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+.main section div.profile {
+  text-align: center;
+  background-color: #f1f0f0;
+  padding: 25px;
+  width: 18%;
+  min-width: 190px;
+  border-radius: 10px;
+}
+.main section div.profile div.picDiv {
+  width: 100%;
+}
+.main section div.profile div.picDiv .profilePic {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+.main section div.profile div.picDiv .profilePic .pic {
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 90%;
+  border: 6px solid #7e2061;
+}
+.main section div.profile .fullName {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.main section div.profile .username {
+  font-size: 1rem;
+  color: rgb(147, 147, 147);
+}
+.main section div.profile input[type=file] {
+  display: none;
+}
+.main section form {
+  width: 75%;
+  background-color: #f1f0f0;
+  border-radius: 10px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main section form div.fullName {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main section form input {
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+.main section form .divisioner {
+  display: flex;
+  justify-content: space-between;
+}
+.main section form .divisioner a {
+  color: #7e2061;
+}
+.main section form .errorMessage {
+  color: #FFFFFF;
+  background-color: black;
+  text-align: center;
+}
+.main label {
+  display: flex;
+  justify-content: space-between;
+}
+.main label input {
+  width: 70%;
+}
+@media screen and (max-width: 700px) {
+  .main {
+    background-image: linear-gradient(rgba(126, 32, 97, 0.8) 35%, rgba(126, 32, 97, 0.8)), url("../../images/loginbanner.jpg");
+    margin-bottom: 25px;
+  }
+  .main section {
+    flex-direction: column;
+    align-items: center;
+  }
+}/*# sourceMappingURL=profile.module.css.map */

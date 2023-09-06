@@ -11,7 +11,7 @@ import footerBanner from './readingBanner.jpg'
 
 import { ReactComponent as Logo } from '../../images/SVG/full_logo.svg'
 
-import '../../css/footer.css'
+import './footer.css'
 
 function Footer () {
   const [reqStatu, setReqState] = useState('');

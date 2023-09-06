@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import {TiThMenu} from 'react-icons/ti'
+import { TiThMenu } from 'react-icons/ti'
 
-import {useSelector} from "react-redux"
+import { useSelector } from 'react-redux'
 
-import nStyle from '../../css/navbar.module.css'
+import nStyle from './navbar.module.css'
 import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
 
 import { AiOutlineShoppingCart, AiOutlineLogout } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
 
 const NavBar = () => {
-
-  const user = useSelector(state => state.user);
+  const user = useSelector(state => state.user)
+  const location = useLocation().pathname
+  const MobileNav = useRef(null)
 
   const [Headers, setHeaders] = useState([
     { name: 'Home', path: '/' || 'Home', isActive: true },
@@ -22,9 +23,10 @@ const NavBar = () => {
     { name: 'About Us', path: '/About', isActive: false }
   ])
 
-  const [navbarClasses, setNavbarClasses] = useState({isActive: false, classes: nStyle.navBar})
-
-  const location = useLocation().pathname
+  const [navbarClasses, setNavbarClasses] = useState({
+    isActive: false,
+    classes: nStyle.navBar
+  })
 
   useEffect(() => {
     let headers = Headers.map(h => {
@@ -37,8 +39,28 @@ const NavBar = () => {
       return h
     })
     setHeaders(headers)
-    setNavbarClasses({isActive: false, classes: nStyle.navBar})
+    setNavbarClasses({ isActive: false, classes: nStyle.navBar })
   }, [location])
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        MobileNav.current &&
+        !MobileNav.current.contains(event.target) &&
+        navbarClasses.isActive
+      ) {
+        console.log(navbarClasses.isActive);
+        setNavbarClasses({ isActive: false, classes: nStyle.navBar });
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // return () => {
+    //   document.removeEventListener('mousedown', handleClickOutside)
+    // }
+
+  }, [MobileNav, navbarClasses.isActive])
 
   const AuthButtons = () => {
     return (
@@ -62,34 +84,51 @@ const NavBar = () => {
         {/* <Link to={'/Profile'} className={nStyle.Profile_Icons}>
           <CgProfile />
         </Link> */}
-        <Link to={'/Logout'} className={nStyle.Profile_Icons}><AiOutlineLogout /></Link>
+        <Link to={'/Logout'} className={nStyle.Profile_Icons}>
+          <AiOutlineLogout />
+        </Link>
       </div>
     )
   }
-   
+
   return (
     <>
-      <div className={nStyle.navButton}
-        onClick={(e) => {
-          if(navbarClasses.isActive){
-            setNavbarClasses({isActive: false, classes: nStyle.navBar})
+      <div
+        ref={MobileNav}
+        className={nStyle.navButton}
+        onClick={e => {
+          if (navbarClasses.isActive) {
+            setNavbarClasses({ isActive: false, classes: nStyle.navBar })
+          } else {
+            setNavbarClasses({
+              isActive: true,
+              classes: nStyle.navBar + ' ' + nStyle.Active
+            })
           }
-          else{
-            setNavbarClasses({isActive: true, classes: nStyle.navBar + " " + nStyle.Active})
+        }}
+        onBlur={() => {
+          console.log('blur')
+          if (navbarClasses.isActive) {
+            setNavbarClasses({ isActive: false, classes: nStyle.navBar })
+          } else {
+            setNavbarClasses({
+              isActive: true,
+              classes: nStyle.navBar + ' ' + nStyle.Active
+            })
           }
         }}
       >
         <TiThMenu />
       </div>
-      <nav className={navbarClasses.classes} >
+      <nav className={navbarClasses.classes}>
         {/* <img src={logo} alt='' className='logo' /> */}
         <Logo className={nStyle.logo} />
-        
-        <ul className={nStyle.navList + " bold black"}>
+
+        <ul className={nStyle.navList + ' bold black'}>
           {Headers.map((header, index) => (
             <li
               key={index}
-              className={header.isActive ? nStyle.active : ""}
+              className={header.isActive ? nStyle.active : ''}
               onClick={e => {
                 const headers = Headers.map(h => {
                   if (h.isActive) h.isActive = false
@@ -103,7 +142,9 @@ const NavBar = () => {
             </li>
           ))}
         </ul>
-        <div className={nStyle.icons}>{user.isConnected ? <Profile /> : <AuthButtons />}</div>
+        <div className={nStyle.icons}>
+          {user.isConnected ? <Profile /> : <AuthButtons />}
+        </div>
       </nav>
     </>
   )

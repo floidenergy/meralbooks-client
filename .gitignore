@@ -18,6 +18,9 @@
 # SSL certificat
 cert/
 
+# temp Images
+# /images/temp/
+
 # misc
 .DS_Store
 .env.local
