@@ -18,10 +18,9 @@ import book3 from '../../images/booksImageTemp/book3.jpg'
 import book4 from '../../images/booksImageTemp/book4.jpg'
 import book5 from '../../images/booksImageTemp/book5.jpg'
 
-import { ReactComponent as ChooseYourBook } from '../../images/SVG/Choose_Your_Book.svg'
-// import {ReactComponent as ChooseYourBook} from '../images/SVG/shild.svg'
-import { ReactComponent as MakeYourOrder } from '../../images/SVG/make_your_order.svg'
-import { ReactComponent as CashAtDelivery } from '../../images/SVG/delivery_cash_black.svg'
+import ChooseYourBook from '../../images/SVG/Choose_Your_Book.svg'
+import MakeYourOrder from '../../images/SVG/make_your_order.svg'
+import CashAtDelivery from '../../images/SVG/delivery_cash_black.svg'
 
 import benifitsPic from '../../images/pexels-vlada-karpovich-4050348.jpg'
 
@@ -165,17 +164,14 @@ const Home = () => {
         <section className={Style.how_we_work}>
           <div className={Style.info}>
             <p className={Style.section_detail + ' purple bold'}>How We Work</p>
-            <h2 className='bold title'>
-              Explore Our Processes
-            </h2>
-           
+            <h2 className='bold title'>Explore Our Processes</h2>
           </div>
 
           <div className={Style.hwwContainer}>
-             <div className={Style.icons_cards}>
+            <div className={Style.icons_cards}>
               <div className={Style.card + ' b-dark-white'}>
                 <div className={Style.imageBackground}>
-                  <ChooseYourBook className={Style.card_icon} />
+                  <img src={ChooseYourBook} className={Style.card_icon} />
                 </div>
                 <p className={Style.card_title + ' bold'}>Choose Your Book</p>
                 <p className={Style.card_description}>
@@ -186,7 +182,7 @@ const Home = () => {
 
               <div className={Style.card + ' b-dark-white'}>
                 <div className={Style.imageBackground}>
-                  <MakeYourOrder className={Style.card_icon} />
+                  <img src={MakeYourOrder} className={Style.card_icon} />
                 </div>
                 <p className={Style.card_title + ' bold'}>Make Your Order</p>
                 <p className={Style.card_description}>
@@ -197,7 +193,7 @@ const Home = () => {
 
               <div className={Style.card + ' b-dark-white'}>
                 <div className={Style.imageBackground}>
-                  <CashAtDelivery className={Style.card_icon} />
+                  <img src={CashAtDelivery} className={Style.card_icon} />
                 </div>
                 <p className={Style.card_title + ' bold'}>Pay On Delivery</p>
                 <p className={Style.card_description}>
@@ -271,7 +267,7 @@ const Home = () => {
               </p>
               <div className={Style.user_info}>
                 <img src={user3} alt='' />
-                <p className={Style.name + ' bold'}>Kader Ben M'hamed</p>
+                <p className={Style.name + ' bold'}>Kader Ben M&apos;hamed</p>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import {Routes, Route} from 'react-router-dom'
 import NavBar from '../../elements/navBar/navBar';
 import Footer from '../../elements/footer/Footer';
 
-import Index from "./index/Index"
+import Index from './index/Index'
 import MProfile from './mProfile/MProfile';
 import Profile from './profile/Profile'
 

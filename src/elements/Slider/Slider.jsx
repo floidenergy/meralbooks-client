@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 
 import style from './style.module.css'
 import SlideBtn from './SlideBtn'
 
-export default function ImageSlider ({ children }) {
+export default function ImageSlider({ children }) {
   if (!children) {
     throw new Error(
       'no elements1 in ImageSlider please set elements: <ImageSlider>[<elements />]</ImageSlider>'

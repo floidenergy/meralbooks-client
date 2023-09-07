@@ -12,7 +12,7 @@ import lStyle from './auth.module.css'
 
 import { BiShow, BiHide } from 'react-icons/bi'
 import { TiThMenu } from 'react-icons/ti'
-import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
+import Logo from '../../images/SVG/meral_books.svg'
 
 const Login = () => {
   const dispatcher = useDispatch()
@@ -124,7 +124,7 @@ const Login = () => {
         <TiThMenu />
       </div>
       <nav className={navbarClasses.classes}>
-        <Logo className={lStyle.logo} />
+        <img src={Logo} className={lStyle.logo} />
         <ul className={lStyle.navList + ' bold'}>
           {Headers.map((header, index) => (
             <li

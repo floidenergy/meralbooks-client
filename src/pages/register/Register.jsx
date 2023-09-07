@@ -8,7 +8,7 @@ import lStyle from './auth.module.css'
 import { TiThMenu } from 'react-icons/ti'
 import { BiShow, BiHide } from 'react-icons/bi'
 
-import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
+import Logo from '../../images/SVG/meral_books.svg'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -122,7 +122,7 @@ const Register = () => {
         <TiThMenu />
       </div>
       <nav className={navbarClasses.classes}>
-        <Logo className={lStyle.logo} />
+        <img src={Logo} className={lStyle.logo} />
         <ul className={lStyle.navList + ' bold white'}>
           {Headers.map((header, index) => (
             <li
