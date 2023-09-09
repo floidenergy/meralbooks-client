@@ -9,7 +9,7 @@ import { TfiFacebook as FacebookIcon } from 'react-icons/tfi'
 
 import footerBanner from './readingBanner.jpg'
 
-import Logo from '../../images/SVG/full_logo.svg'
+import {ReactComponent as Logo} from '../../images/SVG/full_logo.svg'
 
 import './footer.css'
 
@@ -33,7 +33,7 @@ function Footer () {
     <footer className='b-purple white'>
       <img src={footerBanner} alt='' />
       <div className='footer-menue '>
-        <img src={Logo} className='footer-logo' />
+        <Logo className='footer-logo' />
         <div className='mainMenu'>
           <div className='customer-care'>
             <p className='title bold'>CUSTOMER CARE</p>

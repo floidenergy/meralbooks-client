@@ -1,0 +1,65 @@
+/** @format */
+.searchBarContainer {
+  width: 100%;
+  background-color: #7e2061;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.searchBarContainer .searchType {
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  width: 10%;
+}
+.searchBarContainer .searchInput {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #FFFFFF;
+  padding: 5px 0;
+  border-radius: 0.5em;
+  position: relative;
+}
+.searchBarContainer .searchInput svg {
+  border-right: 1px solid black;
+  padding: 0 10px;
+  box-sizing: unset !important;
+  height: 100%;
+}
+.searchBarContainer .searchInput input {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  outline: none;
+  padding: 5px;
+}
+.searchBarContainer .searchInput .searchSuggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style-type: none;
+  background-color: #FFFFFF;
+  width: 100%;
+  z-index: 5;
+}
+.searchBarContainer .searchInput .searchSuggestions li {
+  position: relative;
+}
+.searchBarContainer .searchInput .searchSuggestions li:hover {
+  background-color: #f1f0f0;
+}
+.searchBarContainer .searchInput .searchSuggestions li a {
+  position: relative;
+  display: block;
+  padding: 10px;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.searchBarContainer .submitButton {
+  width: 10%;
+}/*# sourceMappingURL=style.module.css.map */

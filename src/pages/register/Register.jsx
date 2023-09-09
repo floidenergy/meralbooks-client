@@ -8,7 +8,7 @@ import lStyle from './auth.module.css'
 import { TiThMenu } from 'react-icons/ti'
 import { BiShow, BiHide } from 'react-icons/bi'
 
-import Logo from '../../images/SVG/meral_books.svg'
+import {ReactComponent as Logo} from '../../images/SVG/meral_books.svg'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -94,7 +94,7 @@ const Register = () => {
     const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
 
     const { data } = await axios.post(
-      `${process.env.REACT_APP_SERVER_LINK}/account/register`,
+      `${import.meta.env.REACT_APP_SERVER_LINK}/account/register`,
       formData,
       { withCredentials: true }
     )
@@ -108,7 +108,7 @@ const Register = () => {
     <main className={lStyle.main}>
       <div
         className={lStyle.navButton}
-        onClick={e => {
+        onClick={() => {
           if (navbarClasses.isActive) {
             setNavbarClasses({ isActive: false, classes: lStyle.navBar })
           } else {
@@ -122,13 +122,13 @@ const Register = () => {
         <TiThMenu />
       </div>
       <nav className={navbarClasses.classes}>
-        <img src={Logo} className={lStyle.logo} />
+        <Logo className={lStyle.logo} />
         <ul className={lStyle.navList + ' bold white'}>
           {Headers.map((header, index) => (
             <li
               key={index}
               className='white'
-              onClick={e => {
+              onClick={() => {
                 const headers = Headers.map(h => {
                   if (h.isActive) h.isActive = false
                   return h
@@ -194,7 +194,7 @@ const Register = () => {
             required
           >
             <option value='' disabled selected hidden>
-              I'am a
+              I&apos;am a
             </option>
             <option value='male'>Male</option>
             <option value='female'>Female</option>

@@ -1,0 +1,81 @@
+/** @format */
+.Card1 {
+  height: -moz-max-content !important;
+  height: max-content !important;
+  padding: 10px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  aspect-ratio: 1/0.85;
+  gap: 20px;
+}
+.Card1 .leftSide {
+  width: 50%;
+}
+.Card1 .leftSide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Card1 .rightSide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Card1 .rightSide .header {
+  height: 15%;
+}
+.Card1 .rightSide .header .title {
+  min-height: -moz-max-content;
+  min-height: max-content;
+  font-size: x-large;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+.Card1 .rightSide .header .catContainer {
+  display: flex;
+  gap: 10px;
+}
+.Card1 .rightSide .header .catContainer .cat {
+  font-size: small;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #9E9D9D;
+}
+.Card1 .rightSide .info {
+  height: 65%;
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding-left: 10px;
+  border-left: 2px solid black;
+}
+.Card1 .rightSide .info .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 9; /* Adjust this number to control the number of lines before the ellipsis */
+  -webkit-box-orient: vertical;
+  width: 100%;
+  overflow: hidden;
+}
+.Card1 .rightSide .info .price {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.Card1 .rightSide .actions {
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+.Card1 .rightSide .actions * {
+  width: 50%;
+  text-align: center;
+  font-size: 0.8rem !important;
+  text-transform: capitalize;
+}/*# sourceMappingURL=style.module.css.map */

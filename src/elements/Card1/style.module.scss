@@ -1,0 +1,83 @@
+/** @format */
+
+@import "../../sass/utilities/variable.scss";
+
+.Card1 {
+	height: max-content !important;
+	padding: 10px;
+	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+
+	aspect-ratio: 1/.85;
+	gap: 20px;
+	.leftSide {
+		width: 50%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.rightSide {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.header {
+			height: 15%;
+			.title {
+				min-height: max-content;
+				font-size: x-large;
+				text-overflow: ellipsis;
+				text-wrap: nowrap;
+				overflow: hidden;
+			}
+			.catContainer {
+				display: flex;
+				gap: 10px;
+				.cat {
+					font-size: small;
+					text-transform: capitalize;
+					font-weight: bold;
+					color: $gray;
+				}
+			}
+		}
+		.info {
+			height: 65%;
+			display: flex;
+			gap: 10px;
+			// height: 30%;
+			box-sizing: border-box;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-top: 10px;
+			padding-left: 10px;
+			border-left: 2px solid black;
+			.description {
+				display: -webkit-box;
+				-webkit-line-clamp: 9; /* Adjust this number to control the number of lines before the ellipsis */
+				-webkit-box-orient: vertical;
+				width: 100%;
+				overflow: hidden;
+			}
+			.price{
+				font-weight: bold;
+				font-size: 1.5rem;
+			}
+		}
+		.actions{
+			height: 8%;
+			display: flex;
+			justify-content: space-between;
+			gap: 5px;
+			*{
+				width: 50%;
+				text-align: center;
+				font-size: .8rem !important;
+				text-transform: capitalize;
+			}
+		}
+	}
+}

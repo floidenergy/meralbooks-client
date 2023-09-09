@@ -1,3 +1,4 @@
+/** @format */
 @font-face {
   font-family: "Nexa";
   src: url("../font/Nexa-Heavy.ttf") format("truetype");
@@ -64,12 +65,20 @@ body {
   color: #f1f0f0;
 }
 
+.yellow {
+  color: #FFD000;
+}
+
 .b-purple {
   background-color: #7e2061;
 }
 
 .b-black {
   background-color: #5D595A;
+}
+
+.b-dark {
+  background-color: black;
 }
 
 .b-gray {
@@ -84,8 +93,13 @@ body {
   background-color: #f1f0f0;
 }
 
+.b-yellow {
+  background-color: #FFD000;
+}
+
 /************************  ********************/
 .button {
+  display: inline-block;
   font-size: large;
   border: none;
   border-radius: 5px;

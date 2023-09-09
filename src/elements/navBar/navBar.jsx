@@ -5,7 +5,8 @@ import { TiThMenu } from 'react-icons/ti'
 import { useSelector } from 'react-redux'
 
 import nStyle from './navbar.module.css'
-import Logo from '../../images/SVG/meral_books.svg'
+// import Logo from '../../images/SVG/meral_books.svg'
+import {ReactComponent as Logo} from '../../images/SVG/meral_books.svg'
 
 import { AiOutlineShoppingCart, AiOutlineLogout } from 'react-icons/ai'
 import { CgProfile } from 'react-icons/cg'
@@ -122,7 +123,7 @@ const NavBar = () => {
       </div>
       <nav className={navbarClasses.classes}>
         {/* <img src={logo} alt='' className='logo' /> */}
-        <img src={Logo} className={nStyle.logo} />
+        <Logo className={nStyle.logo} />
 
         <ul className={nStyle.navList + ' bold black'}>
           {Headers.map((header, index) => (

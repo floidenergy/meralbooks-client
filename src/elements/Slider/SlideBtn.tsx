@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs'
 import style from './style.module.css'
 
-export default function SlideBtn ({ direction, move }) {
+export default function SlideBtn ({ direction, move }: {direction: string, move: MouseEventHandler}) {
   return (
     <button
       className={style.slideBtn + ' ' + style[direction]}

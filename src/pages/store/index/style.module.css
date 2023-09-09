@@ -1,8 +1,105 @@
+/** @format */
 .StoreIndex {
   box-sizing: border-box;
   width: 100vw;
   padding: 0 45px;
+  background-color: #f1f0f0;
 }
 .StoreIndex .sliderContainer {
   width: 100%;
+}
+.StoreIndex header {
+  margin-bottom: 70px;
+}
+.StoreIndex section {
+  margin: 25px 0;
+  padding: 25px;
+  background-color: #FFFFFF;
+}
+.StoreIndex section .title {
+  text-decoration: underline;
+  text-transform: capitalize;
+  font-size: x-large;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 60px;
+}
+.StoreIndex section .categoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+.StoreIndex section .categoriesContainer .category {
+  width: 6vw;
+}
+.StoreIndex section .categoriesContainer .category a {
+  text-decoration: none !important;
+  color: black;
+}
+.StoreIndex section .categoriesContainer .category a img {
+  width: 100%;
+}
+.StoreIndex section .categoriesContainer .category a .name {
+  text-align: center;
+}
+.StoreIndex section .cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-evenly;
+}
+.StoreIndex section .cardsContainer .card1 {
+  width: 32.1%;
+}
+.StoreIndex section.eBookBanner {
+  background: linear-gradient(129deg, rgb(169, 18, 122) 0%, rgb(94, 4, 66) 100%);
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+}
+.StoreIndex section.eBookBanner .info {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 15px;
+  justify-content: baseline;
+}
+.StoreIndex section.eBookBanner .info .bannerTitle {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  line-height: 2.5rem;
+}
+.StoreIndex section.eBookBanner .info a {
+  padding: 5px 20px;
+  font-weight: bold;
+}
+.StoreIndex section.eBookBanner img {
+  position: absolute;
+  height: 100%;
+  right: -20px;
+  bottom: -20px;
+}
+.StoreIndex section .sliderContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  flex-direction: row;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  height: 100%;
+}
+.StoreIndex section .sliderContainer .slide {
+  width: 25vw;
+  transform: translateX(0vw);
+  transition: transform 0.5s ease-in-out;
+}
+.StoreIndex section .sliderContainer .active {
+  width: 35vw;
 }/*# sourceMappingURL=style.module.css.map */

@@ -12,7 +12,7 @@ import lStyle from './auth.module.css'
 
 import { BiShow, BiHide } from 'react-icons/bi'
 import { TiThMenu } from 'react-icons/ti'
-import Logo from '../../images/SVG/meral_books.svg'
+import {ReactComponent as Logo} from '../../images/SVG/meral_books.svg'
 
 const Login = () => {
   const dispatcher = useDispatch()
@@ -79,7 +79,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_SERVER_LINK}/account/login`,
+        `${import.meta.env.REACT_APP_SERVER_LINK}/account/login`,
         formData,
         {
           withCredentials: true
@@ -110,7 +110,7 @@ const Login = () => {
     <main className={lStyle.main}>
       <div
         className={lStyle.navButton}
-        onClick={e => {
+        onClick={() => {
           if (navbarClasses.isActive) {
             setNavbarClasses({ isActive: false, classes: lStyle.navBar })
           } else {
@@ -124,13 +124,13 @@ const Login = () => {
         <TiThMenu />
       </div>
       <nav className={navbarClasses.classes}>
-        <img src={Logo} className={lStyle.logo} />
+        <Logo className={lStyle.logo} />
         <ul className={lStyle.navList + ' bold'}>
           {Headers.map((header, index) => (
             <li
               key={index}
               className='white'
-              onClick={e => {
+              onClick={() => {
                 const headers = Headers.map(h => {
                   if (h.isActive) h.isActive = false
 
@@ -207,7 +207,7 @@ const Login = () => {
             YOU AGAIN
           </p>
           <p className={lStyle.rInvitation}>
-            Ain't A Member Yet? <a href='/Register'>Register Now.</a>
+            Ain&apos;t A Member Yet? <a href='/Register'>Register Now.</a>
           </p>
         </section>
       </div>

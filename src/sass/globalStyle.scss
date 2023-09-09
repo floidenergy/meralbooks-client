@@ -1,95 +1,109 @@
+/** @format */
+
 // @import "../css/fonts.scss";
 @import "../sass/utilities/variable.scss";
 @import "../sass/utilities/fonts.scss";
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box !important;
-    font-family: 'Nexa';
-    font-size : clamp(1rem, 1rem, 8rem);
-
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box !important;
+	font-family: "Nexa";
+	font-size: clamp(1rem, 1rem, 8rem);
 }
 
-body{
-    width: 100vw;
-    background-color: var(--dark-white);
+body {
+	width: 100vw;
+	background-color: var(--dark-white);
 }
 
-#root{
-    // background-color: red !important;
-    // width: 800px !important;
-    // overflow-x: hidden !important;
+#root {
+	// background-color: red !important;
+	// width: 800px !important;
+	// overflow-x: hidden !important;
 }
 /************************ TEXT FORMAT ********************/
 
-.lighter{
-    font-family: lighter;
+.lighter {
+	font-family: lighter;
 }
 
-.bolder{
-    font-weight: bolder;
+.bolder {
+	font-weight: bolder;
 }
 
-.bold{
-    font-weight: bold;
+.bold {
+	font-weight: bold;
 }
 
 /************************ COLORS ********************/
 
-.purple{
-    color: $purple;
+.purple {
+	color: $purple;
 }
 
-.black{
-    color: $black;
+.black {
+	color: $black;
 }
 
-.gray{
-    color: $gray;
+.gray {
+	color: $gray;
 }
 
-.white{
-    color: $white;
+.white {
+	color: $white;
 }
 
-.dark-white{
-    color: $dark-white;
+.dark-white {
+	color: $dark-white;
 }
 
-.b-purple{
-    background-color: $purple;
+.yellow {
+	color: $yellow;
 }
 
-.b-black{
-    background-color: $black;
+.b-purple {
+	background-color: $purple;
 }
 
-.b-gray{
-    background-color: $gray;
+.b-black {
+	background-color: $black;
 }
 
-.b-white{
-    background-color: $white;
+.b-dark{
+	background-color: black;
 }
 
-.b-dark-white{
-    background-color: $dark-white;
+.b-gray {
+	background-color: $gray;
+}
+
+.b-white {
+	background-color: $white;
+}
+
+.b-dark-white {
+	background-color: $dark-white;
+}
+
+.b-yellow {
+	background-color: $yellow;
 }
 
 /************************  ********************/
 
-.button{
-    font-size: large;
-    border: none;
-    border-radius: 5px;
-    padding: 5px;
-    transition: 1s ease-in-out;
-    text-decoration: none;
-    cursor: pointer;
+.button {
+	display: inline-block;
+	font-size: large;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	transition: 1s ease-in-out;
+	text-decoration: none;
+	cursor: pointer;
 }
 
-.button:hover{
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    transform: translateY(-3px);
+.button:hover {
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	transform: translateY(-3px);
 }

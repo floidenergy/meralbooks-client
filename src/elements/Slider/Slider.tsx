@@ -3,27 +3,26 @@ import React, {useEffect, useState } from 'react'
 import style from './style.module.css'
 import SlideBtn from './SlideBtn'
 
-export default function ImageSlider({ children }) {
+export default function ImageSlider({ children }: {children: React.ReactNode[]}) {
   if (!children) {
     throw new Error(
       'no elements1 in ImageSlider please set elements: <ImageSlider>[<elements />]</ImageSlider>'
     )
   }
-  const [slideIndex, setSlideIndex] = useState(null)
-  const [timeoutId, setTimeoutId] = useState()
+  const [slideIndex, setSlideIndex] = useState<number>(-1)
+  const [timeoutId, setTimeoutId] = useState<number>()
 
   const slideRight = () => {
     clearTimeout(timeoutId)
+
     if (slideIndex + 1 < children.length) setSlideIndex(slideIndex + 1)
     else setSlideIndex(0)
   }
-
   const slideLeft = () => {
     clearTimeout(timeoutId)
     if (slideIndex - 1 >= 0) setSlideIndex(slideIndex - 1)
     else setSlideIndex(children.length - 1)
   }
- 
 
   useEffect(() => setSlideIndex(0), []);
 
@@ -35,7 +34,7 @@ export default function ImageSlider({ children }) {
         } else {
           setSlideIndex(0)
         }
-      }, 2000)
+      }, 5000)
     )
   }, [slideIndex])
 
@@ -45,7 +44,7 @@ export default function ImageSlider({ children }) {
       <div className={style.imageBtn}>
         {children.map((el, index) => (
           <input
-            onChange={(e) =>{
+            onChange={() =>{
               clearTimeout(timeoutId);
               setSlideIndex(index);
             }}
