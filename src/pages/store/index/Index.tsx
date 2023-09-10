@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, Scrollbar, A11y, Zoom, Autoplay } from 'swiper/modules'
+// import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import "swiper/css/zoom"
 import 'swiper/css/navigation';
@@ -177,16 +177,16 @@ export default function Index() {
         <p className={`${style.title} bold`}>recommanded for you</p>
         <div className={`${style.sliderContainer}`}>
           <Swiper
-            modules={[Pagination, A11y, Zoom, Autoplay]}
+            // modules={[Pagination, Autoplay]}
+            // modules={[Pagination, ]}
             spaceBetween={50}
             slidesPerView={3}
-            zoom
-            autoplay
-            loop
-            centeredSlides
-            pagination={{ clickable: true, }}
-            onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
-            className={style.slider}
+            // autoplay
+            // loop
+            // centeredSlides
+            // pagination={{ clickable: true, }}
+            // onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
+            // className={style.slider}
           >
             {recommandedBooks.map((book, index) => (
               <SwiperSlide key={book._id} className={index === currentSlide ? style.activeSlide : ''}>
