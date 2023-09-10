@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination, Scrollbar, A11y, Zoom, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import "swiper/css/zoom"
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+
 import ImageSlider from '../../../elements/Slider/Slider'
 import SearchBar from '../../../elements/searchbar/SearchBar'
 import Card1 from '../../../elements/Card1/Card'
@@ -49,6 +58,12 @@ interface bookInterface {
   }]
 }
 
+interface authorInterface {
+  _id: string
+  name: string
+  img: string
+}
+
 /**
  * Renders a header section with an image slider.
  * Uses the useState and useEffect hooks to manage the state of the banners and fetch the banner data.
@@ -59,7 +74,9 @@ export default function Index() {
   const [categories, setCategories] = useState<categoriesInterface[]>([]);
   const [newAddedBooks, setNewAddedBooks] = useState<bookInterface[]>([]);
   const [recommandedBooks, setRecommandedBooks] = useState<bookInterface[]>([]);
+  const [authors, setAuthors] = useState<authorInterface[]>([])
 
+  const [currentAuthor, setCurrentAuthor] = useState<number>(0);
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   useEffect(() => {
@@ -96,12 +113,17 @@ export default function Index() {
       setRecommandedBooks(r.data.slice(0, 6));
     })
 
+    //TODO: MAKE API REQUEST TO FETCH FEATURED AUTHORS
+    axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/AUTHORS`).then(r => {
+      setAuthors(r.data.slice(0, 6));
+      console.log(r.data.slice(0, 6));
+    })
   }, [])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % recommandedBooks.length);
-    }, 1000);
+      setCurrentAuthor((prevSlide) => (prevSlide + 1) % authors.length);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [recommandedBooks])
@@ -154,9 +176,41 @@ export default function Index() {
       <section>
         <p className={`${style.title} bold`}>recommanded for you</p>
         <div className={`${style.sliderContainer}`}>
-          {recommandedBooks.map((book, index) => (
-            <Card1 key={book._id} book={book} className={`${style.slide} ${index === currentSlide ? style.active : ''}`}/>
-          ))}
+          <Swiper
+            modules={[Pagination, A11y, Zoom, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={3}
+            zoom
+            autoplay
+            loop
+            centeredSlides
+            pagination={{ clickable: true, }}
+            onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
+            className={style.slider}
+          >
+            {recommandedBooks.map((book, index) => (
+              <SwiperSlide key={book._id} className={index === currentSlide ? style.activeSlide : ''}>
+                <Card1 book={book} className={`${style.slide}`} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </section>
+      <section className={`${style.featuredAuthors}`}>
+        <p className={`${style.title} bold white`}>featured authors</p>
+        <div className={style.authorContainer}>
+          {
+            authors.map((author, index) => (
+              <Link
+                to={`/Store/Profile/author?id=${author._id}`}
+                key={author._id}
+                className={`${index === currentAuthor ? style.activeAuthor : " "} ${style.author}`}
+              >
+                <img src={author.img} alt="" />
+                <p>{author.name}</p>
+              </Link>
+            ))
+          }
         </div>
       </section>
     </div>

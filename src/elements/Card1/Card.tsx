@@ -38,7 +38,7 @@ export default function Card1({ book, className }: { book: bookCardProps, classN
             // TODO : ADD THE FUNCTION TO ADD AN ITEM TO CART (REDUX TOOLKIT)
           }
           <Link to={"#"} className={`button b-purple white`}>Add to cart</Link>
-          <Link to={`Profile/book/${book._id}`} className={`button b-dark white`}>see More</Link>
+          <Link to={`Profile/book?id=${book._id}`} className={`button b-dark white`}>see More</Link>
         </div>
       </div>
     </div>

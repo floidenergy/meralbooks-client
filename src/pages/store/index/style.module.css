@@ -2,17 +2,21 @@
 .StoreIndex {
   box-sizing: border-box;
   width: 100vw;
-  padding: 0 45px;
   background-color: #f1f0f0;
 }
 .StoreIndex .sliderContainer {
   width: 100%;
 }
 .StoreIndex header {
+  margin: 0 45px;
   margin-bottom: 70px;
 }
+.StoreIndex .searchBar {
+  margin: auto;
+  width: 93vw;
+}
 .StoreIndex section {
-  margin: 25px 0;
+  margin: 25px 45px;
   padding: 25px;
   background-color: #FFFFFF;
 }
@@ -51,7 +55,7 @@
   justify-content: space-evenly;
 }
 .StoreIndex section .cardsContainer .card1 {
-  width: 32.1%;
+  width: 30%;
 }
 .StoreIndex section.eBookBanner {
   background: linear-gradient(129deg, rgb(169, 18, 122) 0%, rgb(94, 4, 66) 100%);
@@ -85,21 +89,43 @@
   right: -20px;
   bottom: -20px;
 }
-.StoreIndex section .sliderContainer {
+.StoreIndex section .sliderContainer .slider {
+  padding-bottom: 55px;
+}
+.StoreIndex section .sliderContainer .slider .activeSlide {
+  scale: 1.1;
+  transition: all ease-in-out 0.3s;
+}
+.StoreIndex section .sliderContainer .sliderPagination {
+  background-color: green;
+}
+.StoreIndex section.featuredAuthors {
+  margin: 25px 0;
+  background-color: #7e2061;
+}
+.StoreIndex section.featuredAuthors .authorContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
   flex-direction: row;
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
-  height: 100%;
+  gap: 1.5em;
+  justify-content: center;
 }
-.StoreIndex section .sliderContainer .slide {
-  width: 25vw;
-  transform: translateX(0vw);
-  transition: transform 0.5s ease-in-out;
+.StoreIndex section.featuredAuthors .authorContainer .author {
+  width: 12%;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  padding: 10px;
 }
-.StoreIndex section .sliderContainer .active {
-  width: 35vw;
+.StoreIndex section.featuredAuthors .authorContainer .author img {
+  width: 100%;
+}
+.StoreIndex section.featuredAuthors .authorContainer .author p {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.StoreIndex section.featuredAuthors .authorContainer .author.activeAuthor {
+  background: #FFFFFF;
+  color: #5D595A;
 }/*# sourceMappingURL=style.module.css.map */
