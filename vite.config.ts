@@ -11,10 +11,11 @@ export default defineConfig({
     'process.env': process.env
   },
   server: {
-    port: 3002,
-    https: {
-      key: fs.readFileSync('./cert/key.pem'),
-      cert: fs.readFileSync('./cert/cert.pem')
-    }
+    
+    // port: 3002,
+    // https: {
+    //   key: fs.readFileSync('./cert/key.pem'),
+    //   cert: fs.readFileSync('./cert/cert.pem')
+    // }
   }
 })
