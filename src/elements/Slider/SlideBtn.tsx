@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 import { BsFillCaretLeftFill, BsFillCaretRightFill } from 'react-icons/bs'
 import style from './style.module.css'
 

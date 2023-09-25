@@ -1,9 +1,10 @@
-import React, {useEffect, useState } from 'react'
+import {useEffect, useState } from 'react'
 
 import style from './style.module.css'
 import SlideBtn from './SlideBtn'
 
-export default function ImageSlider({ children }: {children: React.ReactNode[]}) {
+export default function ImageSlider({ children }: {children: React.ReactElement[]}) {
+  // const arr : Number[] = [5, 10, 12];
   if (!children) {
     throw new Error(
       'no elements1 in ImageSlider please set elements: <ImageSlider>[<elements />]</ImageSlider>'
@@ -40,9 +41,9 @@ export default function ImageSlider({ children }: {children: React.ReactNode[]})
 
   return (
     <div className={style.container}>
-      <div className={style.card}>{children.at(slideIndex)}</div>
+      <div className={style.card}>{children[slideIndex]}</div>
       <div className={style.imageBtn}>
-        {children.map((el, index) => (
+        {children.map((_, index) => (
           <input
             onChange={() =>{
               clearTimeout(timeoutId);

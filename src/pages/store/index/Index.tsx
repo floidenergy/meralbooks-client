@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -185,7 +185,7 @@ export default function Index() {
             // loop
             // centeredSlides
             // pagination={{ clickable: true, }}
-            // onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
+            onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
             // className={style.slider}
           >
             {recommandedBooks.map((book, index) => (

@@ -1,24 +1,19 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import viteSvgr from 'vite-plugin-svgr'
+import react from '@vitejs/plugin-react'
+import svgr from 'vite-plugin-svgr'
 
-import fs from "fs"
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
-  plugins: [viteSvgr(), react()],
-  define: {
-    'process.env': process.env
-  },
+  plugins: [svgr(), react()],
   build: {
-    outDir: './build'
+    outDir: "./dist"
   },
   server: {
-    
-    // port: 3002,
-    // https: {
-    //   key: fs.readFileSync('./cert/key.pem'),
-    //   cert: fs.readFileSync('./cert/cert.pem')
-    // }
+    port: 3002,
+    https: {
+      key: "./cert/key.pem",
+      cert: './cert/cert.pem'
+    }
   }
 })
