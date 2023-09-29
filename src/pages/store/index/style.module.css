@@ -4,6 +4,9 @@
   width: 100vw;
   background-color: #f1f0f0;
 }
+.StoreIndex .loadingPage {
+  background-color: #5E0442;
+}
 .StoreIndex .sliderContainer {
   width: 100%;
 }
@@ -36,17 +39,31 @@
   margin-top: 2em;
 }
 .StoreIndex section .categoriesContainer .category {
-  width: 6vw;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 .StoreIndex section .categoriesContainer .category a {
   text-decoration: none !important;
-  color: black;
-}
-.StoreIndex section .categoriesContainer .category a img {
-  width: 100%;
+  color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .StoreIndex section .categoriesContainer .category a .name {
+  font-size: 1rem !important;
+  line-height: 100%;
   text-align: center;
+  padding: auto;
+}
+.StoreIndex section .categoriesContainer .category a .count {
+  color: #7e2061;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  display: block;
+  width: 25px;
+  text-align: center;
+  line-height: 150%;
+  aspect-ratio: 1;
 }
 .StoreIndex section .cardsContainer {
   display: flex;
@@ -56,6 +73,21 @@
 }
 .StoreIndex section .cardsContainer .card1 {
   width: 30%;
+}
+@media screen and (max-width: 1200px) {
+  .StoreIndex section .cardsContainer .card1 {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .StoreIndex section .cardsContainer .card1 {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .StoreIndex section .cardsContainer .card1 {
+    width: 80%;
+  }
 }
 .StoreIndex section.eBookBanner {
   background: linear-gradient(129deg, rgb(169, 18, 122) 0%, rgb(94, 4, 66) 100%);
@@ -91,6 +123,12 @@
 }
 .StoreIndex section .sliderContainer .slider {
   padding-bottom: 55px;
+  width: 90%;
+}
+@media screen and (max-width: 750px) {
+  .StoreIndex section .sliderContainer .slider {
+    width: 75%;
+  }
 }
 .StoreIndex section .sliderContainer .slider .activeSlide {
   scale: 1.1;
@@ -110,12 +148,11 @@
   justify-content: center;
 }
 .StoreIndex section.featuredAuthors .authorContainer .author {
-  width: 12%;
+  width: 15%;
   text-align: center;
   text-decoration: none;
   color: white;
   text-transform: capitalize;
-  padding: 10px;
 }
 .StoreIndex section.featuredAuthors .authorContainer .author img {
   width: 100%;
@@ -128,4 +165,5 @@
 .StoreIndex section.featuredAuthors .authorContainer .author.activeAuthor {
   background: #FFFFFF;
   color: #5D595A;
+  padding: 5px;
 }/*# sourceMappingURL=style.module.css.map */

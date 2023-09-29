@@ -5,6 +5,7 @@ import style from './style.module.css'
 export interface bookCardProps {
   _id: string
   img: string
+  thumb: string
   name: string
   description: string
   price: number
@@ -19,7 +20,7 @@ export default function Card1({ book, className }: { book: bookCardProps, classN
   return (
     <div className={`${className ? className : ""} ${style.Card1}`} >
       <div className={style.leftSide}>
-        <img src={book.img} alt="" />
+        <img src={book.thumb} alt="" />
       </div>
       <div className={style.rightSide}>
         <div className={style.header}>

@@ -12,10 +12,7 @@ import { BiShow, BiHide } from 'react-icons/bi'
 
 import { ReactComponent as Logo } from '../../images/SVG/meral_books.svg'
 
-interface InputError {
-  name: string,
-  title: string
-}
+import { InputError } from '../../model'
 
 const Register = () => {
   const navigate = useNavigate()

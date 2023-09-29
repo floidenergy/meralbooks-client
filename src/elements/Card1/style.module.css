@@ -19,7 +19,7 @@
 }
 .Card1 .rightSide {
   width: 50%;
-  height: 100%;
+  height: 100% !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,6 +31,7 @@
   min-height: -moz-max-content;
   min-height: max-content;
   font-size: x-large;
+  font-weight: bold;
   text-overflow: ellipsis;
   text-wrap: nowrap;
   overflow: hidden;
@@ -44,6 +45,9 @@
   text-transform: capitalize;
   font-weight: bold;
   color: #9E9D9D;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .Card1 .rightSide .info {
   height: 65%;
@@ -62,13 +66,18 @@
   -webkit-box-orient: vertical;
   width: 100%;
   overflow: hidden;
+  font-size: 1.2vw;
 }
 .Card1 .rightSide .info .price {
   font-weight: bold;
   font-size: 1.5rem;
 }
+@media screen and (min-width: 170px) {
+  .Card1 .rightSide .info {
+    height: 50%;
+  }
+}
 .Card1 .rightSide .actions {
-  height: 8%;
   display: flex;
   justify-content: space-between;
   gap: 5px;
@@ -78,4 +87,12 @@
   text-align: center;
   font-size: 0.8rem !important;
   text-transform: capitalize;
+}
+@media screen and (min-width: 170px) {
+  .Card1 .rightSide .actions {
+    flex-direction: column;
+  }
+  .Card1 .rightSide .actions * {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.module.css.map */

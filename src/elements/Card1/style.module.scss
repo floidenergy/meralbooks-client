@@ -8,6 +8,7 @@
 	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 
+
 	aspect-ratio: 1/.85;
 	gap: 20px;
 	.leftSide {
@@ -20,7 +21,7 @@
 	}
 	.rightSide {
 		width: 50%;
-		height: 100%;
+		height: 100% !important;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -29,6 +30,7 @@
 			.title {
 				min-height: max-content;
 				font-size: x-large;
+				font-weight: bold;
 				text-overflow: ellipsis;
 				text-wrap: nowrap;
 				overflow: hidden;
@@ -41,6 +43,9 @@
 					text-transform: capitalize;
 					font-weight: bold;
 					color: $gray;
+					text-wrap: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 		}
@@ -61,14 +66,18 @@
 				-webkit-box-orient: vertical;
 				width: 100%;
 				overflow: hidden;
+				font-size: 1.2vw;
 			}
 			.price{
 				font-weight: bold;
 				font-size: 1.5rem;
 			}
+			@media screen and (min-width: 170px){
+				height: 50%;
+			}
 		}
 		.actions{
-			height: 8%;
+			// height: 8%;
 			display: flex;
 			justify-content: space-between;
 			gap: 5px;
@@ -77,6 +86,12 @@
 				text-align: center;
 				font-size: .8rem !important;
 				text-transform: capitalize;
+			}
+			@media screen and (min-width: 170px) {
+				flex-direction: column;
+				*{
+					width: 100%;
+				}
 			}
 		}
 	}

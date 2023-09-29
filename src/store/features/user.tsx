@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { User, UserInfo } from "../../models"
+import { User, UserInfo } from "../../model"
 const initialState = () => {
   const storageUser: string | null = localStorage.getItem('user');
   if (storageUser) {

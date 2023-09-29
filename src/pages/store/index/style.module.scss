@@ -8,6 +8,10 @@
 	// padding: 0 45px;
 	background-color: $dark-white;
 
+	.loadingPage{
+		background-color: $dark-purple;
+	}
+
 	.sliderContainer {
 		width: 100%;
 	}
@@ -39,15 +43,31 @@
 			gap: 2em;
 			margin-top: 2em;
 			.category {
-				width: 6vw;
+				padding: 5px 10px;
+				// width: 100%;
+				border-radius: 10px;
 				a {
 					text-decoration: none !important;
-					color: black;
-					img {
-						width: 100%;
-					}
+					color: white;
+
+					display: flex;
+					gap: 10px;
+					align-items: center;
 					.name {
+						font-size: 1rem !important;
+						line-height: 100%;
 						text-align: center;
+						padding: auto;
+					}
+					.count{
+						color: $purple;
+						background-color: $white;
+						border-radius: 100%;
+						display: block;
+						width: 25px;
+						text-align: center;
+						line-height: 150%;
+						aspect-ratio: 1;
 					}
 				}
 			}
@@ -59,6 +79,15 @@
 			justify-content: space-evenly;
 			.card1 {
 				width: 30%;
+				@media screen and (max-width: 1200px) {
+					width: 40%;
+				}
+				@media screen and (max-width: 800px) {
+					width: 45%;
+				}
+				@media screen and (max-width: 750px) {
+					width: 80%;
+				}
 			}
 		}
 		&.eBookBanner {
@@ -100,10 +129,16 @@
 		.sliderContainer {
 			.slider {
 				padding-bottom: 55px;
+				width: 90%;
+
+				@media screen and (max-width: 750px) {
+					width: 75%;
+				}
+				
 				.activeSlide {
 					// width: 25% !important;
 					scale: 1.1;
-					// transform: translateY(50%);
+					// transform: translateY(-10px);
 					transition: all ease-in-out 0.3s;
 				}
 			}
@@ -122,12 +157,11 @@
 				// .... //
 
 				.author {
-					width: 12%;
+					width: 15%;
 					text-align: center;
 					text-decoration: none;
 					color: white;
 					text-transform: capitalize;
-					padding: 10px;
 					img {
 						width: 100%;
 					}
@@ -140,6 +174,7 @@
 					&.activeAuthor{
 						background: $white;
 						color: $black;
+						padding: 5px;
 					}
 				}
 			}

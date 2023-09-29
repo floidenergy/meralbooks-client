@@ -7,10 +7,9 @@ import { BsSearch } from "react-icons/bs";
 
 import style from "./style.module.css";
 
-interface suggestionsInterface {
-  id: string;
-  name: string;
-}
+import {suggestionsInterface} from "../../model"
+
+
 
 export default function SearchBar({className}: {className?: string}) {
   const navigate = useNavigate();
