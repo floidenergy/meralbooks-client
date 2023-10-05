@@ -58,6 +58,8 @@ export default function Book({ id }: { id: string }) {
 
   }, [id])
 
+  useEffect(() => console.log("author changed"), [booksByAuthor] )
+
   // TODO: delete later
 
   const handleReviewSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
