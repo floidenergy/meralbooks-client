@@ -14,7 +14,8 @@
 
 body {
 	width: 100vw;
-	background-color: var(--dark-white);
+	// background-color: var(--dark-white);
+	background-color: $dark-white;
 }
 
 #root {
@@ -70,7 +71,7 @@ body {
 	background-color: $black;
 }
 
-.b-dark{
+.b-dark {
 	background-color: black;
 }
 
@@ -88,6 +89,10 @@ body {
 
 .b-yellow {
 	background-color: $yellow;
+}
+
+.b-transparent {
+	background-color: transparent;
 }
 
 /************************  ********************/

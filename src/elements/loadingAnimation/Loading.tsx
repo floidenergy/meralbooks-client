@@ -1,15 +1,7 @@
 import style from './style.module.css'
-export default function LoadingAnimation({ className }: { className?: string }) {
-  // document.addEventListener('scroll', function (e) {
-  //   e.preventDefault();
-
-  //   console.log("hello");
-    
-  // }, { passive: false });
-
-  // window.addEventListener('scroll', (e) => e.preventDefault())
+export default function LoadingAnimation ({darkbackground}:{darkbackground?:boolean}) {
   return (
-    <div className={`${style.container} ${className && className}`}>
+    <div className={`${style.container} ${darkbackground ? style.darker : style.lighter}`}>
       <div className={style.bookshelf_wrapper}>
         <ul className={style.books_list}>
           <li className={`${style.book_item} ${style.first}`}></li>

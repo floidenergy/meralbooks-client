@@ -8,10 +8,6 @@
 	// padding: 0 45px;
 	background-color: $dark-white;
 
-	.loadingPage{
-		background-color: $dark-purple;
-	}
-
 	.sliderContainer {
 		width: 100%;
 	}
@@ -35,14 +31,14 @@
 			text-align: center;
 			margin-bottom: 60px;
 		}
-		.categoriesContainer {
+		.genreContainer {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 
 			gap: 2em;
 			margin-top: 2em;
-			.category {
+			.genre {
 				padding: 5px 10px;
 				// width: 100%;
 				border-radius: 10px;

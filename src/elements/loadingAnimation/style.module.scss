@@ -14,11 +14,19 @@ $delay: calc($duration / 6);
 .container{
   width:100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   background-color: #7e2060a8;
   top: 0;
   left: 0;
   z-index: 500;
+}
+
+.darker{
+  background-color: #7e2060;
+}
+
+.lighter{
+  background-color: #7e2060a8;
 }
 
 .bookshelf_wrapper {

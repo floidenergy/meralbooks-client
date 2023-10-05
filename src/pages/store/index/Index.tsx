@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
-import { bannerInterface, categoriesInterface, bookInterface, authorInterface } from '../../../model.ts'
+import { bannerInterface, bookInterface, authorInterface, genreInterface } from '../../../model.ts'
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Pagination, Autoplay, Navigation } from 'swiper/modules'
@@ -24,16 +24,6 @@ import Banner1 from '../../../images/temp/banner_1.jpg'
 import Banner2 from '../../../images/temp/banner_2.jpg'
 import Banner3 from '../../../images/temp/banner_3.jpg'
 
-// categories icons delete later
-// import crimeIcon from '../../../images/categoriesIcons/crime-8.png'
-// import fantasyIcon from "../../../images/categoriesIcons/fantasy-8.png"
-// import kidsIcon from "../../../images/categoriesIcons/kids-8.png"
-// import religionsIcon from "../../../images/categoriesIcons/religions-8.png"
-// import romanceIcon from "../../../images/categoriesIcons/romance-8.png"
-// import selfDevIcon from "../../../images/categoriesIcons/self dev-8.png"
-// import technicalIcon from "../../../images/categoriesIcons/technicals-8.png"
-
-
 
 /**
  * Renders a header section with an image slider.
@@ -42,7 +32,7 @@ import Banner3 from '../../../images/temp/banner_3.jpg'
  */
 export default function Index() {
   const [banners, setBanners] = useState<bannerInterface[]>([]);
-  const [categories, setCategories] = useState<categoriesInterface[]>([]);
+  const [genre, setGenre] = useState<genreInterface[]>([]);
   const [newAddedBooks, setNewAddedBooks] = useState<bookInterface[]>([]);
   const [recommandedBooks, setRecommandedBooks] = useState<bookInterface[]>([]);
   const [authors, setAuthors] = useState<authorInterface[]>([])
@@ -53,36 +43,31 @@ export default function Index() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
   useEffect(() => {
+    window.scroll({ top: 0, behavior: "instant" });
+
     // TODO: MAKE API REQUEST TO FETCH ALL BANNERS
     setBanners([
       {
-        id: '00001',
+        _id: '00001',
         img: Banner1
       },
       {
-        id: '00002',
+        _id: '00002',
         img: Banner2
       },
       {
-        id: '00003',
+        _id: '00003',
         img: Banner3
       }
     ])
 
-    // TODO: MAKE API REQUEST TO FETCH ALL CATEGORIES
-    setCategories([
-      { id: "8779888d-c982-5d3b-ae7e-022273429b1b", count: 2, name: "Crime" },
-      { id: "dee4fd6b-2bd0-5c6a-becd-b9c53477f176", count: 14, name: "Fantasy" },
-      { id: "497625a6-b9c6-5347-9093-d8dcf6f1b0be", count: 17, name: "Kids " },
-      { id: "dceeced4-cf68-55e0-b888-fa919ffea8dd", count: 4, name: "Religion" },
-      { id: "30189d62-5f99-5ed4-8205-8dac757763d0", count: 14, name: "Romance" },
-      { id: "bfaf1601-cd2d-5190-8d0e-2698858b5eb9", count: 1, name: "Self Dev" },
-      { id: "3c0da7fb-3a12-5067-8237-95b6dafafb99", count: 15, name: "Technology" }
-    ])
 
     const getData = async (): Promise<void> => {
       //TODO: MAKE API REQUEST TO FETCH NEWLY ADDED BOOKS AND RECOMMANDED BOOKS
       try {
+
+        const Genre = await axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/genre`)
+        setGenre(Genre.data);
         const Books = await axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/books`)
         setNewAddedBooks(Books.data.slice(0, 6));
         setRecommandedBooks(Books.data.slice(0, 6));
@@ -110,14 +95,13 @@ export default function Index() {
 
   return (
     <div className={style.StoreIndex}>
-      {isLoading && <LoadingAnimation className={style.loadingPage} />}
-      {/* <LoadingAnimation className={style.loadingPage}/> */}
+      {isLoading && <LoadingAnimation darkbackground />}
       <header>
         <div className={style.sliderContainer}>
           <ImageSlider>
             {banners.map(banner => (
-              <div key={banner.id}>
-                <Link to={`MProfile?id=${banner.id}`}>
+              <div key={banner._id}>
+                <Link to={`MProfile?id=${banner._id}`}>
                   <img src={banner.img} alt='' />
                 </Link>
               </div>
@@ -127,11 +111,11 @@ export default function Index() {
       </header>
       <SearchBar className={style.searchBar} />
       <section>
-        <p className={`${style.title} bold`}>Books Categories</p>
-        <div className={style.categoriesContainer}>
-          {categories.map((cat, index) => (
-            <div key={index} className={`${style.category} b-purple`}>
-              <Link to={`Search?category=${cat.id}`}>
+        <p className={`${style.title} bold`}>Books Genre</p>
+        <div className={style.genreContainer}>
+          {genre.map((cat: genreInterface) => (
+            <div key={cat._id} className={`${style.genre} b-purple`}>
+              <Link to={`Search?genre=${cat._id}`}>
                 <p className={style.name}>{cat.name}</p>
                 <p className={style.count}>{cat.count}</p>
               </Link>

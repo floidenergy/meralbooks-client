@@ -1,0 +1,174 @@
+/** @format */
+.profile {
+  margin: 0 45px;
+}
+.profile .noData {
+  height: 75vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.profile .noData .message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.profile .noData .message p {
+  font-weight: bold;
+  font-size: 5vh;
+  color: #9E9D9D;
+}
+.profile .profileSection {
+  display: flex;
+  height: 85vh;
+  gap: 25px;
+}
+.profile .profileSection .subject {
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 60%;
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+.profile .profileSection .subject img {
+  width: 40%;
+  aspect-ratio: 16/9 !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile .profileSection .subject .subjectinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile .profileSection .subject .subjectinfo .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.profile .profileSection .subject .subjectinfo .header .info {
+  width: 100%;
+}
+.profile .profileSection .subject .subjectinfo .header .info h2 {
+  font-size: 2.2vw;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.profile .profileSection .subject .subjectinfo .header .info .genre {
+  display: flex;
+  gap: 10px;
+  color: #9E9D9D;
+  margin: 3px 0;
+}
+.profile .profileSection .subject .subjectinfo .header .info .authorSide {
+  border-bottom: 1px solid #7e2061;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+.profile .profileSection .subject .subjectinfo .header .info .authorSide a {
+  color: #5E0442;
+  text-transform: capitalize;
+}
+.profile .profileSection .subject .subjectinfo .header .action button {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  padding: 8px;
+}
+.profile .profileSection .subject .subjectinfo .header .action button svg {
+  width: 100%;
+  height: 100%;
+}
+.profile .profileSection .subject .subjectinfo .description {
+  height: 100%;
+  padding: 0px 5px;
+  margin: 25px 0;
+  border-left: 1px solid gray;
+}
+.profile .profileSection .subject .subjectinfo .bookFooter .bookStock {
+  color: red;
+  text-transform: capitalize;
+}
+.profile .profileSection .subject .subjectinfo .bookFooter .price {
+  font-size: 2.2vw;
+}
+.profile .profileSection .subject .subjectinfo .bookFooter .addToCart {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+.profile .profileSection .reviews {
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 35%;
+  height: 100%;
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile .profileSection .reviews .header {
+  border-bottom: 2px solid #7e2061;
+}
+.profile .profileSection .reviews .header .title {
+  color: #7e2061;
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+.profile .profileSection .reviews .comments {
+  overflow-y: scroll;
+  height: 100%;
+  border-bottom: 0.5px solid #7e2061;
+  /* Track */
+  /* Handle */
+}
+.profile .profileSection .reviews .comments .noReviews {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  color: #9E9D9D;
+}
+.profile .profileSection .reviews .comments::-webkit-scrollbar {
+  width: 10px;
+  display: block;
+}
+.profile .profileSection .reviews .comments::-webkit-scrollbar-track {
+  border-radius: 10px;
+  width: 2px;
+}
+.profile .profileSection .reviews .comments::-webkit-scrollbar-thumb {
+  background: #7e2061;
+  border-radius: 10px;
+  width: 5px !important;
+}
+.profile .profileSection .reviews .reviewSubmission {
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+}
+.profile .profileSection .reviews .reviewSubmission textarea {
+  resize: none;
+  width: 100%;
+  height: 75%;
+  border-color: #9E9D9D;
+  padding: 2.5px;
+  outline: #9E9D9D;
+}
+.profile .profileSection .reviews .reviewSubmission span {
+  display: flex;
+  justify-content: space-between;
+}
+.profile .profileSection .reviews .reviewSubmission span button:disabled {
+  background-color: #9E9D9D;
+}
+.profile .profileSection .reviews .reviewSubmission span button:disabled:hover {
+  transform: unset;
+  box-shadow: unset;
+}/*# sourceMappingURL=style.module.css.map */

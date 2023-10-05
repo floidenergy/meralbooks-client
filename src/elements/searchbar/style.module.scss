@@ -5,10 +5,12 @@
 .searchBarContainer {
 	width: 100%;
 	background-color: $purple;
+	max-height: 55px;
 	padding: 10px;
 	border-radius: 10px;
 	display: flex;
 	justify-content: space-evenly;
+	margin: 15px 0;
 	.searchType {
 		padding: 5px 10px;
 		border-radius: 5px;

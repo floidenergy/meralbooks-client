@@ -1,0 +1,30 @@
+/** @format */
+
+@import "../../sass/utilities/variable.scss";
+
+.review {
+	padding: 15px 10px;
+	display: flex;
+	// justify-content: flex-start;
+	gap: 15px;
+	align-items: flex-start;
+	border-bottom: 1px solid $purple;
+	img {
+		width: 12%;
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: 100%;
+		border: 2px solid $purple;
+		padding: 2px;
+	}
+  .header{
+    margin-bottom: 10px;
+    .userInfo{
+      font-weight: bolder;
+      .userName{
+        color: $gray;
+        font-weight: normal;
+      }
+    }
+  }
+}

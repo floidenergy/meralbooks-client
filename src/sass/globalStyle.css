@@ -28,7 +28,7 @@
 
 body {
   width: 100vw;
-  background-color: var(--dark-white);
+  background-color: #f1f0f0;
 }
 
 /************************ TEXT FORMAT ********************/
@@ -95,6 +95,10 @@ body {
 
 .b-yellow {
   background-color: #FFD000;
+}
+
+.b-transparent {
+  background-color: transparent;
 }
 
 /************************  ********************/

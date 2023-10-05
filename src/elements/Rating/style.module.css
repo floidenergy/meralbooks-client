@@ -1,0 +1,7 @@
+.ratingStars {
+  display: flex;
+  gap: 5px;
+}
+.ratingStars svg {
+  color: gold;
+}/*# sourceMappingURL=style.module.css.map */

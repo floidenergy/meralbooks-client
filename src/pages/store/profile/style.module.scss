@@ -1,0 +1,193 @@
+/** @format */
+
+@import "../../../sass/utilities/variable.scss";
+.profile {
+	margin: 0 45px;
+
+	.noData {
+		height: 75vh;
+		width: 100%;
+		position: relative;
+		text-align: center;
+		.message {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			p {
+				font-weight: bold;
+				font-size: 5vh;
+				color: $gray;
+			}
+		}
+	}
+	.profileSection {
+		display: flex;
+		// align-items: flex-start;
+		height: 85vh;
+		gap: 25px;
+		.subject {
+			box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+			width: 60%;
+			height: 100%;
+			background-color: $white;
+			padding: 30px;
+			border-radius: 10px;
+			display: flex;
+			justify-content: center;
+			gap: 35px;
+			img {
+				width: 40%;
+				aspect-ratio: 16/9 !important;
+				object-fit: cover;
+			}
+			.subjectinfo {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				.header {
+					width: 100%;
+					display: flex;
+					justify-content: space-between;
+					.info {
+						width: 100%;
+						h2 {
+							font-size: 2.2vw;
+							font-style: normal;
+							font-weight: 700;
+							text-transform: uppercase;
+						}
+						.genre {
+							display: flex;
+							gap: 10px;
+							color: $gray;
+							margin: 3px 0;
+						}
+						.authorSide {
+							border-bottom: 1px solid $purple;
+							padding: 10px 0;
+							margin-bottom: 10px;
+							a {
+								color: $dark-purple;
+								text-transform: capitalize;
+							}
+						}
+					}
+					.action {
+						button {
+							width: 45px;
+							height: 45px;
+							border-radius: 100%;
+							padding: 8px;
+							svg {
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+
+				.description {
+					height: 100%;
+					padding: 0px 5px;
+					margin: 25px 0;
+					border-left: 1px solid gray;
+				}
+
+				.bookFooter {
+					.bookStock {
+						color: red;
+						text-transform: capitalize;
+					}
+					.price {
+						font-size: 2.2vw;
+					}
+					.addToCart {
+						width: 100%;
+						padding: 10px;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+		.reviews {
+			box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+			width: 35%;
+			height: 100%;
+			background-color: $white;
+			padding: 30px;
+			border-radius: 10px;
+			display: flex;
+			flex-direction: column;
+			// justify-content: space-between;
+			gap: 10px;
+			.header {
+				border-bottom: 2px solid $purple;
+				// height: 5%;
+				// margin-bottom: 25px;
+				.title {
+					color: $purple;
+					font-weight: bolder;
+					font-size: 1.5rem;
+				}
+			}
+			.comments {
+				overflow-y: scroll;
+				height: 100%;
+				border-bottom: 0.5px solid $purple;
+
+				.noReviews {
+					text-align: center;
+					font-weight: bolder;
+					font-size: 1.5rem;
+					color: $gray;
+				}
+
+				&::-webkit-scrollbar {
+					width: 10px;
+					display: block;
+				}
+
+				/* Track */
+				&::-webkit-scrollbar-track {
+					// box-shadow: inset 0 0 5px grey;
+					border-radius: 10px;
+					width: 2px;
+				}
+
+				/* Handle */
+				&::-webkit-scrollbar-thumb {
+					background: $purple;
+					border-radius: 10px;
+					width: 5px !important;
+				}
+			}
+			.reviewSubmission {
+				height: 25%;
+				display: flex;
+				flex-direction: column;
+				// gap: 10px;
+				textarea {
+					resize: none;
+					width: 100%;
+					height: 75%;
+					border-color: $gray;
+					padding: 2.5px;
+					outline: $gray;
+				}
+				span {
+					display: flex;
+					justify-content: space-between;
+					// align-items: center;
+					button:disabled {
+						background-color: $gray;
+						&:hover {
+							transform: unset;
+							box-shadow: unset;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -25,7 +25,7 @@ const Page: React.FC = () => {
   //   }
   // }, [])
 
-  console.log(user);
+  // console.log(user);
   
 
   const imageUploaded = (e: React.ChangeEvent<HTMLInputElement>) => {

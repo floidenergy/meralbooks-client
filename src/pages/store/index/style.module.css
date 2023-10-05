@@ -4,9 +4,6 @@
   width: 100vw;
   background-color: #f1f0f0;
 }
-.StoreIndex .loadingPage {
-  background-color: #5E0442;
-}
 .StoreIndex .sliderContainer {
   width: 100%;
 }
@@ -31,31 +28,31 @@
   text-align: center;
   margin-bottom: 60px;
 }
-.StoreIndex section .categoriesContainer {
+.StoreIndex section .genreContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
   margin-top: 2em;
 }
-.StoreIndex section .categoriesContainer .category {
+.StoreIndex section .genreContainer .genre {
   padding: 5px 10px;
   border-radius: 10px;
 }
-.StoreIndex section .categoriesContainer .category a {
+.StoreIndex section .genreContainer .genre a {
   text-decoration: none !important;
   color: white;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.StoreIndex section .categoriesContainer .category a .name {
+.StoreIndex section .genreContainer .genre a .name {
   font-size: 1rem !important;
   line-height: 100%;
   text-align: center;
   padding: auto;
 }
-.StoreIndex section .categoriesContainer .category a .count {
+.StoreIndex section .genreContainer .genre a .count {
   color: #7e2061;
   background-color: #FFFFFF;
   border-radius: 100%;

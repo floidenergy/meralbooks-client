@@ -15,6 +15,8 @@ import Register from './pages/register/Register'
 import EmailConf from './pages/emailConf/EmailConf.tsx'
 import Logout from './pages/Logout'
 
+import Default from './pages/default/Default.tsx'
+
 
 const MainApp = () => {
   return (
@@ -31,6 +33,7 @@ const MainApp = () => {
         <Route path='/Login' element={<Login />} />
         <Route path='/Logout' element={<Logout />} />
         <Route path='/Register' element={<Register />} />
+        <Route path='*' element={<Default />} />
       </Routes>
   )
 }

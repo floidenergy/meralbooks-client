@@ -8,6 +8,8 @@ import Search from './search/Search'
 import MProfile from './mProfile/MProfile'
 import Profile from './profile/Profile'
 
+import Defalut from "../default/Default"
+
 const Store = () => {
   return (
     <>
@@ -17,6 +19,7 @@ const Store = () => {
         <Route path='/Search/:type' element={<Search />} />
         <Route path='/Profile/:type' element={<Profile />} />
         <Route path='/MProfile/*' element={<MProfile />} />
+        <Route path='/*' element={<Defalut />} />
       </Routes>
       <Footer />
     </>

@@ -1,22 +1,10 @@
 import { Link } from 'react-router-dom'
+import { bookInterface } from '../../model'
 
 import style from './style.module.css'
 
-export interface bookCardProps {
-  _id: string
-  img: string
-  thumb: string
-  name: string
-  description: string
-  price: number
-  category: [{
-    _id: string
-    name: string
-    description?: string
-  }]
-}
 
-export default function Card1({ book, className }: { book: bookCardProps, className?: string }) {
+export default function Card1({ book, className }: { book: bookInterface, className?: string }) {
   return (
     <div className={`${className ? className : ""} ${style.Card1}`} >
       <div className={style.leftSide}>
@@ -26,7 +14,7 @@ export default function Card1({ book, className }: { book: bookCardProps, classN
         <div className={style.header}>
           <p className={style.title}>{book?.name}</p>
           <div className={style.catContainer}>
-            {book.category.slice(0, 2).map(cat => <p key={cat._id} className={style.cat}>{cat.name}</p>)}
+            {book.genre.slice(0, 2).map(cat => <p key={cat._id} className={style.cat}>{cat.name}</p>)}
           </div>
         </div>
         <div className={style.info}>

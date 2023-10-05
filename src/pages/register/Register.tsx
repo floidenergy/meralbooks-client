@@ -43,6 +43,7 @@ const Register = () => {
   const [inputError, setInputError] = useState<InputError[]>([])
   const [RequestError, setRequestError] = useState('')
 
+  // input unmatch the required data
   const HandleError = (e: React.FocusEvent<HTMLFormElement>) => {
     if (e.target.type === 'submit') return
 
@@ -91,6 +92,7 @@ const Register = () => {
     e.target.style.borderBottom = '4px solid cyan'
   }
 
+  // register submission
   const HandleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 

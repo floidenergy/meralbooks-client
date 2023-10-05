@@ -1,11 +1,19 @@
 .container {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   background-color: rgba(126, 32, 96, 0.6588235294);
   top: 0;
   left: 0;
   z-index: 500;
+}
+
+.darker {
+  background-color: #7e2060;
+}
+
+.lighter {
+  background-color: rgba(126, 32, 96, 0.6588235294);
 }
 
 .bookshelf_wrapper {
