@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector"
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai"
+import { useSelector } from "react-redux/es/hooks/useSelector"
+import { 
+  // AiFillHeart,
+  AiOutlineHeart
+} from "react-icons/ai"
 
-import { bookInterface, genreInterface, reviewInterface } from "../../../model"
+import { bookInterface, genreInterface } from "../../../model"
 
 import LoadingAnimation from "../../../elements/loadingAnimation/Loading"
 import Review from "../../../elements/review/Review"
@@ -19,10 +22,11 @@ export default function Book({ id }: { id: string }) {
 
   const [isLoading, setIsLoading] = useState(true)
   const [bookData, setBookData] = useState<bookInterface>()
+  
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [booksByAuthor, setBooksByAuthor] = useState<bookInterface[]>()
 
   // TODO: DELETE LETTER
-  const [reviews, setReviews] = useState<reviewInterface[]>([])
 
   const [reviewRate, setReviewRate] = useState<number>(1)
 

@@ -6,7 +6,7 @@ export interface User {
   },
   username: string,
   gender: 'male'| 'femal'
-  dob: Date,
+  dob: string,
   profilPic: string,
   thumb: string,
   email: string,
