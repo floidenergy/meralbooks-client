@@ -66,7 +66,7 @@ export default function SearchBar({className}: {className?: string}) {
           <ul className={style.searchSuggestions}>
             {searchSuggestions?.slice(0, 8).map((s) => (
               <li key={s._id}>
-                <Link to={`Profile/${searchType}?id=${s.id}`}>
+                <Link to={`Profile/${searchType}?id=${s._id}`}>
                   {s.name}
                 </Link>
               </li>
