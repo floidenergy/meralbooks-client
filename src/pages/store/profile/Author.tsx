@@ -1,6 +1,6 @@
 
-export default function Author({id}:{id:string}) {
+export default function Author({authorID}:{authorID:string}) {
   return (
-    <div>Author {id}</div>
+    <div>Author {authorID}</div>
   )
 }

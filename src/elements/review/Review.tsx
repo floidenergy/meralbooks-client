@@ -12,8 +12,8 @@ export default function Review({ rev }: { rev: reviewInterface }) {
         <div className={style.header}>
           <p className={style.userInfo}>{`${rev.user.name.fName} ${rev.user.name.lName}`}
             <span className={style.userName}>&nbsp;- @{rev.user.username}</span>
-            <Rating rating={rev.rate} size={15}/>
           </p>
+          <Rating rating={rev.rate} size={15} />
         </div>
         <p className={style.comment}>
           "{rev.review}"

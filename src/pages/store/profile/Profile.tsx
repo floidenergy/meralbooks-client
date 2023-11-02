@@ -20,7 +20,7 @@ export default function Profile() {
   return (
     <div className={style.profile}>
       <SearchBar />
-      {type === 'book' ? <Book id={id!} /> : <Author id={id!} />}
+      {type === 'book' ? <Book bookID={id!} /> : <Author authorID={id!} />}
     </div>
   )
 }

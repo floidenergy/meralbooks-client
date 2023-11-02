@@ -24,5 +24,5 @@ export default function Rating({ rating, size = 20 }: { rating: number, size?: n
     setStars(starsArray);
   }, [rating, size]);
 
-  return <div className={style.ratingStars}>{stars.map((Star, index) => (<span key={index} className={style.rateStar}>{Star}</span>))}</div>;
+  return <div className="ratingStars">{stars.map((Star, index) => (<span key={index} className='ratingStars'>{Star}</span>))}</div>;
 }

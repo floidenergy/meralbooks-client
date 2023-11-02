@@ -1,0 +1,31 @@
+/** @format */
+.card {
+  max-width: 15%;
+  height: 100%;
+}
+.card .thumb {
+  aspect-ratio: 9/16;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card div {
+  height: 10%;
+}
+.card div .title {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card div .info {
+  display: flex;
+  justify-content: space-between;
+  color: #7e2061;
+}
+.card div .info .price {
+  font-size: large;
+  font-weight: bold;
+}
+.card div .info .rating {
+  display: flex;
+  gap: 5px;
+}/*# sourceMappingURL=style.module.css.map */

@@ -22,11 +22,12 @@
 .profile .profileSection {
   display: flex;
   height: 85vh;
+  width: 100%;
   gap: 25px;
 }
 .profile .profileSection .subject {
   box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 60%;
+  width: 75%;
   height: 100%;
   background-color: #FFFFFF;
   padding: 30px;
@@ -104,23 +105,15 @@
   font-size: 1.5rem;
 }
 .profile .profileSection .reviews {
-  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
   width: 35%;
   height: 100%;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #FFFFFF;
   padding: 30px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.profile .profileSection .reviews .header {
-  border-bottom: 2px solid #7e2061;
-}
-.profile .profileSection .reviews .header .title {
-  color: #7e2061;
-  font-weight: bolder;
-  font-size: 1.5rem;
 }
 .profile .profileSection .reviews .comments {
   overflow-y: scroll;
@@ -158,8 +151,9 @@
   width: 100%;
   height: 75%;
   border-color: #9E9D9D;
-  padding: 2.5px;
+  padding: 0.5rem;
   outline: #9E9D9D;
+  border-radius: 0.5rem;
 }
 .profile .profileSection .reviews .reviewSubmission span {
   display: flex;
@@ -171,4 +165,19 @@
 .profile .profileSection .reviews .reviewSubmission span button:disabled:hover {
   transform: unset;
   box-shadow: unset;
+}
+.profile .suggestions {
+  margin: 25px 0;
+  width: 100%;
+  box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+}
+.profile .suggestions .content {
+  padding-top: 0.5rem;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.module.css.map */

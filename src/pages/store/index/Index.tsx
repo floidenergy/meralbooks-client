@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+
+import API from '../../../utils/Axios.ts'
 
 import { bannerInterface, bookInterface, authorInterface, genreInterface } from '../../../model.ts'
 
@@ -65,14 +66,13 @@ export default function Index() {
     const getData = async (): Promise<void> => {
       //TODO: MAKE API REQUEST TO FETCH NEWLY ADDED BOOKS AND RECOMMANDED BOOKS
       try {
-
-        const Genre = await axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/genre`)
+        const Genre = await API.get("/api/v1/genre")
         setGenre(Genre.data);
-        const Books = await axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/books`)
+        const Books = await API.get("/api/v1/books") // TODO: MAKE CHANGE THE REQUEST ROUTES
         setNewAddedBooks(Books.data.slice(0, 6));
         setRecommandedBooks(Books.data.slice(0, 6));
 
-        const Authors = await axios.get(`${import.meta.env.VITE_SERVER_LINK}/api/v1/AUTHORS`)
+        const Authors = await API.get("/api/v1/AUTHORS")
         setAuthors(Authors.data.slice(0, 6));
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -160,11 +160,11 @@ export default function Index() {
             modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={50}
             slidesPerView={3}
-            autoplay={{delay: 2500, disableOnInteraction: false}}
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
             centeredSlides={true}
-            pagination={{ clickable: true}}
+            pagination={{ clickable: true }}
             onSlideChange={(slide) => setCurrentSlide(slide.realIndex)}
-          className={style.slider}
+            className={style.slider}
           >
             {recommandedBooks.map((book, index) => (
               <SwiperSlide key={book._id} className={index === currentSlide ? style.activeSlide : ''}>
