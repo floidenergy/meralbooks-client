@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+
+import {addToWishList, removeFromWhishList} from "../../store/features/whishList"
 import { bookInterface } from '../../model'
 
 import style from './style.module.css'
+import { RootState } from '../../store/store'
 
 
 export default function Card1({ book, className }: { book: bookInterface, className?: string }) {
+  const dispatcher = useDispatch();
+  const whishList = useSelector((state: RootState) => state.whishList)
   return (
     <div className={`${className ? className : ""} ${style.Card1}`} >
       <div className={style.leftSide}>
@@ -22,10 +28,15 @@ export default function Card1({ book, className }: { book: bookInterface, classN
           <p className={style.price}>{book.price} DA</p>
         </div>
         <div className={style.actions}>
-          {
-            // TODO : ADD THE FUNCTION TO ADD AN ITEM TO CART (REDUX TOOLKIT)
-          }
-          <Link to={"#"} className={`button b-purple white`}>Add to cart</Link>
+          <button
+            onClick={() => {
+              const isExist = whishList.find(element => element._id === book._id)
+              isExist ?
+                dispatcher(removeFromWhishList(book._id)) :
+                dispatcher(addToWishList(book))
+            }}
+            className={`button b-purple white`}
+          >{whishList.find(element => element._id === book._id) ? "Remove from whishList" : "Add to whish List"}</button>
           <Link to={`Profile/book?id=${book._id}`} className={`button b-dark white`}>see More</Link>
         </div>
       </div>

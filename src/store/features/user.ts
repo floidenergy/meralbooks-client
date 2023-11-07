@@ -25,6 +25,7 @@ const userReducer = createSlice({
         localStorage.setItem("user", JSON.stringify(action.payload.user));
         state.isConnected = action.payload.isConnected
         state.user = action.payload.user
+        return state
       },
       prepare: (user: User) => {
         return {
@@ -50,6 +51,7 @@ const userReducer = createSlice({
         // state = action.payload;
         state.isConnected = action.payload.isConnected;
         state.user = action.payload.user
+        return state
       },
       prepare: (user: User) => {
         return {

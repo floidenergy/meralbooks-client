@@ -16,6 +16,7 @@ import { AiOutlineShoppingCart, AiOutlineLogout } from 'react-icons/ai'
 
 const NavBar = () => {
   const user = useSelector((state : RootState) => state.user)
+  const cartItems = useSelector((state : RootState) => state.cartItems)
   const location = useLocation().pathname
   const MobileNav = useRef<HTMLDivElement | null>(null)
 
@@ -44,7 +45,7 @@ const NavBar = () => {
     })
     setHeaders(headers)
     setNavbarClasses({ isActive: false, classes: nStyle.navBar })
-  }, [location,])
+  }, [location]) // dont add here in deps it will trigger rerender in a loop
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -82,7 +83,7 @@ const NavBar = () => {
   const Profile = () => {
     return (
       <div className={nStyle.profileDiv}>
-        <Link to={'/Cart'} className={nStyle.Profile_Icons}>
+        <Link to={'/Store/cart'} data-quantity={cartItems.length} className={nStyle.Profile_Icons}>
           <AiOutlineShoppingCart />
         </Link>
         {/* <Link to={'/Profile'} className={nStyle.Profile_Icons}>

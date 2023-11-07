@@ -3,9 +3,12 @@ import { useCallback, useEffect, useState } from "react"
 import API from "../../../utils/Axios"
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
+import { addToCart, removeFromCart } from "../../../store/features/cartItems"
+import { addToWishList, removeFromWhishList } from '../../../store/features/whishList'
 import {
-  // AiFillHeart,
+  AiFillHeart,
   AiOutlineHeart
 } from "react-icons/ai"
 
@@ -16,22 +19,25 @@ import Card2 from "../../../elements/Card2/Card2"
 import Review from "../../../elements/review/Review"
 import Rating from "../../../elements/Rating/Rating"
 import RatingSubmission from "../../../elements/RatingSubmission/RatingSubmission"
+import Counter from "../../../elements/Counter/Counter"
 
 import style from './style.module.css'
 import { RootState } from "../../../store/store"
 
 export default function Book({ bookID }: { bookID: string }) {
   const user = useSelector((state: RootState) => state.user);
+  const cartItems = useSelector((state: RootState) => state.cartItems);
+  const whishList = useSelector((state: RootState) => state.whishList);
 
-  const [isLoading, setIsLoading] = useState(true)
+  const dispatcher = useDispatch();
+
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [bookData, setBookData] = useState<bookInterface>()
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [booksByAuthor, setBooksByAuthor] = useState<bookInterface[]>()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [booksByGenre, setBooksByGenre] = useState<bookInterface[]>()
 
-
+  const [orderQuantity, setOrderQuantity] = useState<number>(1)
   const [reviewRate, setReviewRate] = useState<number>(1)
 
 
@@ -52,13 +58,9 @@ export default function Book({ bookID }: { bookID: string }) {
 
 
   useEffect(() => {
-    // window.scroll({ top: 0, behavior: "instant" });
+    window.scroll({ top: 0, behavior: "instant" });
     getData();
-  }, [bookID, getData])
-
-  console.log(booksByGenre);
-
-  // TODO: delete later
+  }, [bookID, getData, bookID])
 
   const handleReviewSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
@@ -96,21 +98,38 @@ export default function Book({ bookID }: { bookID: string }) {
                       {bookData?.genre?.map((gen: genreInterface) => <p key={gen._id} className={style.cat}>{gen.name}</p>)}
                     </div>
                     <p className={style.authorSide}>By <Link to={`/Store/Profile/author?id=${bookData?.author!._id}`}>{bookData?.author!.name}</Link> (Author)</p>
-
-                    <Rating rating={4} />
+                    <span className={style.ratingSection}><Rating rating={bookData.rating} /> {bookData.rating} / 5</span>
                   </div>
                   <div className={style.action}>
-                    {/* // TODO: DO THE ADD TO CART AND CHECK WHEATHER U IT ALREADY ADDED OR NAH AND PUT THE REQUIRED ICON (FILLED OR OUTLINED) */}
-                    <button type="button" className={`${style.addToWishList} button b-purple white`}><AiOutlineHeart /></button>
+                    <button
+                      type="button"
+                      className={`${style.addToWishList} button b-purple white`}
+                      onClick={() => {
+                        const isExist = whishList.find(element => element._id === bookData._id);
+                        isExist ?
+                          dispatcher(removeFromWhishList(bookData._id))
+                          :
+                          dispatcher(addToWishList(bookData))
+                      }}
+                    >
+                      {whishList.find(element => element._id === bookData._id) ? <AiFillHeart /> : <AiOutlineHeart />}
+                    </button>
                   </div>
                 </div>
 
                 <p className={style.description}>{bookData?.description}</p>
-
+                {!cartItems.find(element => element.item._id === bookData._id) && <Counter value={orderQuantity} onChange={value => setOrderQuantity(value)} />}
                 <div className={style.bookFooter}>
                   <p className={style.bookStock}>{bookData?.quantity} books left</p>
                   <p className={`${style.price} bold purple`}>{bookData?.price} DA</p>
-                  <button type="submit" className={`${style.addToCart} button white b-purple bold`}>Add To Cart</button>
+                  <button type="submit" className={`${style.addToCart} button white b-purple bold`}
+                    onClick={() => {
+                      const isExist = cartItems.find(element => element.item._id === bookData._id);
+                      isExist ?
+                        dispatcher(removeFromCart(bookData._id)) :
+                        dispatcher(addToCart({ item: bookData, quantity: orderQuantity }))
+                    }}
+                  >{cartItems.find(element => element.item._id === bookData._id) ? "Remove From Cart" : "Add To Cart"}</button>
                 </div>
               </div>
             </div>
@@ -124,7 +143,6 @@ export default function Book({ bookID }: { bookID: string }) {
                     bookData?.review.map(r => <Review rev={r} key={r._id} />)
                     : <p className={style.noReviews}>No Review Submited</p>
                 }
-
               </div>
               <form onSubmit={handleReviewSubmit} className={style.reviewSubmission} action="">
                 <textarea name="review" id="" cols={15} rows={6} placeholder='Write a review' ></textarea><br />
@@ -145,7 +163,21 @@ export default function Book({ bookID }: { bookID: string }) {
             </div>
             <div className={style.content}>
               {
-                booksByAuthor?.slice(0, 6).map(book => <Card2 key={book._id} book={book} className={style.card}/>)
+                booksByAuthor?.slice(0, 6).map(book => (
+                  <Card2 key={book._id} link={`?id=${book._id}`} book={book} className={style.card} />
+                ))
+              }
+            </div>
+          </section>
+          <section className={style.suggestions}>
+            <div className="headerTitle">
+              <p className="title">More on {bookData.genre[0].name} books</p>
+            </div>
+            <div className={style.content}>
+              {
+                booksByGenre?.slice(0, 6).map(book => (
+                  <Card2 key={book._id} link={`?id=${book._id}`} book={book} className={style.card} />
+                ))
               }
             </div>
           </section>

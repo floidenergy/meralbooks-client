@@ -1,0 +1,7 @@
+{
+  "singleAttributePerLine": false,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "tabWidth": 2,
+  "cursorOffset": -1
+}

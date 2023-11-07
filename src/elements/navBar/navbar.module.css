@@ -66,6 +66,19 @@
   width: 100%;
   padding-right: 15px;
   color: #5D595A;
+  position: relative;
+}
+.navBar div.icons div.profileDiv a.Profile_Icons::after {
+  content: attr(data-quantity);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-50%, -25%);
+  background-color: #7e2061;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 100%;
+  min-width: 15px;
 }
 .navBar div.icons div.profileDiv a.Profile_Icons svg {
   width: 100%;

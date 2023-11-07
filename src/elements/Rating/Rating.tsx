@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
-import style from './style.module.css'
+// import style from './style.module.css'
 
 export default function Rating({ rating, size = 20 }: { rating: number, size?: number }) {
   const [stars, setStars] = useState<React.ReactNode[]>([]);

@@ -7,7 +7,6 @@ import Contact from './pages/contact/Contact.tsx'
 import About from './pages/about/About'
 
 import './sass/globalStyle.css'
-import Cart from './pages/cart/Cart'
 import Profile from './pages/profile/Profile'
 
 import Login from './pages/login/Login.js'
@@ -20,21 +19,20 @@ import Default from './pages/default/Default.tsx'
 
 const MainApp = () => {
   return (
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/Store/*' element={<Store />} />
-        <Route path='/Forum/*' element={<Forum />} />
-        <Route path='/Contact/*' element={<Contact />} />
-        <Route path='/About' element={<About />} />
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/Store/*' element={<Store />} />
+      <Route path='/Forum/*' element={<Forum />} />
+      <Route path='/Contact/*' element={<Contact />} />
+      <Route path='/About' element={<About />} />
 
-        <Route path='/Cart/*' element={<Cart />} />
-        <Route path='/Email/*' element={<EmailConf />} />
-        <Route path='/Profile/*' element={<Profile />} />
-        <Route path='/Login' element={<Login />} />
-        <Route path='/Logout' element={<Logout />} />
-        <Route path='/Register' element={<Register />} />
-        <Route path='*' element={<Default />} />
-      </Routes>
+      <Route path='/Email/*' element={<EmailConf />} />
+      <Route path='/Profile/*' element={<Profile />} />
+      <Route path='/Login' element={<Login />} />
+      <Route path='/Logout' element={<Logout />} />
+      <Route path='/Register' element={<Register />} />
+      <Route path='*' element={<Default />} />
+    </Routes>
   )
 }
 

@@ -1,0 +1,20 @@
+@import "../../sass/utilities/variable.scss";
+
+.counterContainer{
+  padding: 1rem 0;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  button{
+    transition: none;
+    width: 35%;
+    &:hover{
+      transform: none;
+      box-shadow: unset;
+    }   
+  }
+  p{
+    font-size: large;
+    font-weight: bold;
+  }
+}

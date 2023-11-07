@@ -1,0 +1,18 @@
+.counterContainer {
+  padding: 1rem 0;
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+.counterContainer button {
+  transition: none;
+  width: 35%;
+}
+.counterContainer button:hover {
+  transform: none;
+  box-shadow: unset;
+}
+.counterContainer p {
+  font-size: large;
+  font-weight: bold;
+}/*# sourceMappingURL=style.module.css.map */

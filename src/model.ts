@@ -5,14 +5,14 @@ export interface User {
     lName: string
   },
   username: string,
-  gender: 'male'| 'femal'
+  gender: 'male' | 'femal'
   dob: string,
   profilPic: string,
   thumb: string,
   email: string,
   confirmedEmail: boolean
   shipping_info?: shippingInfoInterface[] | string[]
-  orderHistory?: ordersInterface[] | string[] 
+  orderHistory?: ordersInterface[] | string[]
   isAdmin?: boolean,
 }
 
@@ -26,7 +26,7 @@ export interface bookInterface {
   price: number
   quantity: number
   language: ['Frabic', 'Arabic', 'English']
-  genre: genreInterface[] 
+  genre: genreInterface[]
   review: reviewInterface[]
   rating: number
 }
@@ -104,4 +104,9 @@ export interface reviewInterface {
 export interface bannerInterface {
   _id: string
   img: string;
+}
+
+export interface cartItemsInterface {
+  item: bookInterface,
+  quantity: number
 }

@@ -76,6 +76,10 @@
   color: #5E0442;
   text-transform: capitalize;
 }
+.profile .profileSection .subject .subjectinfo .header .info .ratingSection {
+  display: flex;
+  gap: 1rem;
+}
 .profile .profileSection .subject .subjectinfo .header .action button {
   width: 45px;
   height: 45px;
@@ -180,4 +184,7 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+}
+.profile .suggestions .content .card {
+  height: 100%;
 }/*# sourceMappingURL=style.module.css.map */
